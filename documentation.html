@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-theme-pref="dark" data-lang="en"
+      data-title-fr="Documentation — BRAVIS"
+      data-title-en="Documentation — BRAVIS">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Documentation — BRAVIS</title>
+  <meta name="description" content="Documentation complète de BRAVIS, l’extension 3D Slicer de versionnement collaboratif : installation, Version tree, Save, Share, Compare, Merge, tâches et reviews."
+        data-fr-content="Documentation complète de BRAVIS, l’extension 3D Slicer de versionnement collaboratif : installation, Version tree, Save, Share, Compare, Merge, tâches et reviews."
+        data-en-content="Full documentation for BRAVIS, the collaborative versioning extension for 3D Slicer: installation, Version tree, Save, Share, Compare, Merge, tasks and reviews.">
+  <meta name="theme-color" content="#060a17">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Documentation — BRAVIS">
+  <meta property="og:image" content="assets/img/bravis-banner.jpg">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@500..700&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    (function () {
+      var d = document.documentElement, t, l;
+      try { t = localStorage.getItem("bravis-theme"); l = localStorage.getItem("bravis-lang"); } catch (e) {}
+      if (t !== "light" && t !== "dark" && t !== "auto") t = "dark";
+      if (l !== "fr" && l !== "en") l = "en";
+      var dark = t === "dark" || (t === "auto" && window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches);
+      d.setAttribute("data-theme", dark ? "dark" : "light");
+      d.setAttribute("data-theme-pref", t);
+      d.setAttribute("data-lang", l);
+      d.lang = l;
+      var title = d.getAttribute("data-title-" + l);
+      if (title) document.title = title;
+    })();
+  </script>
+  <script src="assets/js/config.js" defer></script>
+  <script src="assets/js/videos.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/docs.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main"><span data-l="fr">Aller au contenu</span><span data-l="en">Skip to content</span></a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="BRAVIS">
+        <img src="assets/img/favicon.svg" alt="" width="34" height="34">
+        <span class="brand-name">BRA<span class="brand-vis">VIS</span></span>
+      </a>
+      <nav class="main-nav" id="main-nav" data-fr-aria-label="Navigation principale" data-en-aria-label="Main navigation">
+        <a href="index.html"><span data-l="fr">Accueil</span><span data-l="en">Home</span></a>
+        <a href="documentation.html" aria-current="page">Documentation</a>
+        <a href="demos.html"><span data-l="fr">Démos</span><span data-l="en">Demos</span></a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-switch" role="group" aria-label="Langue / Language">
+          <button type="button" data-set-lang="fr" aria-pressed="true">FR</button>
+          <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <button type="button" class="icon-btn theme-toggle" data-theme-toggle aria-label="Thème">
+          <svg class="ico ico-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor"/></svg>
+          <svg class="ico ico-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="ico ico-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <a class="icon-btn source-link" data-source-link href="#" hidden>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+          <span class="label">Code</span>
+        </a>
+        <button type="button" class="icon-btn nav-toggle" aria-controls="main-nav" aria-expanded="false" data-fr-aria-label="Ouvrir le menu" data-en-aria-label="Open menu" aria-label="Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="doc-hero">
+      <div class="container">
+        <span class="eyebrow">Documentation</span>
+        <h1><span data-l="fr">Guide complet de <span class="gradient-text">BRAVIS</span></span><span data-l="en">The complete <span class="gradient-text">BRAVIS</span> guide</span></h1>
+        <p>
+          <span data-l="fr">De l’installation à la review d’une tâche : chaque fonction de l’extension expliquée pas à pas, avec des vidéos. Les noms de boutons restent en anglais, comme dans 3D Slicer.</span>
+          <span data-l="en">From installation to reviewing a task: every feature of the extension explained step by step, with videos. Button names match the 3D Slicer interface.</span>
+        </p>
+      </div>
+    </section>
+
+    <div class="container doc-layout">
+      <!-- ================= SIDEBAR ================= -->
+      <aside class="doc-sidebar" id="doc-sidebar" data-fr-aria-label="Sommaire" data-en-aria-label="Contents">
+        <div class="doc-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          <input type="search" id="doc-search" autocomplete="off"
+                 placeholder="Rechercher…  ( / )"
+                 data-fr-placeholder="Rechercher…  ( / )" data-en-placeholder="Search…  ( / )"
+                 data-fr-aria-label="Rechercher dans la documentation" data-en-aria-label="Search the documentation">
+        </div>
+        <nav class="toc">
+          <div class="toc-group" data-group="start">
+            <p class="toc-group-title"><span data-l="fr">Démarrer</span><span data-l="en">Getting started</span></p>
+            <ol>
+              <li><a href="#installation"><span data-l="fr">Installation et prérequis</span><span data-l="en">Installation &amp; requirements</span></a></li>
+              <li><a href="#interface"><span data-l="fr">L’interface</span><span data-l="en">The interface</span></a></li>
+              <li><a href="#connexion"><span data-l="fr">Connexion GitHub</span><span data-l="en">GitHub sign-in</span></a></li>
+              <li><a href="#projet"><span data-l="fr">Créer ou ouvrir un projet</span><span data-l="en">Create or open a project</span></a></li>
+            </ol>
+          </div>
+          <div class="toc-group" data-group="data">
+            <p class="toc-group-title"><span data-l="fr">Données et atlas</span><span data-l="en">Data &amp; atlases</span></p>
+            <ol>
+              <li><a href="#donnees"><span data-l="fr">Volume, segmentation, ontologie</span><span data-l="en">Volume, segmentation, ontology</span></a></li>
+              <li><a href="#ontologie"><span data-l="fr">Ontologies et éditeur</span><span data-l="en">Ontologies &amp; editor</span></a></li>
+              <li><a href="#anatomie"><span data-l="fr">Arbre anatomique</span><span data-l="en">Anatomy tree</span></a></li>
+            </ol>
+          </div>
+          <div class="toc-group" data-group="versions">
+            <p class="toc-group-title">Versions</p>
+            <ol>
+              <li><a href="#version-tree"><span data-l="fr">Lire le Version tree</span><span data-l="en">Reading the Version tree</span></a></li>
+              <li><a href="#switch">Switch version</a></li>
+              <li><a href="#save">Save version</a></li>
+              <li><a href="#branches"><span data-l="fr">Branches et sous-branches</span><span data-l="en">Branches &amp; sub-branches</span></a></li>
+              <li><a href="#share">Share</a></li>
+              <li><a href="#compare-shared">Compare with shared</a></li>
+              <li><a href="#merge">Merge &amp; Compare</a></li>
+            </ol>
+          </div>
+          <div class="toc-group" data-group="collab">
+            <p class="toc-group-title">Collaboration</p>
+            <ol>
+              <li><a href="#people"><span data-l="fr">People : inviter, rôles</span><span data-l="en">People: invite, roles</span></a></li>
+              <li><a href="#tasks-assign"><span data-l="fr">Tasks : assigner</span><span data-l="en">Tasks: assign</span></a></li>
+              <li><a href="#tasks-junior"><span data-l="fr">Tasks : côté junior</span><span data-l="en">Tasks: junior side</span></a></li>
+              <li><a href="#tasks-review"><span data-l="fr">Tasks : Accept / Decline</span><span data-l="en">Tasks: Accept / Decline</span></a></li>
+              <li><a href="#messages"><span data-l="fr">Messages et notifications</span><span data-l="en">Messages &amp; notifications</span></a></li>
+              <li><a href="#permissions"><span data-l="fr">Cadenas et permissions</span><span data-l="en">Padlocks &amp; permissions</span></a></li>
+              <li><a href="#delete">Delete</a></li>
+            </ol>
+          </div>
+          <div class="toc-group" data-group="ref">
+            <p class="toc-group-title"><span data-l="fr">Référence</span><span data-l="en">Reference</span></p>
+            <ol>
+              <li><a href="#scenarios"><span data-l="fr">Scénarios utiles</span><span data-l="en">Useful scenarios</span></a></li>
+              <li><a href="#stockage"><span data-l="fr">Stockage des segmentations</span><span data-l="en">Segmentation storage</span></a></li>
+              <li><a href="#limites"><span data-l="fr">Limites actuelles</span><span data-l="en">Current limitations</span></a></li>
+            </ol>
+          </div>
+          <p class="toc-empty" hidden><span data-l="fr">Aucun chapitre ne correspond.</span><span data-l="en">No chapter matches.</span></p>
+        </nav>
+      </aside>
+
+      <!-- ================= CONTENT ================= -->
+      <div class="doc-content">
+        <button type="button" class="icon-btn doc-toc-toggle" aria-controls="doc-sidebar" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h13"/></svg>
+          <span data-l="fr">Sommaire</span><span data-l="en">Contents</span>
+        </button>
+
+        <div class="search-empty" id="search-empty">
+          <span data-l="fr">Aucun résultat. Essayez « Share », « review », « ontologie »…</span>
+          <span data-l="en">No results. Try “Share”, “review”, “ontology”…</span>
+        </div>
+
+        <!-- ======================= GETTING STARTED ======================= -->
+        <p class="doc-group-title" data-group="start"><span data-l="fr">Démarrer</span><span data-l="en">Getting started</span></p>
+
+        <!-- 01 Installation -->
+        <section class="doc-section" id="installation" data-group="start">
+          <h2><span class="num">01</span><span class="title"><span data-l="fr">Installation et prérequis</span><span data-l="en">Installation &amp; requirements</span></span></h2>
+          <p class="lead">
+            <span data-l="fr">BRAVIS est un module Python de 3D Slicer, nommé <strong>Collaborative Versioning</strong> (catégorie <em>Informatics</em>). Il s’appuie sur Git et sur la GitHub CLI pour enregistrer et partager les versions.</span>
+            <span data-l="en">BRAVIS is a 3D Slicer Python module named <strong>Collaborative Versioning</strong> (<em>Informatics</em> category). It relies on Git and the GitHub CLI to record and share versions.</span>
+          </p>
+          <figure class="video-slot" data-video="installation"></figure>
+
+          <div data-l="fr">
+            <h3>Ce qu’il vous faut</h3>
+            <ul>
+              <li><strong>3D Slicer</strong>, version récente.</li>
+              <li><strong>Git</strong> installé et accessible depuis le terminal (<code>git --version</code>).</li>
+              <li><strong>GitHub CLI</strong> (<code>gh</code>) installée et accessible (<code>gh --version</code>).</li>
+              <li>Un <strong>compte GitHub</strong>. Pour tester le travail d’équipe : idéalement un senior et un ou deux juniors.</li>
+              <li>Le paquet Python <strong><code>xxhash</code></strong> dans le Python de Slicer (utilisé pour le stockage des segmentations).</li>
+            </ul>
+
+            <h3>Installer le module</h3>
+            <ol class="steps">
+              <li>Récupérez le dossier de l’extension. Il contient un fichier <code>CMakeLists.txt</code> et un dossier <code>CollaborativeVersioning</code>.</li>
+              <li>Dans Slicer, ouvrez <span class="ui">Edit</span> → <span class="ui">Application Settings</span> → <span class="ui">Modules</span>.</li>
+              <li>Dans <strong>Additional module paths</strong>, ajoutez le dossier <code>CollaborativeVersioning</code> (celui qui contient <code>CollaborativeVersioning.py</code>).</li>
+              <li>Redémarrez Slicer.</li>
+              <li>Ouvrez le module : liste des modules → <strong>Informatics</strong> → <strong>Collaborative Versioning</strong>.</li>
+            </ol>
+            <p>Alternative pour les développeurs : <span class="ui">Developer Tools</span> → <span class="ui">Extension Wizard</span> → <span class="ui">Select Extension</span>, puis choisir le dossier de l’extension.</p>
+
+            <h3>Installer <code>xxhash</code></h3>
+            <p>Dans Slicer, ouvrez la console Python (<span class="ui">View</span> → <span class="ui">Python Console</span>) et lancez :</p>
+            <pre><code>slicer.util.pip_install("xxhash")</code></pre>
+
+            <div class="callout warn"><span class="callout-ico">⚠️</span><div><p><strong>Git ou gh introuvable ?</strong> Après avoir installé Git ou la GitHub CLI, redémarrez Slicer pour qu’il les trouve dans le <code>PATH</code>.</p></div></div>
+          </div>
+
+          <div data-l="en">
+            <h3>What you need</h3>
+            <ul>
+              <li><strong>3D Slicer</strong>, a recent version.</li>
+              <li><strong>Git</strong> installed and reachable from the terminal (<code>git --version</code>).</li>
+              <li><strong>GitHub CLI</strong> (<code>gh</code>) installed and reachable (<code>gh --version</code>).</li>
+              <li>A <strong>GitHub account</strong>. To try teamwork: ideally one senior and one or two juniors.</li>
+              <li>The <strong><code>xxhash</code></strong> Python package in Slicer’s Python (used to store segmentations).</li>
+            </ul>
+
+            <h3>Install the module</h3>
+            <ol class="steps">
+              <li>Get the extension folder. It contains a <code>CMakeLists.txt</code> file and a <code>CollaborativeVersioning</code> folder.</li>
+              <li>In Slicer, open <span class="ui">Edit</span> → <span class="ui">Application Settings</span> → <span class="ui">Modules</span>.</li>
+              <li>Under <strong>Additional module paths</strong>, add the <code>CollaborativeVersioning</code> folder (the one containing <code>CollaborativeVersioning.py</code>).</li>
+              <li>Restart Slicer.</li>
+              <li>Open the module: module list → <strong>Informatics</strong> → <strong>Collaborative Versioning</strong>.</li>
+            </ol>
+            <p>Developer alternative: <span class="ui">Developer Tools</span> → <span class="ui">Extension Wizard</span> → <span class="ui">Select Extension</span>, then pick the extension folder.</p>
+
+            <h3>Install <code>xxhash</code></h3>
+            <p>In Slicer, open the Python console (<span class="ui">View</span> → <span class="ui">Python Console</span>) and run:</p>
+            <pre><code>slicer.util.pip_install("xxhash")</code></pre>
+
+            <div class="callout warn"><span class="callout-ico">⚠️</span><div><p><strong>Git or gh not found?</strong> After installing Git or the GitHub CLI, restart Slicer so it finds them on the <code>PATH</code>.</p></div></div>
+          </div>
+        </section>
+
+        <!-- 02 Interface -->
+        <section class="doc-section" id="interface" data-group="start">
+          <h2><span class="num">02</span><span class="title"><span data-l="fr">L’interface</span><span data-l="en">The interface</span></span></h2>
+          <p class="lead">
+            <span data-l="fr">Le module occupe deux zones de Slicer : un panneau à gauche pour les actions, et un panneau à droite pour explorer l’historique et suivre l’activité.</span>
+            <span data-l="en">The module uses two areas of Slicer: a left panel for actions, and a right panel to explore history and follow activity.</span>
+          </p>
+
+          <div class="ui-mock" aria-hidden="true">
+            <div class="col">
+              <div class="blk"><span class="tag">CONNECTION</span><b>Connect with GitHub · 🔔</b><span data-l="fr">Statut de connexion</span><span data-l="en">Connection status</span></div>
+              <div class="blk"><span class="tag">ACTIVE PROJECT</span><b>Project · 3D Volume · Segmentation · Ontology ⚙</b>Create · People · Delete<br>Open · Save · Share</div>
+              <div class="blk"><b>Tasks</b><span data-l="fr">Tâches du projet</span><span data-l="en">Project tasks</span></div>
+              <div class="blk"><b>Messages</b><span data-l="fr">Fil de discussion</span><span data-l="en">Project chat</span></div>
+            </div>
+            <div class="col">
+              <div class="views">
+                <div class="view v3d">3D</div>
+                <div class="view r">Axial</div>
+                <div class="view y">Sagittal</div>
+                <div class="view g">Coronal</div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="blk"><span class="tag">VISUAL EXPLORATION</span><b>View anatomy tree</b><b>View version tree</b></div>
+              <div class="blk"><span class="tag">VERSION HISTORY</span>Version · Date · Author · Message</div>
+              <div class="blk"><span class="tag">LIVE ACTIVITY FEED</span><span data-l="fr">Journal des actions · Clear</span><span data-l="en">Action log · Clear</span></div>
+            </div>
+          </div>
+
+          <div data-l="fr">
+            <h3>Panneau de gauche</h3>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Élément</th><th>Rôle</th></tr></thead>
+              <tbody>
+                <tr><td><span class="ui">Connect with GitHub</span></td><td>Se connecter (ou se déconnecter) de GitHub. La cloche 🔔 à côté ouvre les notifications.</td></tr>
+                <tr><td><strong>Project</strong></td><td>Liste de vos projets (ceux que vous possédez ou que vous avez rejoints).</td></tr>
+                <tr><td><strong>3D Volume / Segmentation</strong></td><td>Le volume et la segmentation de la scène Slicer à versionner.</td></tr>
+                <tr><td><strong>Ontology map (JSON)</strong></td><td>L’atlas utilisé (Allen Mouse, Allen Human ou votre JSON) et le menu ⚙.</td></tr>
+                <tr><td><span class="ui">Create</span> <span class="ui">People</span> <span class="ui">Delete</span></td><td>Créer un projet, gérer l’équipe, supprimer le projet (owner).</td></tr>
+                <tr><td><span class="ui">Open</span> <span class="ui">Save</span> <span class="ui">Share</span></td><td>Ouvrir le projet choisi, enregistrer une version locale, la publier.</td></tr>
+                <tr><td><span class="ui">Tasks</span> <span class="ui">Messages</span></td><td>Les tâches assignées et le fil de discussion du projet. Un badge signale les nouveautés.</td></tr>
+              </tbody>
+            </table></div>
+            <h3>Panneau de droite</h3>
+            <ul>
+              <li><strong>Visual exploration</strong> : <span class="ui">View anatomy tree</span> et <span class="ui">View version tree</span> ouvrent les deux graphes.</li>
+              <li><strong>Version history</strong> : la version ouverte (<em>Checked out</em>) et un tableau des versions (Version, Date, Author, Message), avec les mêmes couleurs de branche que le Version tree.</li>
+              <li><strong>Live activity feed</strong> : le journal de ce que fait le module (connexion, ouverture, erreurs…). <span class="ui">Clear</span> le vide.</li>
+            </ul>
+            <div class="callout"><span class="callout-ico">💡</span><div><p>Pendant un Merge, la section <strong>Active project</strong> est remplacée par le panneau <strong>Compare and Merge</strong>. <span class="ui">Quit</span> rétablit l’affichage normal.</p></div></div>
+          </div>
+
+          <div data-l="en">
+            <h3>Left panel</h3>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Item</th><th>Purpose</th></tr></thead>
+              <tbody>
+                <tr><td><span class="ui">Connect with GitHub</span></td><td>Sign in to (or out of) GitHub. The 🔔 bell next to it opens notifications.</td></tr>
+                <tr><td><strong>Project</strong></td><td>Your projects (the ones you own or have joined).</td></tr>
+                <tr><td><strong>3D Volume / Segmentation</strong></td><td>The Slicer scene volume and segmentation to version.</td></tr>
+                <tr><td><strong>Ontology map (JSON)</strong></td><td>The atlas in use (Allen Mouse, Allen Human or your JSON) and the ⚙ menu.</td></tr>
+                <tr><td><span class="ui">Create</span> <span class="ui">People</span> <span class="ui">Delete</span></td><td>Create a project, manage the team, delete the project (owner).</td></tr>
+                <tr><td><span class="ui">Open</span> <span class="ui">Save</span> <span class="ui">Share</span></td><td>Open the selected project, save a local version, publish it.</td></tr>
+                <tr><td><span class="ui">Tasks</span> <span class="ui">Messages</span></td><td>Assigned tasks and the project chat. A badge flags anything new.</td></tr>
+              </tbody>
+            </table></div>
+            <h3>Right panel</h3>
+            <ul>
+              <li><strong>Visual exploration</strong>: <span class="ui">View anatomy tree</span> and <span class="ui">View version tree</span> open the two graphs.</li>
+              <li><strong>Version history</strong>: the open version (<em>Checked out</em>) and a table of versions (Version, Date, Author, Message), using the same branch colors as the Version tree.</li>
+              <li><strong>Live activity feed</strong>: a log of what the module does (sign-in, opening, errors…). <span class="ui">Clear</span> empties it.</li>
+            </ul>
+            <div class="callout"><span class="callout-ico">💡</span><div><p>During a Merge, the <strong>Active project</strong> section is replaced by the <strong>Compare and Merge</strong> panel. <span class="ui">Quit</span> restores the normal layout.</p></div></div>
+          </div>
+        </section>
+
+        <!-- 03 Connexion -->
+        <section class="doc-section" id="connexion" data-group="start">
+          <h2><span class="num">03</span><span class="title"><span data-l="fr">Connexion GitHub</span><span data-l="en">GitHub sign-in</span></span></h2>
+          <p class="lead">
+            <span data-l="fr">La connexion passe par la GitHub CLI et un code à usage unique, sans jamais saisir votre mot de passe dans Slicer.</span>
+            <span data-l="en">Sign-in goes through the GitHub CLI and a one-time code, without ever typing your password into Slicer.</span>
+          </p>
+          <figure class="video-slot" data-video="connexion"></figure>
+
+          <div data-l="fr">
+            <ol class="steps">
+              <li>Cliquez sur <span class="ui">Connect with GitHub</span>. Une fenêtre résume les étapes : cliquez sur <span class="ui">Open sign-in window</span>.</li>
+              <li>Dans la fenêtre de connexion qui s’ouvre, répondez <strong>Yes</strong> si on vous demande d’authentifier Git avec vos identifiants GitHub.</li>
+              <li>Un <strong>code à usage unique</strong> s’affiche (il est aussi copié dans le presse-papiers). Appuyez sur <kbd>Entrée</kbd> : le navigateur s’ouvre sur <code>github.com/login/device</code>.</li>
+              <li>Connectez-vous à GitHub si besoin, collez le code et autorisez l’accès.</li>
+              <li>Revenez dans Slicer et cliquez sur <span class="ui">I have signed in</span>. Le statut affiche votre compte, et le bouton devient <span class="ui">Disconnect</span>.</li>
+            </ol>
+            <h3>Se déconnecter</h3>
+            <p><span class="ui">Disconnect</span> → <span class="ui">Sign out</span>. La prochaine connexion redemandera de se connecter dans le navigateur. C’est utile pour changer de compte ou sur un ordinateur partagé.</p>
+            <div class="callout"><span class="callout-ico">🔐</span><div><p>Certaines actions, comme supprimer un projet, demandent une autorisation GitHub supplémentaire. Une fenêtre <strong>GitHub permission</strong> vous guide ; terminez dans le navigateur puis cliquez sur <span class="ui">I have authorized</span>.</p></div></div>
+            <div class="callout warn"><span class="callout-ico">⚠️</span><div><p><strong>Cannot reach GitHub</strong> : vérifiez votre connexion Internet (ou un proxy d’établissement), puis réessayez.</p></div></div>
+          </div>
+
+          <div data-l="en">
+            <ol class="steps">
+              <li>Click <span class="ui">Connect with GitHub</span>. A window sums up the steps: click <span class="ui">Open sign-in window</span>.</li>
+              <li>In the sign-in window that opens, answer <strong>Yes</strong> if asked to authenticate Git with your GitHub credentials.</li>
+              <li>A <strong>one-time code</strong> is shown (it is also copied to the clipboard). Press <kbd>Enter</kbd>: the browser opens <code>github.com/login/device</code>.</li>
+              <li>Sign in to GitHub if needed, paste the code and authorize.</li>
+              <li>Back in Slicer, click <span class="ui">I have signed in</span>. The status shows your account and the button becomes <span class="ui">Disconnect</span>.</li>
+            </ol>
+            <h3>Signing out</h3>
+            <p><span class="ui">Disconnect</span> → <span class="ui">Sign out</span>. The next connection will ask you to sign in again in the browser. Useful to switch account or on a shared computer.</p>
+            <div class="callout"><span class="callout-ico">🔐</span><div><p>Some actions, such as deleting a project, need an extra GitHub permission. A <strong>GitHub permission</strong> window guides you; finish in the browser, then click <span class="ui">I have authorized</span>.</p></div></div>
+            <div class="callout warn"><span class="callout-ico">⚠️</span><div><p><strong>Cannot reach GitHub</strong>: check your Internet connection (or an institutional proxy), then try again.</p></div></div>
+          </div>
+        </section>
+
+        <!-- 04 Projet -->
+        <section class="doc-section" id="projet" data-group="start">
+          <h2><span class="num">04</span><span class="title"><span data-l="fr">Créer ou ouvrir un projet</span><span data-l="en">Create or open a project</span></span></h2>
+          <p class="lead">
+            <span data-l="fr">Un projet BRAVIS est un dépôt GitHub <strong>privé</strong>, plus une copie locale sur chaque ordinateur.</span>
+            <span data-l="en">A BRAVIS project is a <strong>private</strong> GitHub repository, plus a local copy on each computer.</span>
+          </p>
+          <figure class="video-slot" data-video="projet"></figure>
+
+          <div data-l="fr">
+            <h3>Créer</h3>
+            <ol class="steps">
+              <li>Cliquez sur <span class="ui">Create</span>.</li>
+              <li>Dans <strong>New project</strong>, saisissez un <strong>Project name</strong> et, si vous voulez, une <strong>Description</strong> courte.</li>
+              <li>Validez avec <span class="ui">Create</span>. Le dépôt privé est créé sur GitHub, avec sa copie locale. Vous en êtes l’<strong>owner</strong>.</li>
+            </ol>
+            <h3>Ouvrir</h3>
+            <ol class="steps">
+              <li>Choisissez le projet dans la liste <strong>Project</strong>.</li>
+              <li>Cliquez sur <span class="ui">Open</span>. La copie locale est créée ou mise à jour, et le <strong>Version history</strong> apparaît.</li>
+            </ol>
+            <div class="callout"><span class="callout-ico">💡</span><div><p>Un projet suivi de <strong>(not on GitHub)</strong> est une copie locale dont le dépôt GitHub n’existe pas (supprimé ou jamais publié).</p></div></div>
+            <p>Les projets auxquels vous êtes invité apparaissent après avoir accepté l’invitation (voir <a href="#people">People</a>).</p>
+          </div>
+
+          <div data-l="en">
+            <h3>Create</h3>
+            <ol class="steps">
+              <li>Click <span class="ui">Create</span>.</li>
+              <li>In <strong>New project</strong>, enter a <strong>Project name</strong> and, optionally, a short <strong>Description</strong>.</li>
+              <li>Confirm with <span class="ui">Create</span>. The private repository is created on GitHub, with its local copy. You are its <strong>owner</strong>.</li>
+            </ol>
+            <h3>Open</h3>
+            <ol class="steps">
+              <li>Pick the project in the <strong>Project</strong> list.</li>
+              <li>Click <span class="ui">Open</span>. The local copy is created or updated, and the <strong>Version history</strong> appears.</li>
+            </ol>
+            <div class="callout"><span class="callout-ico">💡</span><div><p>A project followed by <strong>(not on GitHub)</strong> is a local copy whose GitHub repository does not exist (deleted or never published).</p></div></div>
+            <p>Projects you are invited to appear once you accept the invitation (see <a href="#people">People</a>).</p>
+          </div>
+        </section>
+
+        <!-- ======================= DATA ======================= -->
+        <p class="doc-group-title" data-group="data"><span data-l="fr">Données et atlas</span><span data-l="en">Data &amp; atlases</span></p>
+
+        <!-- 05 Données -->
+        <section class="doc-section" id="donnees" data-group="data">
+          <h2><span class="num">05</span><span class="title"><span data-l="fr">Volume, segmentation et ontologie</span><span data-l="en">Volume, segmentation and ontology</span></span></h2>
+          <p class="lead">
+            <span data-l="fr">BRAVIS versionne la segmentation d’un volume. Indiquez-lui quels éléments de la scène Slicer suivre.</span>
+            <span data-l="en">BRAVIS versions the segmentation of a volume. Tell it which items of the Slicer scene to track.</span>
+          </p>
+          <figure class="video-slot" data-video="donnees"></figure>
+
+          <div data-l="fr">
+            <ol class="steps">
+              <li>Chargez votre volume dans Slicer comme d’habitude (glisser-déposer ou <span class="ui">Add Data</span>).</li>
+              <li><strong>3D Volume</strong> : choisissez ce volume.</li>
+              <li><strong>Segmentation</strong> : choisissez la segmentation (ou une labelmap) à versionner.</li>
+              <li><strong>Ontology map (JSON)</strong> : choisissez <em>Allen Mouse Brain Atlas</em>, <em>Allen Human Brain Atlas</em>, ou chargez votre propre fichier via ⚙ → <span class="ui">Load JSON…</span>.</li>
+              <li>Annotez avec le <strong>Segment Editor</strong> de Slicer, puis enregistrez avec <a href="#save">Save</a>.</li>
+            </ol>
+            <div class="callout tip"><span class="callout-ico">✅</span><div><p><strong>Nommage des segments</strong> : un segment est relié à une structure de l’ontologie par son identifiant, sous la forme <code>Segment_ID</code> (par exemple <code>Segment_64</code>). C’est ce qui permet à l’<a href="#anatomie">arbre anatomique</a> de savoir ce qui est annoté.</p></div></div>
+          </div>
+
+          <div data-l="en">
+            <ol class="steps">
+              <li>Load your volume in Slicer as usual (drag and drop or <span class="ui">Add Data</span>).</li>
+              <li><strong>3D Volume</strong>: pick that volume.</li>
+              <li><strong>Segmentation</strong>: pick the segmentation (or a labelmap) to version.</li>
+              <li><strong>Ontology map (JSON)</strong>: pick <em>Allen Mouse Brain Atlas</em>, <em>Allen Human Brain Atlas</em>, or load your own file via ⚙ → <span class="ui">Load JSON…</span>.</li>
+              <li>Annotate with Slicer’s <strong>Segment Editor</strong>, then record with <a href="#save">Save</a>.</li>
+            </ol>
+            <div class="callout tip"><span class="callout-ico">✅</span><div><p><strong>Segment naming</strong>: a segment is linked to an ontology structure through its id, as <code>Segment_ID</code> (for example <code>Segment_64</code>). That is how the <a href="#anatomie">anatomy tree</a> knows what is annotated.</p></div></div>
+          </div>
+        </section>
+
+        <!-- 06 Ontologie -->
+        <section class="doc-section" id="ontologie" data-group="data">
+          <h2><span class="num">06</span><span class="title"><span data-l="fr">Ontologies et éditeur</span><span data-l="en">Ontologies &amp; editor</span></span></h2>
+          <p class="lead">
+            <span data-l="fr">Une ontologie décrit la hiérarchie des structures anatomiques. Deux atlas Allen sont fournis ; vous pouvez aussi créer ou modifier la vôtre.</span>
+            <span data-l="en">An ontology describes the hierarchy of anatomical structures. Two Allen atlases are included; you can also create or edit your own.</span>
+          </p>
+          <figure class="video-slot" data-video="ontologie"></figure>
+
+          <div data-l="fr">
+            <h3>Le menu ⚙</h3>
+            <ul>
+              <li><span class="ui">Help…</span> : la référence du format JSON.</li>
+              <li><span class="ui">Load JSON…</span> : charger une ontologie depuis un fichier.</li>
+              <li><span class="ui">Edit…</span> : ouvrir l’<strong>Ontology editor</strong>.</li>
+              <li><span class="ui">Export JSON…</span> : enregistrer l’ontologie actuelle dans un fichier.</li>
+            </ul>
+            <h3>L’éditeur</h3>
+            <p>Sélectionnez une structure puis utilisez <span class="ui">Add root</span>, <span class="ui">Add child</span>, <span class="ui">Rename</span> ou <span class="ui">Remove</span>. <span class="ui">Apply</span> valide les changements, <span class="ui">Cancel</span> les abandonne.</p>
+            <h3>Format JSON</h3>
+            <p>Un objet racine avec <code>atlas_name</code> (titre) et <code>tree</code> (nœud racine). Chaque nœud a un <code>id</code> unique, un <code>symbol</code> (abréviation), un <code>name</code> et une liste <code>children</code> (vide pour une feuille).</p>
+          </div>
+          <div data-l="en">
+            <h3>The ⚙ menu</h3>
+            <ul>
+              <li><span class="ui">Help…</span>: the JSON format reference.</li>
+              <li><span class="ui">Load JSON…</span>: load an ontology from a file.</li>
+              <li><span class="ui">Edit…</span>: open the <strong>Ontology editor</strong>.</li>
+              <li><span class="ui">Export JSON…</span>: save the current ontology to a file.</li>
+            </ul>
+            <h3>The editor</h3>
+            <p>Select a structure, then use <span class="ui">Add root</span>, <span class="ui">Add child</span>, <span class="ui">Rename</span> or <span class="ui">Remove</span>. <span class="ui">Apply</span> keeps the changes, <span class="ui">Cancel</span> drops them.</p>
+            <h3>JSON format</h3>
+            <p>A root object with <code>atlas_name</code> (title) and <code>tree</code> (root node). Each node has a unique <code>id</code>, a <code>symbol</code> (abbreviation), a <code>name</code> and a <code>children</code> list (empty for a leaf).</p>
+          </div>
+<pre><code>{
+  "atlas_name": "My brain atlas",
+  "tree": {
+    "id": "997", "symbol": "root", "name": "Brain",
+    "children": [
+      { "id": "8",  "symbol": "grey", "name": "Basic cell groups and regions",
+        "children": [
+          { "id": "567", "symbol": "CH", "name": "Cerebrum", "children": [] }
+        ] }
+    ]
+  }
+}</code></pre>
+        </section>
+
+        <!-- 07 Anatomie -->
+        <section class="doc-section" id="anatomie" data-group="data">
+          <h2><span class="num">07</span><span class="title"><span data-l="fr">Arbre anatomique</span><span data-l="en">Anatomy tree</span></span></h2>
+          <p class="lead">
+            <span data-l="fr"><span class="ui">View anatomy tree</span> affiche l’ontologie sous forme d’arbre et montre, structure par structure, ce qui est déjà annoté.</span>
+            <span data-l="en"><span class="ui">View anatomy tree</span> shows the ontology as a tree and, structure by structure, what is already annotated.</span>
+          </p>
+          <figure class="video-slot" data-video="anatomie"></figure>
+
+          <div data-l="fr">
+            <h3>Naviguer</h3>
+            <ul>
+              <li><strong>Clic</strong> sur un parent : déplier ou replier ses enfants.</li>
+              <li><strong>Double-clic</strong> : les détails de la structure (<em>Structure details</em>).</li>
+              <li><span class="ui">Collapse all</span> : revenir au niveau racine. Molette pour zoomer, glisser pour se déplacer.</li>
+              <li>Chaque niveau de profondeur a sa couleur de bordure.</li>
+            </ul>
+            <h3>Les pastilles</h3>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Pastille</th><th>Signification</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Gauche</strong> <span style="color:var(--mint)">●</span></td><td>La structure a une annotation dans Slicer (un segment <code>Segment_ID</code> existe ; il peut encore être vide).</td></tr>
+                <tr><td><strong>Gauche</strong> ○</td><td>Pas d’annotation pour cette structure.</td></tr>
+                <tr><td><strong>Droite</strong> <span style="color:var(--indigo)">●</span></td><td>Parents seulement : <em>toutes</em> les structures de plus bas niveau en dessous sont annotées.</td></tr>
+                <tr><td><strong>Droite</strong> <span style="color:var(--amber)">●</span></td><td>Certaines, mais pas toutes, sont annotées.</td></tr>
+                <tr><td><strong>Droite</strong> ○</td><td>Aucune n’est annotée.</td></tr>
+              </tbody>
+            </table></div>
+            <p>Les deux pastilles sont indépendantes. Le bouton <span class="ui">?</span> rappelle cette légende.</p>
+          </div>
+          <div data-l="en">
+            <h3>Navigating</h3>
+            <ul>
+              <li><strong>Click</strong> a parent: expand or collapse its children.</li>
+              <li><strong>Double-click</strong>: the structure’s details (<em>Structure details</em>).</li>
+              <li><span class="ui">Collapse all</span>: back to the root level. Wheel to zoom, drag to pan.</li>
+              <li>Each depth level has its own border color.</li>
+            </ul>
+            <h3>The marks</h3>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Mark</th><th>Meaning</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Left</strong> <span style="color:var(--mint)">●</span></td><td>The structure has an annotation in Slicer (a <code>Segment_ID</code> segment exists; it may still be empty).</td></tr>
+                <tr><td><strong>Left</strong> ○</td><td>No annotation for this structure.</td></tr>
+                <tr><td><strong>Right</strong> <span style="color:var(--indigo)">●</span></td><td>Parents only: <em>every</em> lowest-level structure below is annotated.</td></tr>
+                <tr><td><strong>Right</strong> <span style="color:var(--amber)">●</span></td><td>Some, but not all, are annotated.</td></tr>
+                <tr><td><strong>Right</strong> ○</td><td>None are annotated.</td></tr>
+              </tbody>
+            </table></div>
+            <p>The two marks are independent. The <span class="ui">?</span> button recalls this legend.</p>
+          </div>
+        </section>
+
+        <!-- ======================= VERSIONS ======================= -->
+        <p class="doc-group-title" data-group="versions">Versions</p>
+
+        <!-- 08 Version tree -->
+        <section class="doc-section" id="version-tree" data-group="versions">
+          <h2><span class="num">08</span><span class="title"><span data-l="fr">Lire le Version tree</span><span data-l="en">Reading the Version tree</span></span></h2>
+          <p class="lead">
+            <span data-l="fr"><span class="ui">View version tree</span> ouvre le graphe de toutes les versions du projet : branches, fusions, ce qui est partagé et ce qui ne l’est pas encore.</span>
+            <span data-l="en"><span class="ui">View version tree</span> opens the graph of all project versions: branches, merges, what is shared and what is not yet.</span>
+          </p>
+          <figure class="video-slot" data-video="version-tree"></figure>
+
+          <div data-l="fr">
+            <h3>Légende</h3>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Apparence</th><th>Sens</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Cadre plein</strong></td><td>Version <strong>shared</strong> : elle est sur le projet distant.</td></tr>
+                <tr><td><strong>Cadre en pointillés</strong></td><td>Version <strong>locale</strong> seulement, pas encore partagée.</td></tr>
+                <tr><td>🔒</td><td>Junior : vous pouvez regarder et faire Switch, mais <strong>pas</strong> Save ni Share ici.</td></tr>
+                <tr><td>🔵</td><td>Une review a été demandée sur cette version.</td></tr>
+                <tr><td>▶ / flèche</td><td>La version actuellement ouverte.</td></tr>
+              </tbody>
+            </table></div>
+            <p>Les noms ressemblent à <code>main/3</code>, <code>sos/2</code>, <code>sos/ok/1</code> ou <code>ma-tache/start</code> : la branche, puis le numéro de version sur cette branche. Chaque branche a sa couleur.</p>
+
+            <h3>Naviguer et consulter</h3>
+            <ul>
+              <li>Molette pour zoomer, glisser pour se déplacer ; <span class="ui">Zoom in</span>, <span class="ui">Zoom out</span> et <span class="ui">Reset view</span> dans la barre d’outils.</li>
+              <li><strong>Clic</strong> sur un nœud : proposer de charger cette version (<a href="#switch">Switch</a>).</li>
+              <li><strong>Double-clic</strong> : la fenêtre <strong>Version details</strong> (version, branche, message, date, auteur, statut, parent, fusion, tâche liée).</li>
+            </ul>
+            <p>Selon le contexte et votre rôle, <strong>Version details</strong> propose les actions <span class="ui">Request review</span>, <span class="ui">Merge</span>, <span class="ui">Accept and Merge</span>, <span class="ui">Decline</span> ou <span class="ui">Delete</span>. S’il n’y a rien à faire, seul <span class="ui">Close</span> apparaît.</p>
+
+            <h3>Le nœud <code>…/start</code></h3>
+            <p>Sur une tâche assignée, un nœud de départ <code>…/start</code> marque l’ancrage de la branche. Ce n’est pas une version à merger : il sert de repère. Le premier Save sur la branche crée <code>…/1</code>. Les branches créées à la main (DIY) n’ont en général pas de <code>start</code>.</p>
+          </div>
+          <div data-l="en">
+            <h3>Legend</h3>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Look</th><th>Meaning</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Solid border</strong></td><td><strong>Shared</strong> version: it is on the remote project.</td></tr>
+                <tr><td><strong>Dashed border</strong></td><td><strong>Local</strong> version only, not shared yet.</td></tr>
+                <tr><td>🔒</td><td>Junior: you can look and Switch, but <strong>not</strong> Save or Share here.</td></tr>
+                <tr><td>🔵</td><td>A review was requested on this version.</td></tr>
+                <tr><td>▶ / arrow</td><td>The version currently open.</td></tr>
+              </tbody>
+            </table></div>
+            <p>Names look like <code>main/3</code>, <code>sos/2</code>, <code>sos/ok/1</code> or <code>my-task/start</code>: the branch, then the version number on that branch. Each branch has its own color.</p>
+
+            <h3>Browsing and inspecting</h3>
+            <ul>
+              <li>Wheel to zoom, drag to pan; <span class="ui">Zoom in</span>, <span class="ui">Zoom out</span> and <span class="ui">Reset view</span> in the toolbar.</li>
+              <li><strong>Click</strong> a node: offers to load that version (<a href="#switch">Switch</a>).</li>
+              <li><strong>Double-click</strong>: the <strong>Version details</strong> window (version, branch, message, date, author, status, parent, merge, linked task).</li>
+            </ul>
+            <p>Depending on context and your role, <strong>Version details</strong> offers <span class="ui">Request review</span>, <span class="ui">Merge</span>, <span class="ui">Accept and Merge</span>, <span class="ui">Decline</span> or <span class="ui">Delete</span>. When there is nothing to do, only <span class="ui">Close</span> shows.</p>
+
+            <h3>The <code>…/start</code> node</h3>
+            <p>On an assigned task, a <code>…/start</code> node marks where the branch is anchored. It is not a version to merge: it is a landmark. The first Save on the branch creates <code>…/1</code>. Hand-made (DIY) branches usually have no <code>start</code>.</p>
+          </div>
+        </section>
+
+        <!-- 09 Switch -->
+        <section class="doc-section" id="switch" data-group="versions">
+          <h2><span class="num">09</span><span class="title">Switch version</span></h2>
+          <p class="lead">
+            <span data-l="fr">Charger n’importe quelle version dans Slicer pour la consulter ou repartir de là.</span>
+            <span data-l="en">Load any version in Slicer to look at it or start again from there.</span>
+          </p>
+          <figure class="video-slot" data-video="switch"></figure>
+          <div data-l="fr">
+            <ol class="steps">
+              <li>Dans le Version tree, cliquez sur le nœud voulu.</li>
+              <li>Confirmez avec <span class="ui">Switch version</span>. La segmentation de cette version est reconstruite et chargée dans les vues.</li>
+            </ol>
+            <div class="callout warn"><span class="callout-ico">⚠️</span><div><p>Faites <strong>Save</strong> avant de changer de version si vous voulez garder votre travail en cours.</p></div></div>
+            <p>Sur un nœud 🔒, Switch reste possible pour <strong>regarder</strong>. Pour travailler, revenez sur la branche de votre tâche (nœuds sans cadenas).</p>
+          </div>
+          <div data-l="en">
+            <ol class="steps">
+              <li>In the Version tree, click the node you want.</li>
+              <li>Confirm with <span class="ui">Switch version</span>. That version’s segmentation is rebuilt and loaded in the views.</li>
+            </ol>
+            <div class="callout warn"><span class="callout-ico">⚠️</span><div><p><strong>Save</strong> before switching if you want to keep your current work.</p></div></div>
+            <p>On a 🔒 node, Switch still works to <strong>look</strong>. To work, go back to your task branch (nodes without a padlock).</p>
+          </div>
+        </section>
+
+        <!-- 10 Save -->
+        <section class="doc-section" id="save" data-group="versions">
+          <h2><span class="num">10</span><span class="title">Save version</span></h2>
+          <p class="lead">
+            <span data-l="fr"><span class="ui">Save</span> enregistre l’état actuel comme une nouvelle version, <strong>sur votre ordinateur</strong>. Elle apparaît en pointillés jusqu’au Share.</span>
+            <span data-l="en"><span class="ui">Save</span> records the current state as a new version, <strong>on your computer</strong>. It shows dashed until you Share.</span>
+          </p>
+          <figure class="video-slot" data-video="save"></figure>
+          <div data-l="fr">
+            <p>BRAVIS vous demande un court message décrivant la version et, selon l’endroit où vous êtes, où l’enregistrer :</p>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Vous êtes…</th><th>Choix proposés</th></tr></thead>
+              <tbody>
+                <tr><td>Au bout de <code>main</code> (senior)</td><td><span class="ui">Put on main</span> ou <span class="ui">Create a branch</span></td></tr>
+                <tr><td>Au bout d’une autre branche</td><td><span class="ui">Save on this branch</span> (continuer) ou <span class="ui">Create a branch</span> (bifurquer)</td></tr>
+                <tr><td>Sur une version plus ancienne</td><td><span class="ui">Create a branch</span> seulement : les versions suivantes restent intactes</td></tr>
+                <tr><td>Au bout d’une branche déjà fusionnée</td><td><span class="ui">Create a branch</span> seulement : le bout de la branche fusionnée ne bouge pas</td></tr>
+              </tbody>
+            </table></div>
+            <div class="callout"><span class="callout-ico">🔒</span><div><p><strong>Junior</strong> : Save seulement sur une branche de tâche assignée, ou une sous-branche en dessous. Ailleurs, c’est refusé (cadenas).</p></div></div>
+          </div>
+          <div data-l="en">
+            <p>BRAVIS asks for a short message describing the version and, depending on where you are, where to save it:</p>
+            <div class="table-wrap"><table>
+              <thead><tr><th>You are…</th><th>Options</th></tr></thead>
+              <tbody>
+                <tr><td>At the tip of <code>main</code> (senior)</td><td><span class="ui">Put on main</span> or <span class="ui">Create a branch</span></td></tr>
+                <tr><td>At the tip of another branch</td><td><span class="ui">Save on this branch</span> (continue) or <span class="ui">Create a branch</span> (fork)</td></tr>
+                <tr><td>On an older version</td><td><span class="ui">Create a branch</span> only: later versions stay untouched</td></tr>
+                <tr><td>At the tip of an already merged branch</td><td><span class="ui">Create a branch</span> only: the merged branch tip does not move</td></tr>
+              </tbody>
+            </table></div>
+            <div class="callout"><span class="callout-ico">🔒</span><div><p><strong>Junior</strong>: Save only on an assigned task branch, or a sub-branch below it. Anywhere else it is refused (padlock).</p></div></div>
+          </div>
+        </section>
+
+        <!-- 11 Branches -->
+        <section class="doc-section" id="branches" data-group="versions">
+          <h2><span class="num">11</span><span class="title"><span data-l="fr">Branches et sous-branches</span><span data-l="en">Branches &amp; sub-branches</span></span></h2>
+          <p class="lead">
+            <span data-l="fr">Une branche permet d’essayer une annotation sans toucher à la ligne principale. On la crée depuis <span class="ui">Save</span> → <span class="ui">Create a branch</span>.</span>
+            <span data-l="en">A branch lets you try an annotation without touching the main line. Create one from <span class="ui">Save</span> → <span class="ui">Create a branch</span>.</span>
+          </p>
+          <figure class="video-slot" data-video="branches"></figure>
+          <div data-l="fr">
+            <ul>
+              <li>Depuis <code>main</code>, le nom reste simple : <code>sos</code>, <code>lol</code>…</li>
+              <li>Depuis une autre branche, le nom devient <strong>parent/enfant</strong> : depuis <code>sos</code> → <code>sos/ok</code> ; depuis <code>sos/ok</code> → <code>sos/ok/yoi</code>.</li>
+              <li>Vous ne tapez que le <strong>dernier morceau</strong>, sans <code>/</code> ni <code>+</code>. Le parent est ajouté automatiquement.</li>
+            </ul>
+            <p>Ensuite : Save sur cette sous-branche, puis <a href="#share">Share</a> pour la publier, et <a href="#merge">Merge</a> pour la ramener dans son parent.</p>
+          </div>
+          <div data-l="en">
+            <ul>
+              <li>From <code>main</code>, the name stays flat: <code>sos</code>, <code>lol</code>…</li>
+              <li>From another branch, the name becomes <strong>parent/child</strong>: from <code>sos</code> → <code>sos/ok</code>; from <code>sos/ok</code> → <code>sos/ok/yoi</code>.</li>
+              <li>You only type the <strong>last part</strong>, without <code>/</code> or <code>+</code>. The parent is added automatically.</li>
+            </ul>
+            <p>Then: Save on that sub-branch, <a href="#share">Share</a> to publish it, and <a href="#merge">Merge</a> to bring it back into its parent.</p>
+          </div>
+        </section>
+
+        <!-- 12 Share -->
+        <section class="doc-section" id="share" data-group="versions">
+          <h2><span class="num">12</span><span class="title">Share</span></h2>
+          <p class="lead">
+            <span data-l="fr"><span class="ui">Share</span> publie sur le projet partagé les versions locales de la branche courante. Les pointillés deviennent pleins.</span>
+            <span data-l="en"><span class="ui">Share</span> publishes the local versions of the current branch to the shared project. Dashed nodes turn solid.</span>
+          </p>
+          <figure class="video-slot" data-video="share"></figure>
+          <div data-l="fr">
+            <ol class="steps">
+              <li>Cliquez sur <span class="ui">Share</span>. Une confirmation indique la <strong>branche</strong> et la version jusqu’où publier (<em>Up to</em>).</li>
+              <li>BRAVIS publie la branche jusqu’à ce bout, avec les versions parentes non partagées dont l’historique a besoin. Les autres branches locales ne bougent pas.</li>
+              <li>Avant d’envoyer, l’outil <strong>vérifie</strong> le projet partagé. S’il contient des versions que vous n’avez pas, ou des bouts divergents, Share est refusé : passez par <a href="#compare-shared">Compare with shared</a>, puis réessayez.</li>
+            </ol>
+            <h3>Share est aussi bloqué si…</h3>
+            <ul>
+              <li>il n’y a rien de nouveau à partager ;</li>
+              <li>vous êtes junior hors de votre zone autorisée (cadenas) ;</li>
+              <li>une review 🔵 est ouverte sur cette branche de tâche : Share est en pause jusqu’à Accept ou Decline.</li>
+            </ul>
+            <div class="callout"><span class="callout-ico">💡</span><div><p>Pour une sous-branche, Share publie aussi ce qu’il faut des branches parentes pour que le graphe distant reste cohérent. Rien à cocher.</p></div></div>
+          </div>
+          <div data-l="en">
+            <ol class="steps">
+              <li>Click <span class="ui">Share</span>. A confirmation shows the <strong>branch</strong> and the version to publish up to (<em>Up to</em>).</li>
+              <li>BRAVIS publishes the branch up to that tip, with any unshared parent versions the history needs. Other local branches do not move.</li>
+              <li>Before sending, the tool <strong>checks</strong> the shared project. If it holds versions you do not have, or diverging tips, Share is refused: go through <a href="#compare-shared">Compare with shared</a>, then retry.</li>
+            </ol>
+            <h3>Share is also blocked when…</h3>
+            <ul>
+              <li>there is nothing new to share;</li>
+              <li>you are a junior outside your allowed area (padlock);</li>
+              <li>a 🔵 review is open on that task branch: Share is paused until Accept or Decline.</li>
+            </ul>
+            <div class="callout"><span class="callout-ico">💡</span><div><p>For a sub-branch, Share also publishes what is needed from the parent branches so the remote graph stays consistent. Nothing to tick.</p></div></div>
+          </div>
+        </section>
+
+        <!-- 13 Compare with shared -->
+        <section class="doc-section" id="compare-shared" data-group="versions">
+          <h2><span class="num">13</span><span class="title">Compare with shared</span></h2>
+          <p class="lead">
+            <span data-l="fr">Quand le projet partagé a avancé sans vous, comparez votre arbre local avec lui, choisissez quoi faire, puis validez.</span>
+            <span data-l="en">When the shared project moved on without you, compare your local tree with it, choose what to do, then validate.</span>
+          </p>
+          <figure class="video-slot" data-video="compare-shared" data-show-desc></figure>
+          <div data-l="fr">
+            <h3>Quand l’utiliser</h3>
+            <ul>
+              <li>La cloche affiche ⚠ : <em>Local project is not aligned with the remote copy</em>.</li>
+              <li>Share ou Merge est refusé parce que le projet distant est en avance.</li>
+            </ul>
+            <h3>La fenêtre</h3>
+            <ol class="steps">
+              <li>Ouvrez <span class="ui">Compare with shared</span> (souvent depuis la cloche).</li>
+              <li>Deux graphes côte à côte : <strong>Local (this computer)</strong> et <strong>Shared (remote)</strong>. Les cadres rouges en pointillés marquent les versions qui diffèrent.</li>
+              <li>Dans <strong>Conflicts</strong>, choisissez une action. Le graphe <strong>Result (preview)</strong> montre le résultat ; des tirets verts indiquent ce qui vient du shared et ce qui reste à vous.</li>
+              <li>Cliquez sur <span class="ui">Validate</span> pour appliquer ce choix sur cet ordinateur.</li>
+            </ol>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Action</th><th>Effet</th></tr></thead>
+              <tbody>
+                <tr><td><span class="ui">Update version tree</span></td><td>Mettre à jour ce que vous voyez du shared sur cette machine.</td></tr>
+                <tr><td><span class="ui">Keep mine</span></td><td>Garder votre arbre tel quel pour l’instant ; le bout shared n’est pas appliqué.</td></tr>
+                <tr><td><span class="ui">Reset to shared</span></td><td>Aligner les branches en conflit sur le bout shared. Les autres branches locales restent. Attention : les versions locales en conflit quittent ces lignes.</td></tr>
+                <tr><td><span class="ui">Keep both (merge)</span></td><td>Garder les deux côtés en fusionnant les annotations. <em>Pas encore disponible.</em></td></tr>
+              </tbody>
+            </table></div>
+            <div class="callout warn"><span class="callout-ico">⚠️</span><div><p><strong>Regarder ne suffit pas.</strong> Il faut choisir une action et cliquer sur <span class="ui">Validate</span>. Et les collègues ne sont pas mis à jour tout seuls : chacun fait Compare / Update de son côté.</p></div></div>
+          </div>
+          <div data-l="en">
+            <h3>When to use it</h3>
+            <ul>
+              <li>The bell shows ⚠: <em>Local project is not aligned with the remote copy</em>.</li>
+              <li>Share or Merge is refused because the remote project is ahead.</li>
+            </ul>
+            <h3>The window</h3>
+            <ol class="steps">
+              <li>Open <span class="ui">Compare with shared</span> (often from the bell).</li>
+              <li>Two graphs side by side: <strong>Local (this computer)</strong> and <strong>Shared (remote)</strong>. Red dashed boxes mark versions that differ.</li>
+              <li>Under <strong>Conflicts</strong>, pick an action. The <strong>Result (preview)</strong> graph shows the outcome; green dashes show what comes from shared and what stays yours.</li>
+              <li>Click <span class="ui">Validate</span> to apply that choice on this computer.</li>
+            </ol>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Action</th><th>Effect</th></tr></thead>
+              <tbody>
+                <tr><td><span class="ui">Update version tree</span></td><td>Refresh what you see of shared on this machine.</td></tr>
+                <tr><td><span class="ui">Keep mine</span></td><td>Keep your tree as is for now; the shared tip is not applied.</td></tr>
+                <tr><td><span class="ui">Reset to shared</span></td><td>Align conflicting branches on the shared tip. Other local branches stay. Warning: conflicting local versions leave those lines.</td></tr>
+                <tr><td><span class="ui">Keep both (merge)</span></td><td>Keep both sides by merging annotations. <em>Not available yet.</em></td></tr>
+              </tbody>
+            </table></div>
+            <div class="callout warn"><span class="callout-ico">⚠️</span><div><p><strong>Looking is not enough.</strong> You must pick an action and click <span class="ui">Validate</span>. And colleagues are not updated automatically: each one runs Compare / Update on their side.</p></div></div>
+          </div>
+        </section>
+
+        <!-- 14 Merge -->
+        <section class="doc-section" id="merge" data-group="versions">
+          <h2><span class="num">14</span><span class="title">Merge &amp; Compare</span></h2>
+          <p class="lead">
+            <span data-l="fr">Fusionner une branche dans une autre, après avoir comparé les deux versions côte à côte dans 6 vues synchronisées.</span>
+            <span data-l="en">Merge one branch into another, after comparing both versions side by side in 6 synchronized views.</span>
+          </p>
+          <figure class="video-slot" data-video="merge-compare" data-show-desc></figure>
+          <div data-l="fr">
+            <h3>Lancer un merge</h3>
+            <ol class="steps">
+              <li>Ouvrez les <strong>Version details</strong> (double-clic) du bout de la branche à fusionner. Le bouton <span class="ui">Merge</span> n’apparaît que si le merge est permis (voir les règles plus bas).</li>
+              <li>Confirmez avec <span class="ui">Compare and Merge</span>. Slicer passe en disposition de comparaison.</li>
+            </ol>
+            <h3>La disposition Compare and Merge</h3>
+            <ul>
+              <li>En haut, les deux vues 3D ; en bas, pour chaque version, les vues Axial, Sagittal et Coronal. La version cible est à gauche en 3D et en haut en 2D ; la version source à droite en 3D et en bas en 2D.</li>
+              <li>La liste <strong>SEGMENTS</strong> indique pour chaque segment s’il existe dans les deux versions. <span class="ui">◀ Prev</span> et <span class="ui">Next ▶</span> passent de l’un à l’autre.</li>
+              <li><strong>Show all segments</strong> : tous les segments avec leurs vraies couleurs. Décoché : un segment à la fois, vert pour la cible et rouge pour la source.</li>
+              <li><strong>Show 3D</strong> : construire les surfaces 3D (désactivé par défaut, plus rapide).</li>
+              <li><strong>Show cube diffs</strong> : entourer les cubes modifiés sur les vues 2D.</li>
+            </ul>
+          </div>
+          <div data-l="en">
+            <h3>Starting a merge</h3>
+            <ol class="steps">
+              <li>Open the <strong>Version details</strong> (double-click) of the tip of the branch to merge. The <span class="ui">Merge</span> button only shows when the merge is allowed (see the rules below).</li>
+              <li>Confirm with <span class="ui">Compare and Merge</span>. Slicer switches to the compare layout.</li>
+            </ol>
+            <h3>The Compare and Merge layout</h3>
+            <ul>
+              <li>Both 3D views on top; below, for each version, the Axial, Sagittal and Coronal views. The target version is left in 3D and upper in 2D; the source version is right in 3D and lower in 2D.</li>
+              <li>The <strong>SEGMENTS</strong> list shows whether each segment exists in both versions. <span class="ui">◀ Prev</span> and <span class="ui">Next ▶</span> step through them.</li>
+              <li><strong>Show all segments</strong>: every segment in its real colors. Unchecked: one segment at a time, green for target and red for source.</li>
+              <li><strong>Show 3D</strong>: build 3D surfaces (off by default, faster).</li>
+              <li><strong>Show cube diffs</strong>: outline changed cubes on the 2D views.</li>
+            </ul>
+          </div>
+
+          <figure class="video-slot" data-video="apply-merge"></figure>
+
+          <div data-l="fr">
+            <h3>Choisir et appliquer</h3>
+            <ol class="steps">
+              <li>Cliquez sur les vues 2D le cube que vous voulez garder : il devient <strong style="color:var(--cyan)">cyan</strong> de ce côté. Recliquez du même côté pour annuler.</li>
+              <li><strong>Auto-select</strong> garde automatiquement le côté qui a du contenu quand l’autre est vide. Si les deux côtés ont du contenu, c’est vous qui choisissez.</li>
+              <li><span class="ui">Apply merge</span> construit la nouvelle version à partir des cubes choisis. <span class="ui">Quit</span> quitte sans fusionner et rétablit l’affichage.</li>
+            </ol>
+            <div class="cube-diagram">
+              <div class="cube-grid" aria-hidden="true">
+                <span></span><span></span><span class="changed"></span><span></span><span></span><span></span><span></span><span></span>
+                <span></span><span class="kept"></span><span class="changed"></span><span></span><span></span><span></span><span class="changed"></span><span></span>
+                <span></span><span></span><span></span><span></span><span class="kept"></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <p style="margin:0"><span style="color:#facc15">■</span> cubes modifiés entre les deux versions · <span style="color:var(--cyan)">■</span> cubes choisis, repris par <em>Apply merge</em>.</p>
+            </div>
+
+            <h3>Qui peut merger, et vers où ?</h3>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Branche</th><th>Qui</th><th>Vers</th><th>Condition</th></tr></thead>
+              <tbody>
+                <tr><td>DIY « plate » (<code>sos</code>)</td><td>Senior</td><td><code>main</code></td><td>Bout de branche, déjà shared, pas encore intégré dans main</td></tr>
+                <tr><td>Sous-branche (<code>sos/ok</code>, <code>sos/ok/yoi</code>)</td><td>Senior, ou junior assigné à la tâche dont elle dépend</td><td>Le parent immédiat</td><td>Bout shared, pas déjà mergé dans son parent</td></tr>
+                <tr><td>Branche de tâche (<code>ma-tache</code>)</td><td colspan="3">Pas de Merge direct : le junior fait <a href="#tasks-junior">Request review</a>, le senior fait <a href="#tasks-review">Accept and Merge</a> vers main.</td></tr>
+              </tbody>
+            </table></div>
+            <ul>
+              <li>Avant le merge, la même <strong>vérification</strong> que pour Share est faite (projet shared à jour).</li>
+              <li><strong>Parent déjà mergé plus haut</strong> : si <code>sos/ok</code> est déjà rentré dans <code>sos</code>, Merge n’apparaît plus sur ses enfants non mergés (<code>sos/ok/yoi</code>). La ligne du parent est « fermée » vers le haut.</li>
+              <li>Après un merge réussi, le bout enfant est intégré : plus de bouton Merge dessus.</li>
+              <li>Jamais de Merge, Accept ni Request review sur : les nœuds <code>…/start</code>, les versions en pointillés, les vieux nœuds qui ne sont plus le bout de leur branche.</li>
+            </ul>
+          </div>
+          <div data-l="en">
+            <h3>Choosing and applying</h3>
+            <ol class="steps">
+              <li>On the 2D views, click the cube you want to keep: it turns <strong style="color:var(--cyan)">cyan</strong> on that side. Click again on the same side to clear.</li>
+              <li><strong>Auto-select</strong> keeps the side with content when the other is empty. When both sides have content, you choose.</li>
+              <li><span class="ui">Apply merge</span> builds the new version from the chosen cubes. <span class="ui">Quit</span> leaves without merging and restores the layout.</li>
+            </ol>
+            <div class="cube-diagram">
+              <div class="cube-grid" aria-hidden="true">
+                <span></span><span></span><span class="changed"></span><span></span><span></span><span></span><span></span><span></span>
+                <span></span><span class="kept"></span><span class="changed"></span><span></span><span></span><span></span><span class="changed"></span><span></span>
+                <span></span><span></span><span></span><span></span><span class="kept"></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <p style="margin:0"><span style="color:#facc15">■</span> cubes changed between the two versions · <span style="color:var(--cyan)">■</span> chosen cubes, taken by <em>Apply merge</em>.</p>
+            </div>
+
+            <h3>Who can merge, and where to?</h3>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Branch</th><th>Who</th><th>Into</th><th>Condition</th></tr></thead>
+              <tbody>
+                <tr><td>Flat DIY (<code>sos</code>)</td><td>Senior</td><td><code>main</code></td><td>Branch tip, already shared, not yet in main</td></tr>
+                <tr><td>Sub-branch (<code>sos/ok</code>, <code>sos/ok/yoi</code>)</td><td>Senior, or a junior assigned to the task it belongs to</td><td>The immediate parent</td><td>Shared tip, not already merged into its parent</td></tr>
+                <tr><td>Task branch (<code>my-task</code>)</td><td colspan="3">No direct Merge: the junior uses <a href="#tasks-junior">Request review</a>, the senior uses <a href="#tasks-review">Accept and Merge</a> into main.</td></tr>
+              </tbody>
+            </table></div>
+            <ul>
+              <li>Before merging, the same <strong>check</strong> as Share runs (shared project up to date).</li>
+              <li><strong>Parent already merged higher up</strong>: if <code>sos/ok</code> is already in <code>sos</code>, Merge no longer shows on its unmerged children (<code>sos/ok/yoi</code>). The parent line is “closed” upwards.</li>
+              <li>After a successful merge, the child tip is integrated: no more Merge button on it.</li>
+              <li>Never Merge, Accept or Request review on: <code>…/start</code> nodes, dashed versions, old nodes that are no longer their branch tip.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ======================= COLLABORATION ======================= -->
+        <p class="doc-group-title" data-group="collab">Collaboration</p>
+
+        <!-- 15 People -->
+        <section class="doc-section" id="people" data-group="collab">
+          <h2><span class="num">15</span><span class="title"><span data-l="fr">People : inviter et attribuer les rôles</span><span data-l="en">People: invite and set roles</span></span></h2>
+          <p class="lead">
+            <span data-l="fr"><span class="ui">People</span> liste l’équipe du projet, sa présence, et permet à l’owner d’inviter ou de retirer des collègues.</span>
+            <span data-l="en"><span class="ui">People</span> lists the project team and its presence, and lets the owner invite or remove colleagues.</span>
+          </p>
+          <figure class="video-slot" data-video="people"></figure>
+          <div data-l="fr">
+            <h3>Inviter (owner)</h3>
+            <ol class="steps">
+              <li>Ouvrez <span class="ui">People</span>.</li>
+              <li>Tapez le <strong>GitHub username</strong> du collègue ; des suggestions s’affichent pendant la saisie.</li>
+              <li>Choisissez le <strong>Role</strong> : <em>Senior</em> ou <em>Junior</em>, puis <span class="ui">Add</span>.</li>
+            </ol>
+            <p>Pour retirer quelqu’un : sélectionnez-le dans la liste, puis <span class="ui">Remove</span>. Seul l’owner peut ajouter ou retirer des collègues.</p>
+            <h3>Rejoindre (invité)</h3>
+            <ol class="steps">
+              <li>L’invitation arrive dans la cloche 🔔, section <strong>Invitations</strong>.</li>
+              <li>Ouvrez-la et cliquez sur <span class="ui">Join</span> (ou <span class="ui">Decline</span>).</li>
+              <li>Le projet apparaît dans votre liste <strong>Project</strong> : faites <span class="ui">Open</span>.</li>
+            </ol>
+            <h3>Présence</h3>
+            <p>🟢 <strong>Online</strong> : actif dans les 2 à 3 dernières minutes. ⚫ <strong>Offline</strong> : vu plus tôt.</p>
+          </div>
+          <div data-l="en">
+            <h3>Inviting (owner)</h3>
+            <ol class="steps">
+              <li>Open <span class="ui">People</span>.</li>
+              <li>Type the colleague’s <strong>GitHub username</strong>; suggestions show as you type.</li>
+              <li>Pick the <strong>Role</strong>: <em>Senior</em> or <em>Junior</em>, then <span class="ui">Add</span>.</li>
+            </ol>
+            <p>To remove someone: select them in the list, then <span class="ui">Remove</span>. Only the owner can add or remove colleagues.</p>
+            <h3>Joining (guest)</h3>
+            <ol class="steps">
+              <li>The invitation arrives in the 🔔 bell, under <strong>Invitations</strong>.</li>
+              <li>Open it and click <span class="ui">Join</span> (or <span class="ui">Decline</span>).</li>
+              <li>The project shows up in your <strong>Project</strong> list: click <span class="ui">Open</span>.</li>
+            </ol>
+            <h3>Presence</h3>
+            <p>🟢 <strong>Online</strong>: active in the last 2–3 minutes. ⚫ <strong>Offline</strong>: last seen earlier.</p>
+          </div>
+        </section>
+
+        <!-- 16 Tasks assign -->
+        <section class="doc-section" id="tasks-assign" data-group="collab">
+          <h2><span class="num">16</span><span class="title"><span data-l="fr">Tasks : assigner une tâche</span><span data-l="en">Tasks: assigning a task</span></span></h2>
+          <p class="lead">
+            <span data-l="fr">Le senior décrit le travail, choisit les juniors et une version de départ. BRAVIS crée une branche partagée pour la tâche.</span>
+            <span data-l="en">The senior describes the work, picks the juniors and a start version. BRAVIS creates a shared branch for the task.</span>
+          </p>
+          <figure class="video-slot" data-video="tasks-assign"></figure>
+          <div data-l="fr">
+            <ol class="steps">
+              <li>Cliquez sur <span class="ui">Tasks</span>.</li>
+              <li><strong>Description</strong> : ce qu’il faut faire.</li>
+              <li><strong>Juniors</strong> : cochez un ou plusieurs juniors. Un junior peut être sur plusieurs tâches.</li>
+              <li><strong>Start version</strong> : <span class="ui">Choose on tree</span>, puis cliquez sur une version de <code>main</code> <strong>déjà partagée</strong> (cadre plein). Une version en pointillés doit d’abord être partagée.</li>
+              <li><span class="ui">Assign</span>, puis donnez un <strong>nom de branche</strong> (lettres, chiffres, tirets). La branche est créée et publiée : tout le monde la voit, même vide.</li>
+            </ol>
+            <div class="callout tip"><span class="callout-ico">✅</span><div><p><strong>Une tâche = une branche</strong>, partagée par tous les juniors cochés. Pas une branche par personne.</p></div></div>
+            <h3>Statuts</h3>
+            <p>🟠 <strong>In progress</strong> · 🔵 <strong>Submitted</strong> (review demandée) · ✅ <strong>Closed</strong> (acceptée, pour tous les juniors de la tâche).</p>
+            <p>Double-cliquez sur une tâche pour lire sa description complète. Le senior peut aussi <span class="ui">Update task</span> ou <span class="ui">Cancel task</span>, et <span class="ui">New task</span> vide le formulaire.</p>
+          </div>
+          <div data-l="en">
+            <ol class="steps">
+              <li>Click <span class="ui">Tasks</span>.</li>
+              <li><strong>Description</strong>: what needs doing.</li>
+              <li><strong>Juniors</strong>: tick one or more juniors. A junior can be on several tasks.</li>
+              <li><strong>Start version</strong>: <span class="ui">Choose on tree</span>, then click a <strong>shared</strong> version of <code>main</code> (solid border). A dashed version must be shared first.</li>
+              <li><span class="ui">Assign</span>, then give a <strong>branch name</strong> (letters, numbers, dashes). The branch is created and published: everyone sees it, even empty.</li>
+            </ol>
+            <div class="callout tip"><span class="callout-ico">✅</span><div><p><strong>One task = one branch</strong>, shared by all ticked juniors. Not one branch per person.</p></div></div>
+            <h3>Statuses</h3>
+            <p>🟠 <strong>In progress</strong> · 🔵 <strong>Submitted</strong> (review requested) · ✅ <strong>Closed</strong> (accepted, for every junior on the task).</p>
+            <p>Double-click a task to read its full description. The senior can also <span class="ui">Update task</span> or <span class="ui">Cancel task</span>, and <span class="ui">New task</span> clears the form.</p>
+          </div>
+        </section>
+
+        <!-- 17 Tasks junior -->
+        <section class="doc-section" id="tasks-junior" data-group="collab">
+          <h2><span class="num">17</span><span class="title"><span data-l="fr">Tasks : côté junior</span><span data-l="en">Tasks: the junior side</span></span></h2>
+          <p class="lead">
+            <span data-l="fr">Le junior travaille sur la branche de sa tâche, publie, puis demande une review au senior.</span>
+            <span data-l="en">The junior works on the task branch, publishes, then asks the senior for a review.</span>
+          </p>
+          <figure class="video-slot" data-video="tasks-junior"></figure>
+          <div data-l="fr">
+            <ol class="steps">
+              <li>Dans le Version tree, faites <a href="#switch">Switch</a> sur la branche de votre tâche (nœuds sans 🔒).</li>
+              <li>Annotez, puis <a href="#save">Save</a> et <a href="#share">Share</a>. Vous pouvez créer des sous-branches sous la tâche et les merger dans leur parent.</li>
+              <li>Quand c’est prêt : <strong>Version details</strong> du bout partagé → <span class="ui">Request review</span>. Le nœud passe en 🔵.</li>
+            </ol>
+            <ul>
+              <li>Une seule review à la fois : si la tâche est déjà 🔵, pas de seconde demande.</li>
+              <li>Share est en pause tant que la review 🔵 est ouverte.</li>
+              <li>Les autres juniors de la tâche voient qu’une review est déjà demandée.</li>
+            </ul>
+          </div>
+          <div data-l="en">
+            <ol class="steps">
+              <li>In the Version tree, <a href="#switch">Switch</a> to your task branch (nodes without 🔒).</li>
+              <li>Annotate, then <a href="#save">Save</a> and <a href="#share">Share</a>. You can create sub-branches under the task and merge them into their parent.</li>
+              <li>When ready: <strong>Version details</strong> of the shared tip → <span class="ui">Request review</span>. The node turns 🔵.</li>
+            </ol>
+            <ul>
+              <li>One review at a time: if the task is already 🔵, no second request.</li>
+              <li>Share is paused while the 🔵 review is open.</li>
+              <li>The task’s other juniors see that a review is already requested.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- 18 Tasks review -->
+        <section class="doc-section" id="tasks-review" data-group="collab">
+          <h2><span class="num">18</span><span class="title"><span data-l="fr">Tasks : Accept ou Decline</span><span data-l="en">Tasks: Accept or Decline</span></span></h2>
+          <p class="lead">
+            <span data-l="fr">Le senior examine la version soumise, garde ce qu’il veut, et l’intègre dans <code>main</code>, ou la renvoie au junior.</span>
+            <span data-l="en">The senior reviews the submitted version, keeps what they want and brings it into <code>main</code>, or sends it back to the junior.</span>
+          </p>
+          <figure class="video-slot" data-video="tasks-review"></figure>
+          <div data-l="fr">
+            <ol class="steps">
+              <li>Une notification vous guide vers le nœud 🔵. Ouvrez ses <strong>Version details</strong>.</li>
+              <li><span class="ui">Accept and Merge</span> → <span class="ui">Compare and Merge</span> : la comparaison côte à côte s’ouvre (voir <a href="#merge">Merge &amp; Compare</a>). Choisissez ce qu’il faut garder, puis <span class="ui">Apply merge</span>.</li>
+              <li>La version arrive sur <code>main</code>, la demande de review est close et la tâche passe ✅ pour tous les juniors assignés.</li>
+            </ol>
+            <p><span class="ui">Decline</span> : la tâche repart en cours 🟠, et le junior peut redemander une review plus tard.</p>
+          </div>
+          <div data-l="en">
+            <ol class="steps">
+              <li>A notification guides you to the 🔵 node. Open its <strong>Version details</strong>.</li>
+              <li><span class="ui">Accept and Merge</span> → <span class="ui">Compare and Merge</span>: the side-by-side comparison opens (see <a href="#merge">Merge &amp; Compare</a>). Choose what to keep, then <span class="ui">Apply merge</span>.</li>
+              <li>The version lands on <code>main</code>, the review request is closed and the task turns ✅ for every assigned junior.</li>
+            </ol>
+            <p><span class="ui">Decline</span>: the task goes back to in progress 🟠, and the junior can request a review again later.</p>
+          </div>
+        </section>
+
+        <!-- 19 Messages -->
+        <section class="doc-section" id="messages" data-group="collab">
+          <h2><span class="num">19</span><span class="title"><span data-l="fr">Messages, cloche et fil d’activité</span><span data-l="en">Messages, bell and activity feed</span></span></h2>
+          <p class="lead">
+            <span data-l="fr">Trois façons de suivre l’équipe sans quitter Slicer.</span>
+            <span data-l="en">Three ways to keep up with the team without leaving Slicer.</span>
+          </p>
+          <figure class="video-slot" data-video="messages"></figure>
+          <div data-l="fr">
+            <h3>Messages</h3>
+            <p>Cliquez sur <span class="ui">Messages</span> pour déplier le fil de discussion du projet, avec la présence approximative des collègues. Écrivez dans <em>Write a message</em>, puis <span class="ui">Send</span> ou <kbd>Entrée</kbd>. Un badge signale les messages non lus.</p>
+            <h3>La cloche 🔔</h3>
+            <ul>
+              <li>Le badge compte les notifications non lues : invitations, activité du projet (share, assign, review…).</li>
+              <li>⚠ sur la cloche : votre copie locale n’est plus alignée avec le projet partagé. Le bouton <span class="ui">Compare with shared</span> apparaît en haut de la liste. ✅ : tout est aligné.</li>
+              <li>Cliquez sur une notification pour l’ouvrir ; <span class="ui">Mark all as read</span> marque tout comme lu.</li>
+              <li>Les notifications sont vérifiées automatiquement toutes les 15 secondes environ.</li>
+            </ul>
+            <h3>Live activity feed</h3>
+            <p>Dans le panneau de droite, le journal de ce que fait le module, y compris les erreurs et les conseils (par exemple un nom de branche invalide). <span class="ui">Clear</span> le vide.</p>
+          </div>
+          <div data-l="en">
+            <h3>Messages</h3>
+            <p>Click <span class="ui">Messages</span> to expand the project chat, with colleagues’ approximate presence. Type in <em>Write a message</em>, then <span class="ui">Send</span> or <kbd>Enter</kbd>. A badge flags unread messages.</p>
+            <h3>The 🔔 bell</h3>
+            <ul>
+              <li>The badge counts unread notifications: invitations, project activity (share, assign, review…).</li>
+              <li>⚠ on the bell: your local copy is no longer aligned with the shared project. The <span class="ui">Compare with shared</span> button shows at the top of the list. ✅: everything is aligned.</li>
+              <li>Click a notification to open it; <span class="ui">Mark all as read</span> marks everything read.</li>
+              <li>Notifications are checked automatically about every 15 seconds.</li>
+            </ul>
+            <h3>Live activity feed</h3>
+            <p>In the right panel, a log of what the module does, including errors and hints (for example an invalid branch name). <span class="ui">Clear</span> empties it.</p>
+          </div>
+        </section>
+
+        <!-- 20 Permissions -->
+        <section class="doc-section" id="permissions" data-group="collab">
+          <h2><span class="num">20</span><span class="title"><span data-l="fr">Cadenas et permissions</span><span data-l="en">Padlocks &amp; permissions</span></span></h2>
+          <p class="lead">
+            <span data-l="fr">Le cadenas 🔒 protège le travail des autres : un junior peut tout regarder, mais n’écrit que là où on lui a confié une tâche.</span>
+            <span data-l="en">The 🔒 padlock protects other people’s work: a junior can look at everything, but only writes where they were given a task.</span>
+          </p>
+          <div data-l="fr">
+            <ul>
+              <li><strong>Sans tâche active</strong> : l’écriture est bloquée presque partout.</li>
+              <li><strong>Avec des tâches</strong> : Save et Share autorisés sur ces branches <em>et</em> leurs sous-branches.</li>
+              <li><strong>Ailleurs</strong> : 🔒, Switch pour regarder, pas de modification.</li>
+            </ul>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Action</th><th>Owner / Senior</th><th>Junior</th></tr></thead>
+              <tbody>
+                <tr><td>Switch (consulter)</td><td>✅ partout</td><td>✅ partout</td></tr>
+                <tr><td>Save / Share sur <code>main</code></td><td>✅</td><td>—</td></tr>
+                <tr><td>Save / Share sur sa branche de tâche et ses sous-branches</td><td>✅</td><td>✅</td></tr>
+                <tr><td>Merge d’une branche DIY vers <code>main</code></td><td>✅</td><td>—</td></tr>
+                <tr><td>Merge d’une sous-branche vers son parent</td><td>✅</td><td>✅ si assigné à la tâche</td></tr>
+                <tr><td>Assign / Update / Cancel task</td><td>✅</td><td>—</td></tr>
+                <tr><td>Request review</td><td>—</td><td>✅</td></tr>
+                <tr><td>Accept and Merge / Decline</td><td>✅</td><td>—</td></tr>
+                <tr><td>Inviter / retirer (People)</td><td>Owner seulement</td><td>—</td></tr>
+                <tr><td>Delete project</td><td>Owner seulement</td><td>—</td></tr>
+              </tbody>
+            </table></div>
+          </div>
+          <div data-l="en">
+            <ul>
+              <li><strong>No active task</strong>: writing is blocked almost everywhere.</li>
+              <li><strong>With tasks</strong>: Save and Share allowed on those branches <em>and</em> their sub-branches.</li>
+              <li><strong>Elsewhere</strong>: 🔒, Switch to look, no changes.</li>
+            </ul>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Action</th><th>Owner / Senior</th><th>Junior</th></tr></thead>
+              <tbody>
+                <tr><td>Switch (view)</td><td>✅ everywhere</td><td>✅ everywhere</td></tr>
+                <tr><td>Save / Share on <code>main</code></td><td>✅</td><td>—</td></tr>
+                <tr><td>Save / Share on their task branch and its sub-branches</td><td>✅</td><td>✅</td></tr>
+                <tr><td>Merge a DIY branch into <code>main</code></td><td>✅</td><td>—</td></tr>
+                <tr><td>Merge a sub-branch into its parent</td><td>✅</td><td>✅ if assigned to the task</td></tr>
+                <tr><td>Assign / Update / Cancel task</td><td>✅</td><td>—</td></tr>
+                <tr><td>Request review</td><td>—</td><td>✅</td></tr>
+                <tr><td>Accept and Merge / Decline</td><td>✅</td><td>—</td></tr>
+                <tr><td>Invite / remove (People)</td><td>Owner only</td><td>—</td></tr>
+                <tr><td>Delete project</td><td>Owner only</td><td>—</td></tr>
+              </tbody>
+            </table></div>
+          </div>
+        </section>
+
+        <!-- 21 Delete -->
+        <section class="doc-section" id="delete" data-group="collab">
+          <h2><span class="num">21</span><span class="title">Delete</span></h2>
+          <p class="lead">
+            <span data-l="fr">Deux suppressions très différentes : une version locale, ou le projet entier.</span>
+            <span data-l="en">Two very different deletions: a local version, or the whole project.</span>
+          </p>
+          <figure class="video-slot" data-video="delete"></figure>
+          <div data-l="fr">
+            <h3>Une version locale</h3>
+            <p>Sur une version en <strong>pointillés</strong>, <strong>Version details</strong> → <span class="ui">Delete</span> retire seulement cette version <strong>locale</strong>. Le projet partagé n’est pas touché. Une version déjà partagée ne peut pas être supprimée ainsi.</p>
+            <h3>Le projet (owner)</h3>
+            <p>Le bouton <span class="ui">Delete</span> du panneau supprime le <strong>projet distant</strong> sur GitHub. GitHub peut demander une autorisation supplémentaire (fenêtre <em>GitHub permission</em>).</p>
+            <div class="callout danger"><span class="callout-ico">⛔</span><div><p><strong>Irréversible.</strong> Toute l’équipe perd l’accès au projet partagé. Les copies locales restantes apparaissent alors avec la mention <em>(not on GitHub)</em>.</p></div></div>
+          </div>
+          <div data-l="en">
+            <h3>A local version</h3>
+            <p>On a <strong>dashed</strong> version, <strong>Version details</strong> → <span class="ui">Delete</span> removes only that <strong>local</strong> version. The shared project is untouched. An already shared version cannot be deleted this way.</p>
+            <h3>The project (owner)</h3>
+            <p>The panel’s <span class="ui">Delete</span> button deletes the <strong>remote project</strong> on GitHub. GitHub may ask for an extra permission (<em>GitHub permission</em> window).</p>
+            <div class="callout danger"><span class="callout-ico">⛔</span><div><p><strong>Irreversible.</strong> The whole team loses access to the shared project. Remaining local copies then show <em>(not on GitHub)</em>.</p></div></div>
+          </div>
+        </section>
+
+        <!-- ======================= REFERENCE ======================= -->
+        <p class="doc-group-title" data-group="ref"><span data-l="fr">Référence</span><span data-l="en">Reference</span></p>
+
+        <!-- 22 Scenarios -->
+        <section class="doc-section" id="scenarios" data-group="ref">
+          <h2><span class="num">22</span><span class="title"><span data-l="fr">Scénarios utiles</span><span data-l="en">Useful scenarios</span></span></h2>
+          <p class="lead">
+            <span data-l="fr">Les enchaînements les plus courants, du plus simple au plus collaboratif.</span>
+            <span data-l="en">The most common flows, from the simplest to the most collaborative.</span>
+          </p>
+          <figure class="video-slot" data-video="scenario"></figure>
+          <div data-l="fr">
+            <div class="table-wrap"><table>
+              <thead><tr><th>Scénario</th><th>Étapes</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Senior seul</strong></td><td>Connect → Create → annoter → Save → Share sur main. Le tree avance : <code>main/1</code>, <code>main/2</code>…</td></tr>
+                <tr><td><strong>Inviter un junior</strong></td><td>People → invitation → le junior fait Join → Open le projet.</td></tr>
+                <tr><td><strong>Tâche + review</strong></td><td>Le senior assigne (start shared + nom de branche) → le junior Save / Share → Request review → le senior Accept and Merge → tâche fermée.</td></tr>
+                <tr><td><strong>Sous-branches DIY</strong></td><td>Sur <code>sos</code> (bout) → Create <code>ok</code> → travail sur <code>sos/ok</code> → Share → Merge dans <code>sos</code>. Puis <code>yoi</code> sous <code>sos/ok</code> → Merge dans <code>sos/ok</code>, seulement si <code>sos/ok</code> n’est pas déjà fermé dans <code>sos</code>.</td></tr>
+                <tr><td><strong>Deux juniors, même tâche</strong></td><td>Même branche de tâche. L’un demande la review → 🔵, l’autre attend. Accept clôture pour les deux.</td></tr>
+                <tr><td><strong>Share refusé alors que « ma » branche semble bonne</strong></td><td>La vérification regarde <em>tout</em> le projet (main ou d’autres branches en avance), pas seulement la branche affichée. Compare with shared, puis réessayer.</td></tr>
+              </tbody>
+            </table></div>
+          </div>
+          <div data-l="en">
+            <div class="table-wrap"><table>
+              <thead><tr><th>Scenario</th><th>Steps</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Solo senior</strong></td><td>Connect → Create → annotate → Save → Share on main. The tree grows: <code>main/1</code>, <code>main/2</code>…</td></tr>
+                <tr><td><strong>Inviting a junior</strong></td><td>People → invitation → the junior clicks Join → Opens the project.</td></tr>
+                <tr><td><strong>Task + review</strong></td><td>The senior assigns (shared start + branch name) → the junior Saves / Shares → Request review → the senior Accepts and Merges → task closed.</td></tr>
+                <tr><td><strong>DIY sub-branches</strong></td><td>On <code>sos</code> (tip) → Create <code>ok</code> → work on <code>sos/ok</code> → Share → Merge into <code>sos</code>. Then <code>yoi</code> under <code>sos/ok</code> → Merge into <code>sos/ok</code>, only if <code>sos/ok</code> is not already closed into <code>sos</code>.</td></tr>
+                <tr><td><strong>Two juniors, same task</strong></td><td>Same task branch. One requests the review → 🔵, the other waits. Accept closes it for both.</td></tr>
+                <tr><td><strong>Share refused although “my” branch looks fine</strong></td><td>The check looks at the <em>whole</em> project (main or other branches ahead), not only the branch on screen. Compare with shared, then retry.</td></tr>
+              </tbody>
+            </table></div>
+          </div>
+        </section>
+
+        <!-- 23 Storage -->
+        <section class="doc-section" id="stockage" data-group="ref">
+          <h2><span class="num">23</span><span class="title"><span data-l="fr">Stockage des segmentations</span><span data-l="en">Segmentation storage</span></span></h2>
+          <p class="lead">
+            <span data-l="fr">Pour aller plus loin : comment BRAVIS garde un historique léger, même avec de gros volumes.</span>
+            <span data-l="en">Going further: how BRAVIS keeps a lightweight history, even with large volumes.</span>
+          </p>
+          <div data-l="fr">
+            <p>La segmentation est découpée en <strong>cubes de 64×64×64 voxels</strong>. Chaque cube est compressé (zlib) et nommé par l’empreinte <strong>xxHash64</strong> de son contenu. Un cube identique n’est donc stocké qu’une fois : un Save n’ajoute au dépôt que les cubes qui ont changé.</p>
+          </div>
+          <div data-l="en">
+            <p>The segmentation is split into <strong>64×64×64-voxel cubes</strong>. Each cube is compressed (zlib) and named after the <strong>xxHash64</strong> fingerprint of its content. An identical cube is stored only once: a Save only adds the cubes that changed.</p>
+          </div>
+          <div class="cube-diagram">
+            <div class="cube-grid" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span class="changed"></span><span class="changed"></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span class="changed"></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+<pre><code>.cv_seg/
+  manifest.json      # shape, geometry, chunk size, hash per cube
+  blocks/
+    ab/abcdef0123…   # immutable zlib cube (uint16)
+    3f/3f9a07c4d1…</code></pre>
+          </div>
+          <div data-l="fr">
+            <ul>
+              <li><strong>Open</strong> et <strong>Switch</strong> reconstruisent la labelmap en mémoire à partir des cubes, puis la chargent dans le nœud de segmentation.</li>
+              <li>Les anciennes versions enregistrées au format <code>*_segmentation.nii.gz</code> restent lisibles.</li>
+              <li>Le projet est un dépôt GitHub privé créé avec la GitHub CLI ; l’historique est un historique Git classique.</li>
+            </ul>
+          </div>
+          <div data-l="en">
+            <ul>
+              <li><strong>Open</strong> and <strong>Switch</strong> rebuild the labelmap in memory from the cubes, then load it into the segmentation node.</li>
+              <li>Older versions saved as <code>*_segmentation.nii.gz</code> remain readable.</li>
+              <li>The project is a private GitHub repository created with the GitHub CLI; its history is a regular Git history.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- 24 Limits -->
+        <section class="doc-section" id="limites" data-group="ref">
+          <h2><span class="num">24</span><span class="title"><span data-l="fr">Limites actuelles</span><span data-l="en">Current limitations</span></span></h2>
+          <p class="lead">
+            <span data-l="fr">Pour ne pas chercher en vain.</span>
+            <span data-l="en">So you don’t look for them in vain.</span>
+          </p>
+          <div data-l="fr">
+            <ul>
+              <li>Pas encore de « Share my workspace » ni de suivi en temps réel entre collègues.</li>
+              <li><em>Keep both (merge)</em> dans Compare with shared n’est pas encore disponible.</li>
+              <li>La version de départ d’une tâche doit être sur <code>main</code> ; les départs depuis d’autres branches viendront plus tard.</li>
+              <li>Les détails du Version tree peuvent être un peu plus lents sur certaines sous-branches (calculs de Merge). Une amélioration est prévue.</li>
+              <li>Les collègues ne sont pas mis à jour automatiquement : chacun fait Compare / Update.</li>
+            </ul>
+            <p>Une question ? Consultez la <a href="faq.html">FAQ et le dépannage</a>.</p>
+          </div>
+          <div data-l="en">
+            <ul>
+              <li>No “Share my workspace” or real-time awareness between colleagues yet.</li>
+              <li><em>Keep both (merge)</em> in Compare with shared is not available yet.</li>
+              <li>A task start version must be on <code>main</code>; starts from other branches will come later.</li>
+              <li>Version tree details can be a little slower on some sub-branches (Merge computations). An improvement is planned.</li>
+              <li>Colleagues are not updated automatically: each one runs Compare / Update.</li>
+            </ul>
+            <p>A question? See the <a href="faq.html">FAQ and troubleshooting</a>.</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a class="brand" href="index.html"><img src="assets/img/favicon.svg" alt="" width="34" height="34"><span>BRA<span class="brand-vis">VIS</span></span></a>
+          <p><span data-l="fr">BRAin-atlas Versioning Interactive System — extension 3D Slicer pour versionner et partager des annotations en équipe.</span><span data-l="en">BRAin-atlas Versioning Interactive System — a 3D Slicer extension to version and share annotations as a team.</span></p>
+        </div>
+        <div>
+          <h4><span data-l="fr">Site</span><span data-l="en">Site</span></h4>
+          <ul>
+            <li><a href="index.html"><span data-l="fr">Accueil</span><span data-l="en">Home</span></a></li>
+            <li><a href="documentation.html">Documentation</a></li>
+            <li><a href="demos.html"><span data-l="fr">Démos</span><span data-l="en">Demos</span></a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4><span data-l="fr">Démarrer</span><span data-l="en">Get started</span></h4>
+          <ul>
+            <li><a href="documentation.html#installation">Installation</a></li>
+            <li><a href="documentation.html#connexion"><span data-l="fr">Connexion GitHub</span><span data-l="en">GitHub sign-in</span></a></li>
+            <li><a href="documentation.html#scenarios"><span data-l="fr">Scénarios</span><span data-l="en">Scenarios</span></a></li>
+            <li><a data-source-link href="#" hidden><span data-l="fr">Code source</span><span data-l="en">Source code</span></a></li>
+          </ul>
+        </div>
+        <div>
+          <h4><span data-l="fr">Partenaires</span><span data-l="en">Partners</span></h4>
+          <ul>
+            <li><a href="https://www.isir.upmc.fr/" target="_blank" rel="noopener">ISIR</a></li>
+            <li><a href="https://institutducerveau-icm.org/" target="_blank" rel="noopener">ICM</a></li>
+            <li><a href="https://www.cnrs.fr/" target="_blank" rel="noopener">CNRS</a></li>
+            <li><a href="https://www.slicer.org/" target="_blank" rel="noopener">3D Slicer</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> BRAVIS · Ahmed Ben Akouche (ISIR), Julien Gori (CNRS)</span>
+        <span><span data-l="fr">Fait pour 3D Slicer</span><span data-l="en">Made for 3D Slicer</span></span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
