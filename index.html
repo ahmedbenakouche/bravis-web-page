@@ -268,8 +268,25 @@
       </div>
     </section>
 
+    <!-- ================= CUBE STORAGE ================= -->
+    <section class="section section-alt" id="stockage-cubes">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow"><span data-l="fr">Fonctionnalités</span><span data-l="en">Features</span></span>
+          <h2><span data-l="fr">Seuls les cubes modifiés sont stockés</span><span data-l="en">Only changed cubes are stored</span></h2>
+          <p><span data-l="fr">Chaque version ne garde pas un fichier de segmentation complet. Le volume est découpé en cubes 64³ ; les cubes inchangés sont réutilisés via leur hash — partage et chargement restent légers. Au moment du merge, la même décomposition permet de comparer deux versions cube par cube et de choisir lesquels garder.</span><span data-l="en">Each version does not keep a full segmentation file. The volume is split into 64³ cubes; unchanged cubes are reused by hash — so sharing and loading stay light. At merge time, the same decomposition lets you compare two versions cube by cube and choose which ones to keep.</span></p>
+        </div>
+        <figure class="figure-panel reveal">
+          <img class="chunk-fig" src="assets/img/spatial-chunk-hash.svg" width="1140" height="540" alt=""
+               data-fr-alt="Schéma : contenu des sous-blocs, hash xxHash de chaque cube 64³, stockage des cubes modifiés, et choix des cubes au merge"
+               data-en-alt="Diagram: sub-block content, xxHash of each 64³ cube, storage of changed cubes, and cube choice at merge"
+               loading="lazy" decoding="async">
+        </figure>
+      </div>
+    </section>
+
     <!-- ================= DEMOS ================= -->
-    <section class="section section-alt" id="demos">
+    <section class="section" id="demos">
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow"><span data-l="fr">Démos</span><span data-l="en">Demos</span></span>
@@ -285,13 +302,26 @@
       </div>
     </section>
 
-    <!-- ================= PARTNERS ================= -->
-    <section class="section" id="partenaires">
+    <!-- ================= RESEARCH ================= -->
+    <section class="section section-alt" id="partenaires">
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow"><span data-l="fr">Recherche</span><span data-l="en">Research</span></span>
-          <h2><span data-l="fr">Un projet ISIR × ICM</span><span data-l="en">An ISIR × ICM project</span></h2>
-          <p><span data-l="fr">Conçu et développé par Ahmed Ben Akouche (ISIR), pour l’annotation collaborative d’atlas cérébraux.</span><span data-l="en">Designed and developed by Ahmed Ben Akouche (ISIR), for collaborative brain-atlas annotation.</span></p>
+          <h2><span data-l="fr">Qui développe BRAVIS et pourquoi</span><span data-l="en">Who builds BRAVIS and why</span></h2>
+        </div>
+        <div class="research-body reveal">
+          <div data-l="fr">
+            <p>Je m’appelle <strong>Ahmed Ben Akouche</strong> (ISIR — Sorbonne Université). Je développe BRAVIS comme base logicielle d’une thèse qui démarre sur l’annotation collaborative d’images neuroanatomiques. L’objectif est de développer, à terme, un système open source complet de versionnement collaboratif, validé sur l’atlas du tronc cérébral de l’ICM, en partenariat avec les équipes de l’ISIR et de l’ICM.</p>
+            <p>Aujourd’hui, BRAVIS est d’abord un <strong>outil</strong> : versionner, partager, comparer et fusionner des annotations dans 3D Slicer, sans imposer un workflow Git. Cette base logicielle soutiendra ensuite mes questions de recherche — notamment une comparaison plus sémantique des versions (au-delà des diffs voxel à voxel), et des études sur la collaboration, la visualisation des graphes d’historique et d’anatomie, et la résolution des désaccords, avec une approche centrée utilisateur.</p>
+            <p>Si vous testez BRAVIS, vos retours m’intéressent beaucoup : ils aident à solidifier la partie logicielle de l’outil, pour qu’en plus de la recherche on aboutisse à un outil vraiment complet et soigné. Vous pouvez m’écrire à l’adresse ci-dessous, ou ouvrir une <strong>issue GitHub</strong> sur le dépôt du projet dès que le lien « Code » est renseigné.</p>
+            <p class="research-contact">Contact : <a href="mailto:benakouche@isir.upmc.fr">benakouche@isir.upmc.fr</a></p>
+          </div>
+          <div data-l="en">
+            <p>I’m <strong>Ahmed Ben Akouche</strong> (ISIR — Sorbonne Université). I build BRAVIS as the software foundation for a PhD that is starting on collaborative annotation of neuroanatomical images. The aim is to develop, in the end, a complete open-source collaborative versioning system, validated on the ICM brainstem atlas, in partnership with ISIR and ICM teams.</p>
+            <p>Right now, BRAVIS is first a <strong>tool</strong>: version, share, compare and merge annotations in 3D Slicer, without forcing a Git workflow. This software base will then support my research questions — including more semantic comparison of versions (beyond voxel-level diffs), and studies of collaboration, visualization of the history and anatomy graphs, and disagreement resolution, with a user-centred approach.</p>
+            <p>If you try BRAVIS, your feedback matters a lot: it helps strengthen the software side of the tool, so that — alongside the research — we can end up with a truly complete and polished tool. You can email me at the address below, or open a <strong>GitHub issue</strong> on the project repo once the “Code” link is filled in.</p>
+            <p class="research-contact">Contact: <a href="mailto:benakouche@isir.upmc.fr">benakouche@isir.upmc.fr</a></p>
+          </div>
         </div>
         <div class="partners reveal">
           <a class="partner" href="https://www.isir.upmc.fr/" target="_blank" rel="noopener">
@@ -311,7 +341,7 @@
     </section>
 
     <!-- ================= CTA ================= -->
-    <section class="section section-alt">
+    <section class="section">
       <div class="container">
         <div class="cta-band reveal">
           <h2><span data-l="fr">Prêt à commencer ?</span><span data-l="en">Ready to start?</span></h2>

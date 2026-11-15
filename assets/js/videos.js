@@ -90,8 +90,8 @@ window.BRAVIS_VIDEOS = [
   },
   {
     id: "merge-compare", file: "merge-compare.mp4", cat: "versions", section: "merge",
-    fr: { title: "Merge → Compare : 6 vues synchronisées", desc: "Comparer deux versions côte à côte avant de fusionner." },
-    en: { title: "Merge → Compare: 6 synchronized views", desc: "Compare two versions side by side before merging." },
+    fr: { title: "Merge → Compare : vues synchronisées", desc: "Comparer deux versions côte à côte avant de fusionner." },
+    en: { title: "Merge → Compare: synchronized views", desc: "Compare two versions side by side before merging." },
     hint: { fr: "", en: "" }
   },
   {
