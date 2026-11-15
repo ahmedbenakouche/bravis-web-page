@@ -338,16 +338,27 @@ pre code { background: none; padding: 0; color: var(--text-soft); white-space: p
 .card-icon svg { width: 24px; height: 24px; }
 
 /* ---------- Version tree illustration ---------- */
-.tree-showcase { display: grid; grid-template-columns: 1.35fr 1fr; gap: 2.5rem; align-items: center; }
+.tree-showcase { display: grid; grid-template-columns: 1.15fr 1fr; gap: 2.5rem; align-items: start; }
 @media (max-width: 900px) { .tree-showcase { grid-template-columns: 1fr; } }
 .tree-frame {
-  border-radius: var(--radius-lg); padding: 1.2rem;
+  border-radius: var(--radius-lg); padding: 1rem 1.1rem 1.1rem;
   background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow);
+  max-height: 100%;
 }
-.tree-frame-bar { display: flex; align-items: center; gap: .4rem; margin-bottom: .8rem; font-size: .78rem; color: var(--muted); font-weight: 600; }
+.tree-frame-bar { display: flex; align-items: center; gap: .4rem; margin-bottom: .55rem; font-size: .78rem; color: var(--muted); font-weight: 600; }
 .tree-frame-bar i { width: 10px; height: 10px; border-radius: 50%; background: var(--border-strong); display: inline-block; }
 .tree-frame-bar span { margin-left: .5rem; }
-.vtree { width: 100%; height: auto; overflow: visible; }
+/* Keep the graph about as tall as the legend column beside it */
+.vtree {
+  width: 100%;
+  height: auto;
+  max-height: 22.5rem;
+  overflow: visible;
+  display: block;
+}
+@media (max-width: 900px) {
+  .vtree { max-height: none; }
+}
 .vtree .edge { fill: none; stroke-width: 2.5; stroke-linecap: round; }
 .vtree .node rect { stroke-width: 2; }
 .vtree .node text { font: 600 12px var(--font-mono); fill: var(--text); }
@@ -357,7 +368,9 @@ pre code { background: none; padding: 0; color: var(--text-soft); white-space: p
 .vtree .lane-task { stroke: var(--magenta); }
 .vtree .node rect { fill: var(--surface-2); }
 .vtree .node.current rect { fill: var(--surface-3); }
-.vtree .marker { font-size: 16px; fill: var(--accent); }
+.vtree .marker { font-size: 14px; fill: var(--accent); }
+.vtree .marker.badge-tr { text-anchor: start; }
+.vtree .checkout { fill: var(--accent); stroke: var(--accent); }
 .vtree .lane-label { font: 700 11px var(--font-sans); letter-spacing: .08em; fill: var(--muted); text-transform: uppercase; }
 .vtree:not(.animate) .edge, .vtree:not(.animate) .node { opacity: 0; }
 .vtree .node { transform-box: fill-box; }
@@ -369,6 +382,17 @@ pre code { background: none; padding: 0; color: var(--text-soft); white-space: p
 .legend-list { list-style: none; padding: 0; margin: 1.2rem 0 0; display: grid; gap: .85rem; }
 .legend-list li { display: flex; gap: .9rem; align-items: flex-start; color: var(--text-soft); }
 .legend-list strong { display: block; }
+.swatch.checkout-swatch {
+  background: transparent; border: none; box-shadow: none;
+  position: relative;
+}
+.swatch.checkout-swatch::before {
+  content: "";
+  position: absolute; left: 14px; top: 6px;
+  border-style: solid;
+  border-width: 7px 0 7px 10px;
+  border-color: transparent transparent transparent var(--accent);
+}
 .swatch {
   flex: 0 0 auto; width: 44px; height: 28px; border-radius: 7px; margin-top: 2px;
   border: 2px solid var(--indigo); background: var(--surface-2);

@@ -167,49 +167,101 @@
         <div class="tree-showcase">
           <div class="tree-frame reveal">
             <div class="tree-frame-bar"><i></i><i></i><i></i><span>Version tree</span></div>
-            <svg class="vtree" viewBox="0 0 760 330" role="img"
-                 data-fr-aria-label="Exemple de Version tree : branche main, branche sos fusionnée, tâche cortex en review et sous-branche locale cortex/fix"
-                 data-en-aria-label="Example Version tree: main branch, merged sos branch, cortex task under review and local cortex/fix sub-branch"
+            <!-- Layout mirrors GraphCanvas: main=0; overlapping side lanes use +1 then -1;
+                 badges at top-right of the node; checkout pointer on the left. -->
+            <svg class="vtree" viewBox="0 0 620 500" role="img"
+                 data-fr-aria-label="Exemple de Version tree vertical fidèle à BRAVIS : cortex à gauche, thalamus à droite, badges en coin, pointeur de version ouverte à gauche du nœud"
+                 data-en-aria-label="Example Version tree faithful to BRAVIS: cortex on the left, thalamus on the right, corner badges, open-version pointer on the left of the node"
                  aria-label="Version tree">
-              <text class="lane-label" x="8" y="54">main</text>
-              <text class="lane-label" x="8" y="134">sos</text>
-              <text class="lane-label" x="8" y="214">cortex</text>
-              <text class="lane-label" x="8" y="294">cortex/fix</text>
+              <!-- columns: cortex/fix (-2) | cortex (-1) | main (0) | thalamus (+1) -->
+              <text class="lane-label" x="75" y="22" text-anchor="middle">cortex/fix</text>
+              <text class="lane-label" x="210" y="22" text-anchor="middle">cortex</text>
+              <text class="lane-label" x="370" y="22" text-anchor="middle">main</text>
+              <text class="lane-label" x="530" y="22" text-anchor="middle">thalamus</text>
 
-              <path class="edge lane-main" d="M174 50 H196" />
-              <path class="edge lane-main" d="M284 50 H306" />
-              <path class="edge lane-main" d="M394 50 H526" />
-              <path class="edge lane-sos" d="M174 50 H185 V130 H196" style="animation-delay:.2s" />
-              <path class="edge lane-sos" d="M284 130 H306" style="animation-delay:.3s" />
-              <path class="edge lane-sos" d="M394 130 H570 V66" style="animation-delay:.5s" />
-              <path class="edge lane-task" d="M394 50 H405 V210 H416" style="animation-delay:.4s" />
-              <path class="edge lane-task" d="M504 210 H526" style="animation-delay:.6s" />
-              <path class="edge lane-task" d="M614 210 H636" style="animation-delay:.7s" />
-              <path class="edge lane-task" d="M614 210 H625 V290 H636" style="animation-delay:.8s" />
+              <!-- main spine -->
+              <path class="edge lane-main" d="M370 72 V110" />
+              <path class="edge lane-main" d="M370 142 V180" style="animation-delay:.1s" />
+              <path class="edge lane-main" d="M370 212 V250" style="animation-delay:.2s" />
 
-              <g class="node" style="animation-delay:.05s"><rect class="lane-main" x="86" y="34" width="88" height="32" rx="8"/><text x="130" y="54" text-anchor="middle">main/1</text></g>
-              <g class="node" style="animation-delay:.15s"><rect class="lane-main" x="196" y="34" width="88" height="32" rx="8"/><text x="240" y="54" text-anchor="middle">main/2</text></g>
-              <g class="node" style="animation-delay:.25s"><rect class="lane-main" x="306" y="34" width="88" height="32" rx="8"/><text x="350" y="54" text-anchor="middle">main/3</text></g>
-              <g class="node" style="animation-delay:.9s"><rect class="lane-main" x="526" y="34" width="88" height="32" rx="8"/><text x="570" y="54" text-anchor="middle">main/4</text><text class="marker" x="606" y="30">🔒</text></g>
+              <!-- fork main → thalamus (right): leave right side, then drop -->
+              <path class="edge lane-sos" d="M414 63 H530 V110" style="animation-delay:.15s" />
+              <path class="edge lane-sos" d="M530 142 V180" style="animation-delay:.25s" />
+              <!-- merge thalamus → main: drop, then enter main from the right side -->
+              <path class="edge lane-sos" d="M530 212 V266 H414" style="animation-delay:.4s" />
 
-              <g class="node" style="animation-delay:.35s"><rect class="lane-sos" x="196" y="114" width="88" height="32" rx="8"/><text x="240" y="134" text-anchor="middle">sos/1</text></g>
-              <g class="node" style="animation-delay:.45s"><rect class="lane-sos" x="306" y="114" width="88" height="32" rx="8"/><text x="350" y="134" text-anchor="middle">sos/2</text><text class="marker" x="386" y="110">🔒</text></g>
+              <!-- fork main → cortex (left): same row as main/4 -->
+              <path class="edge lane-task" d="M326 203 H210 V250" style="animation-delay:.35s" />
+              <path class="edge lane-task" d="M210 282 V320" style="animation-delay:.5s" />
+              <path class="edge lane-task" d="M210 352 V390" style="animation-delay:.65s" />
+              <!-- fork cortex → cortex/fix (further left): leave left side -->
+              <path class="edge lane-task" d="M166 406 H75 V460" style="animation-delay:.8s" />
 
-              <g class="node" style="animation-delay:.55s"><rect class="lane-task" x="416" y="194" width="88" height="32" rx="8"/><text x="460" y="214" text-anchor="middle">…/start</text></g>
-              <g class="node" style="animation-delay:.65s"><rect class="lane-task" x="526" y="194" width="88" height="32" rx="8"/><text x="570" y="214" text-anchor="middle">cortex/1</text></g>
-              <g class="node" style="animation-delay:.75s"><rect class="lane-task" x="636" y="194" width="88" height="32" rx="8"/><text x="680" y="214" text-anchor="middle">cortex/2</text><text class="marker" x="716" y="190">🔵</text></g>
+              <!-- cortex/fix local open -->
+              <g class="node local current" style="animation-delay:.9s">
+                <polygon class="checkout" points="25,476 15,469 15,483"/>
+                <rect class="lane-task" x="31" y="460" width="88" height="32" rx="8"/>
+                <text x="75" y="480" text-anchor="middle">…fix/1</text>
+              </g>
 
-              <g class="node local current" style="animation-delay:.95s"><rect class="lane-task" x="636" y="274" width="88" height="32" rx="8"/><text x="680" y="294" text-anchor="middle">…fix/1</text><text class="marker" x="600" y="296">▶</text></g>
+              <!-- cortex task: …/start aligned with main/4 -->
+              <g class="node" style="animation-delay:.5s">
+                <rect class="lane-task" x="166" y="250" width="88" height="32" rx="8"/>
+                <text x="210" y="270" text-anchor="middle">…/start</text>
+              </g>
+              <g class="node" style="animation-delay:.6s">
+                <rect class="lane-task" x="166" y="320" width="88" height="32" rx="8"/>
+                <text x="210" y="340" text-anchor="middle">cortex/1</text>
+              </g>
+              <g class="node" style="animation-delay:.7s">
+                <rect class="lane-task" x="166" y="390" width="88" height="32" rx="8"/>
+                <text x="210" y="410" text-anchor="middle">cortex/2</text>
+                <text class="marker badge-tr" x="242" y="388">🔵</text>
+              </g>
+
+              <!-- main (locked) -->
+              <g class="node" style="animation-delay:.05s">
+                <rect class="lane-main" x="326" y="40" width="88" height="32" rx="8"/>
+                <text x="370" y="60" text-anchor="middle">main/1</text>
+                <text class="marker badge-tr" x="402" y="38">🔒</text>
+              </g>
+              <g class="node" style="animation-delay:.15s">
+                <rect class="lane-main" x="326" y="110" width="88" height="32" rx="8"/>
+                <text x="370" y="130" text-anchor="middle">main/2</text>
+                <text class="marker badge-tr" x="402" y="108">🔒</text>
+              </g>
+              <g class="node" style="animation-delay:.25s">
+                <rect class="lane-main" x="326" y="180" width="88" height="32" rx="8"/>
+                <text x="370" y="200" text-anchor="middle">main/3</text>
+                <text class="marker badge-tr" x="402" y="178">🔒</text>
+              </g>
+              <g class="node" style="animation-delay:.85s">
+                <rect class="lane-main" x="326" y="250" width="88" height="32" rx="8"/>
+                <text x="370" y="270" text-anchor="middle">main/4</text>
+                <text class="marker badge-tr" x="402" y="248">🔒</text>
+              </g>
+
+              <!-- thalamus (locked) — peer anatomical lane to cortex -->
+              <g class="node" style="animation-delay:.3s">
+                <rect class="lane-sos" x="478" y="110" width="104" height="32" rx="8"/>
+                <text x="530" y="130" text-anchor="middle">thalamus/1</text>
+                <text class="marker badge-tr" x="568" y="108">🔒</text>
+              </g>
+              <g class="node" style="animation-delay:.4s">
+                <rect class="lane-sos" x="478" y="180" width="104" height="32" rx="8"/>
+                <text x="530" y="200" text-anchor="middle">thalamus/2</text>
+                <text class="marker badge-tr" x="568" y="178">🔒</text>
+              </g>
             </svg>
           </div>
           <div class="reveal">
-            <p style="color: var(--text-soft)"><span data-l="fr">Ici, vue d’un junior assigné à la tâche <code>cortex</code> : il consulte <code>main</code> et <code>sos</code> en lecture seule, a demandé une review et continue sur une sous-branche locale.</span><span data-l="en">Here, the view of a junior assigned to the <code>cortex</code> task: they browse <code>main</code> and <code>sos</code> read-only, requested a review and keep going on a local sub-branch.</span></p>
+            <p style="color: var(--text-soft)"><span data-l="fr">Ici, vue d’un junior assigné à la tâche <code>cortex</code> : il consulte <code>main</code> et <code>thalamus</code> en lecture seule, a demandé une review et continue sur une sous-branche locale.</span><span data-l="en">Here, the view of a junior assigned to the <code>cortex</code> task: they browse <code>main</code> and <code>thalamus</code> read-only, requested a review and keep going on a local sub-branch.</span></p>
             <ul class="legend-list">
               <li><span class="swatch"></span><div><strong><span data-l="fr">Cadre plein</span><span data-l="en">Solid border</span></strong><span data-l="fr">Version partagée (sur le projet distant).</span><span data-l="en">Shared version (on the remote project).</span></div></li>
               <li><span class="swatch dashed"></span><div><strong><span data-l="fr">Cadre en pointillés</span><span data-l="en">Dashed border</span></strong><span data-l="fr">Version locale seulement, pas encore partagée.</span><span data-l="en">Local only, not shared yet.</span></div></li>
-              <li><span class="swatch plain">🔒</span><div><strong><span data-l="fr">Cadenas</span><span data-l="en">Padlock</span></strong><span data-l="fr">Junior : consultable (Switch), mais pas de Save ni Share ici.</span><span data-l="en">Junior: viewable (Switch), but no Save or Share here.</span></div></li>
+              <li><span class="swatch plain">🔒</span><div><strong><span data-l="fr">Cadenas</span><span data-l="en">Padlock</span></strong><span data-l="fr">Sur chaque version non autorisée : consultable (Switch), mais pas de Save ni Share.</span><span data-l="en">On every unauthorized version: viewable (Switch), but no Save or Share.</span></div></li>
               <li><span class="swatch plain">🔵</span><div><strong><span data-l="fr">Review demandée</span><span data-l="en">Review requested</span></strong><span data-l="fr">La version attend un Accept ou un Decline du senior.</span><span data-l="en">The version waits for the senior’s Accept or Decline.</span></div></li>
-              <li><span class="swatch plain">▶</span><div><strong><span data-l="fr">Version ouverte</span><span data-l="en">Open version</span></strong><span data-l="fr">Celle actuellement chargée dans Slicer.</span><span data-l="en">The one currently loaded in Slicer.</span></div></li>
+              <li><span class="swatch plain checkout-swatch" aria-hidden="true"></span><div><strong><span data-l="fr">Pointeur à gauche</span><span data-l="en">Left pointer</span></strong><span data-l="fr">Version ouverte (chargée dans Slicer).</span><span data-l="en">Open version (loaded in Slicer).</span></div></li>
             </ul>
           </div>
         </div>
