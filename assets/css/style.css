@@ -337,14 +337,6 @@ pre code { background: none; padding: 0; color: var(--text-soft); white-space: p
 }
 .card-icon svg { width: 24px; height: 24px; }
 
-/* roles */
-.role-card { border-top: 3px solid var(--accent); }
-.role-card.role-senior { border-top-color: var(--indigo); }
-.role-card.role-junior { border-top-color: var(--magenta); }
-.role-card.role-guest { border-top-color: var(--amber); }
-.role-card ul { margin: .8rem 0 0; padding-left: 1.1rem; color: var(--text-soft); font-size: .95rem; }
-.role-card li { margin-bottom: .3rem; }
-
 /* ---------- Version tree illustration ---------- */
 .tree-showcase { display: grid; grid-template-columns: 1.35fr 1fr; gap: 2.5rem; align-items: center; }
 @media (max-width: 900px) { .tree-showcase { grid-template-columns: 1fr; } }
