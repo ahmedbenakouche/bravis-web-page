@@ -169,8 +169,8 @@
         <section class="doc-section" id="installation" data-group="start">
           <h2><span class="num">01</span><span class="title"><span data-l="fr">Installation et prérequis</span><span data-l="en">Installation &amp; requirements</span></span></h2>
           <p class="lead">
-            <span data-l="fr">BRAVIS est un module Python de 3D Slicer, nommé <strong>Collaborative Versioning</strong> (catégorie <em>Informatics</em>). Il s’appuie sur Git et sur la GitHub CLI pour enregistrer et partager les versions.</span>
-            <span data-l="en">BRAVIS is a 3D Slicer Python module named <strong>Collaborative Versioning</strong> (<em>Informatics</em> category). It relies on Git and the GitHub CLI to record and share versions.</span>
+            <span data-l="fr">BRAVIS est un module Python de 3D Slicer (catégorie <em>Informatics</em>). Dans la liste des modules, il apparaît sous le nom <strong>BRAVIS</strong>. Il s’appuie sur Git et sur la GitHub CLI pour enregistrer et partager les versions.</span>
+            <span data-l="en">BRAVIS is a 3D Slicer Python module (<em>Informatics</em> category). In the module list it appears as <strong>BRAVIS</strong>. It relies on Git and the GitHub CLI to record and share versions.</span>
           </p>
           <figure class="video-slot" data-video="installation"></figure>
 
@@ -180,8 +180,8 @@
               <li><strong>3D Slicer</strong>, version récente.</li>
               <li><strong>Git</strong> installé et accessible depuis le terminal (<code>git --version</code>).</li>
               <li><strong>GitHub CLI</strong> (<code>gh</code>) installée et accessible (<code>gh --version</code>).</li>
-              <li>Un <strong>compte GitHub</strong>. Pour tester le travail d’équipe : idéalement un senior et un ou deux juniors.</li>
-              <li>Le paquet Python <strong><code>xxhash</code></strong> dans le Python de Slicer (utilisé pour le stockage des segmentations).</li>
+              <li>Un <strong>compte GitHub</strong>.</li>
+              <li>Le paquet Python <strong><code>xxhash</code></strong> dans le Python de Slicer.</li>
             </ul>
 
             <h3>Installer le module</h3>
@@ -190,7 +190,7 @@
               <li>Dans Slicer, ouvrez <span class="ui">Edit</span> → <span class="ui">Application Settings</span> → <span class="ui">Modules</span>.</li>
               <li>Dans <strong>Additional module paths</strong>, ajoutez le dossier <code>CollaborativeVersioning</code> (celui qui contient <code>CollaborativeVersioning.py</code>).</li>
               <li>Redémarrez Slicer.</li>
-              <li>Ouvrez le module : liste des modules → <strong>Informatics</strong> → <strong>Collaborative Versioning</strong>.</li>
+              <li>Ouvrez le module : liste des modules → <strong>Informatics</strong> → <strong>BRAVIS</strong>.</li>
             </ol>
             <p>Alternative pour les développeurs : <span class="ui">Developer Tools</span> → <span class="ui">Extension Wizard</span> → <span class="ui">Select Extension</span>, puis choisir le dossier de l’extension.</p>
 
@@ -207,8 +207,8 @@
               <li><strong>3D Slicer</strong>, a recent version.</li>
               <li><strong>Git</strong> installed and reachable from the terminal (<code>git --version</code>).</li>
               <li><strong>GitHub CLI</strong> (<code>gh</code>) installed and reachable (<code>gh --version</code>).</li>
-              <li>A <strong>GitHub account</strong>. To try teamwork: ideally one senior and one or two juniors.</li>
-              <li>The <strong><code>xxhash</code></strong> Python package in Slicer’s Python (used to store segmentations).</li>
+              <li>A <strong>GitHub account</strong>.</li>
+              <li>The <strong><code>xxhash</code></strong> Python package in Slicer’s Python.</li>
             </ul>
 
             <h3>Install the module</h3>
@@ -217,7 +217,7 @@
               <li>In Slicer, open <span class="ui">Edit</span> → <span class="ui">Application Settings</span> → <span class="ui">Modules</span>.</li>
               <li>Under <strong>Additional module paths</strong>, add the <code>CollaborativeVersioning</code> folder (the one containing <code>CollaborativeVersioning.py</code>).</li>
               <li>Restart Slicer.</li>
-              <li>Open the module: module list → <strong>Informatics</strong> → <strong>Collaborative Versioning</strong>.</li>
+              <li>Open the module: module list → <strong>Informatics</strong> → <strong>BRAVIS</strong>.</li>
             </ol>
             <p>Developer alternative: <span class="ui">Developer Tools</span> → <span class="ui">Extension Wizard</span> → <span class="ui">Select Extension</span>, then pick the extension folder.</p>
 
@@ -268,7 +268,7 @@
                 <tr><td><strong>Project</strong></td><td>Liste de vos projets (ceux que vous possédez ou que vous avez rejoints).</td></tr>
                 <tr><td><strong>3D Volume / Segmentation</strong></td><td>Le volume et la segmentation de la scène Slicer à versionner.</td></tr>
                 <tr><td><strong>Ontology map (JSON)</strong></td><td>L’atlas utilisé (Allen Mouse, Allen Human ou votre JSON) et le menu ⚙.</td></tr>
-                <tr><td><span class="ui">Create</span> <span class="ui">People</span> <span class="ui">Delete</span></td><td>Créer un projet, gérer l’équipe, supprimer le projet (owner).</td></tr>
+                <tr><td><span class="ui">Create</span> <span class="ui">People</span> <span class="ui">Delete</span></td><td>Créer un projet, gérer l’équipe, supprimer la copie locale (tous) ou le projet GitHub (owner).</td></tr>
                 <tr><td><span class="ui">Open</span> <span class="ui">Save</span> <span class="ui">Share</span></td><td>Ouvrir le projet choisi, enregistrer une version locale, la publier.</td></tr>
                 <tr><td><span class="ui">Tasks</span> <span class="ui">Messages</span></td><td>Les tâches assignées et le fil de discussion du projet. Un badge signale les nouveautés.</td></tr>
               </tbody>
@@ -291,7 +291,7 @@
                 <tr><td><strong>Project</strong></td><td>Your projects (the ones you own or have joined).</td></tr>
                 <tr><td><strong>3D Volume / Segmentation</strong></td><td>The Slicer scene volume and segmentation to version.</td></tr>
                 <tr><td><strong>Ontology map (JSON)</strong></td><td>The atlas in use (Allen Mouse, Allen Human or your JSON) and the ⚙ menu.</td></tr>
-                <tr><td><span class="ui">Create</span> <span class="ui">People</span> <span class="ui">Delete</span></td><td>Create a project, manage the team, delete the project (owner).</td></tr>
+                <tr><td><span class="ui">Create</span> <span class="ui">People</span> <span class="ui">Delete</span></td><td>Create a project, manage the team, remove the local copy (anyone) or the GitHub project (owner).</td></tr>
                 <tr><td><span class="ui">Open</span> <span class="ui">Save</span> <span class="ui">Share</span></td><td>Open the selected project, save a local version, publish it.</td></tr>
                 <tr><td><span class="ui">Tasks</span> <span class="ui">Messages</span></td><td>Assigned tasks and the project chat. A badge flags anything new.</td></tr>
               </tbody>
@@ -316,31 +316,61 @@
           <figure class="video-slot" data-video="connexion"></figure>
 
           <div data-l="fr">
+            <h3>Compte déjà présent sur cet ordinateur</h3>
+            <p>Si la GitHub CLI est déjà connectée, une fenêtre <strong>GitHub account</strong> s’affiche d’abord : <em>This computer is already signed in to GitHub as …</em></p>
+            <ul>
+              <li><span class="ui">Continue</span> — reprendre ce compte (sans rouvrir le navigateur).</li>
+              <li><span class="ui">Switch account</span> — se déconnecter puis refaire le parcours web ci-dessous.</li>
+              <li><span class="ui">Cancel</span> — annuler.</li>
+            </ul>
+            <h3>Première connexion (ou Switch account)</h3>
             <ol class="steps">
               <li>Cliquez sur <span class="ui">Connect with GitHub</span>. Une fenêtre résume les étapes : cliquez sur <span class="ui">Open sign-in window</span>.</li>
-              <li>Dans la fenêtre de connexion qui s’ouvre, répondez <strong>Yes</strong> si on vous demande d’authentifier Git avec vos identifiants GitHub.</li>
+              <li>Dans la fenêtre de connexion qui s’ouvre, répondez <strong>Yes</strong> si on vous demande d’authentifier Git avec vos identifiants GitHub. Au besoin, connectez-vous à GitHub dans le navigateur.</li>
               <li>Un <strong>code à usage unique</strong> s’affiche (il est aussi copié dans le presse-papiers). Appuyez sur <kbd>Entrée</kbd> : le navigateur s’ouvre sur <code>github.com/login/device</code>.</li>
-              <li>Connectez-vous à GitHub si besoin, collez le code et autorisez l’accès.</li>
+              <li>Collez le code et autorisez l’accès.</li>
               <li>Revenez dans Slicer et cliquez sur <span class="ui">I have signed in</span>. Le statut affiche votre compte, et le bouton devient <span class="ui">Disconnect</span>.</li>
             </ol>
+            <h3>Mode local (hors ligne)</h3>
+            <p>Si GitHub est injoignable après <span class="ui">Continue</span>, la fenêtre <strong>Cannot reach GitHub</strong> propose :</p>
+            <ul>
+              <li><span class="ui">Try again</span> — retenter la connexion ;</li>
+              <li><span class="ui">Local mode</span> — travailler hors ligne avec les projets déjà présents sur cet ordinateur (Open, Save) ; Share, People (ajout), Assign, messages projet et notifications distantes restent indisponibles ;</li>
+              <li><span class="ui">Cancel</span> — annuler.</li>
+            </ul>
+            <p>En mode local, le statut ressemble à <em>Not connected — … (local mode)</em>. Le bouton reste <span class="ui">Connect with GitHub</span> pour revenir en ligne plus tard.</p>
             <h3>Se déconnecter</h3>
             <p><span class="ui">Disconnect</span> → <span class="ui">Sign out</span>. La prochaine connexion redemandera de se connecter dans le navigateur. C’est utile pour changer de compte ou sur un ordinateur partagé.</p>
-            <div class="callout"><span class="callout-ico">🔐</span><div><p>Certaines actions, comme supprimer un projet, demandent une autorisation GitHub supplémentaire. Une fenêtre <strong>GitHub permission</strong> vous guide ; terminez dans le navigateur puis cliquez sur <span class="ui">I have authorized</span>.</p></div></div>
-            <div class="callout warn"><span class="callout-ico">⚠️</span><div><p><strong>Cannot reach GitHub</strong> : vérifiez votre connexion Internet (ou un proxy d’établissement), puis réessayez.</p></div></div>
+            <div class="callout"><span class="callout-ico">🔐</span><div><p>Certaines actions, comme supprimer un projet sur GitHub, demandent une autorisation GitHub supplémentaire. Une fenêtre <strong>GitHub permission</strong> vous guide ; terminez dans le navigateur puis cliquez sur <span class="ui">I have authorized</span>.</p></div></div>
           </div>
 
           <div data-l="en">
+            <h3>Account already on this computer</h3>
+            <p>If the GitHub CLI is already signed in, a <strong>GitHub account</strong> window appears first: <em>This computer is already signed in to GitHub as …</em></p>
+            <ul>
+              <li><span class="ui">Continue</span> — keep that account (no browser flow).</li>
+              <li><span class="ui">Switch account</span> — sign out, then follow the web flow below.</li>
+              <li><span class="ui">Cancel</span> — cancel.</li>
+            </ul>
+            <h3>First sign-in (or Switch account)</h3>
             <ol class="steps">
               <li>Click <span class="ui">Connect with GitHub</span>. A window sums up the steps: click <span class="ui">Open sign-in window</span>.</li>
-              <li>In the sign-in window that opens, answer <strong>Yes</strong> if asked to authenticate Git with your GitHub credentials.</li>
+              <li>In the sign-in window that opens, answer <strong>Yes</strong> if asked to authenticate Git with your GitHub credentials. If needed, sign in to GitHub in the browser.</li>
               <li>A <strong>one-time code</strong> is shown (it is also copied to the clipboard). Press <kbd>Enter</kbd>: the browser opens <code>github.com/login/device</code>.</li>
-              <li>Sign in to GitHub if needed, paste the code and authorize.</li>
+              <li>Paste the code and authorize.</li>
               <li>Back in Slicer, click <span class="ui">I have signed in</span>. The status shows your account and the button becomes <span class="ui">Disconnect</span>.</li>
             </ol>
+            <h3>Local mode (offline)</h3>
+            <p>If GitHub is unreachable after <span class="ui">Continue</span>, the <strong>Cannot reach GitHub</strong> window offers:</p>
+            <ul>
+              <li><span class="ui">Try again</span> — retry the connection;</li>
+              <li><span class="ui">Local mode</span> — work offline with projects already on this computer (Open, Save); Share, People (add), Assign, project messages and remote notifications stay unavailable;</li>
+              <li><span class="ui">Cancel</span> — cancel.</li>
+            </ul>
+            <p>In local mode, the status looks like <em>Not connected — … (local mode)</em>. The button stays <span class="ui">Connect with GitHub</span> so you can go back online later.</p>
             <h3>Signing out</h3>
             <p><span class="ui">Disconnect</span> → <span class="ui">Sign out</span>. The next connection will ask you to sign in again in the browser. Useful to switch account or on a shared computer.</p>
-            <div class="callout"><span class="callout-ico">🔐</span><div><p>Some actions, such as deleting a project, need an extra GitHub permission. A <strong>GitHub permission</strong> window guides you; finish in the browser, then click <span class="ui">I have authorized</span>.</p></div></div>
-            <div class="callout warn"><span class="callout-ico">⚠️</span><div><p><strong>Cannot reach GitHub</strong>: check your Internet connection (or an institutional proxy), then try again.</p></div></div>
+            <div class="callout"><span class="callout-ico">🔐</span><div><p>Some actions, such as deleting a project on GitHub, need an extra GitHub permission. A <strong>GitHub permission</strong> window guides you; finish in the browser, then click <span class="ui">I have authorized</span>.</p></div></div>
           </div>
         </section>
 
@@ -355,33 +385,37 @@
 
           <div data-l="fr">
             <h3>Créer</h3>
+            <p>Avant de créer : choisissez un <strong>3D Volume</strong> et une <strong>Ontology map</strong>. Sans eux, <span class="ui">Create</span> reste grisé (<em>Create needs: 3D Volume, Ontology map.</em>). La <strong>Segmentation</strong> est optionnelle : si elle manque, BRAVIS en crée une vide aux dimensions du volume.</p>
             <ol class="steps">
               <li>Cliquez sur <span class="ui">Create</span>.</li>
               <li>Dans <strong>New project</strong>, saisissez un <strong>Project name</strong> et, si vous voulez, une <strong>Description</strong> courte.</li>
               <li>Validez avec <span class="ui">Create</span>. Le dépôt privé est créé sur GitHub, avec sa copie locale. Vous en êtes l’<strong>owner</strong>.</li>
             </ol>
+            <div class="callout tip"><span class="callout-ico">✅</span><div><p>Chaque segment doit s’appeler <code>Segment_ID</code> (ex. <code>Segment_64</code>), sans doublon d’ID. Sinon Create et Save sont refusés.</p></div></div>
             <h3>Ouvrir</h3>
             <ol class="steps">
               <li>Choisissez le projet dans la liste <strong>Project</strong>.</li>
-              <li>Cliquez sur <span class="ui">Open</span>. La copie locale est créée ou mise à jour, et le <strong>Version history</strong> apparaît.</li>
+              <li>Cliquez sur <span class="ui">Open</span>. À la <strong>première</strong> ouverture, la copie locale est clonée depuis GitHub. Les fois suivantes, Open charge uniquement la copie déjà présente sur cet ordinateur — sans fetch silencieux.</li>
             </ol>
-            <div class="callout"><span class="callout-ico">💡</span><div><p>Un projet suivi de <strong>(not on GitHub)</strong> est une copie locale dont le dépôt GitHub n’existe pas (supprimé ou jamais publié).</p></div></div>
+            <div class="callout"><span class="callout-ico">💡</span><div><p>Pour récupérer ce que les autres ont partagé, utilisez la cloche → <a href="#compare-shared">Compare with shared</a> (pas Open). Un projet déjà ouvert ne peut pas être rouvert (<em>This project is already open.</em>). Un projet suivi de <strong>(not on GitHub)</strong> est une copie locale dont le dépôt GitHub n’existe pas (supprimé ou jamais publié).</p></div></div>
             <p>Les projets auxquels vous êtes invité apparaissent après avoir accepté l’invitation (voir <a href="#people">People</a>).</p>
           </div>
 
           <div data-l="en">
             <h3>Create</h3>
+            <p>Before creating: pick a <strong>3D Volume</strong> and an <strong>Ontology map</strong>. Without them, <span class="ui">Create</span> stays disabled (<em>Create needs: 3D Volume, Ontology map.</em>). <strong>Segmentation</strong> is optional: if missing, BRAVIS creates an empty one matching the volume.</p>
             <ol class="steps">
               <li>Click <span class="ui">Create</span>.</li>
               <li>In <strong>New project</strong>, enter a <strong>Project name</strong> and, optionally, a short <strong>Description</strong>.</li>
               <li>Confirm with <span class="ui">Create</span>. The private repository is created on GitHub, with its local copy. You are its <strong>owner</strong>.</li>
             </ol>
+            <div class="callout tip"><span class="callout-ico">✅</span><div><p>Every segment must be named <code>Segment_ID</code> (e.g. <code>Segment_64</code>), with no duplicate IDs. Otherwise Create and Save are refused.</p></div></div>
             <h3>Open</h3>
             <ol class="steps">
               <li>Pick the project in the <strong>Project</strong> list.</li>
-              <li>Click <span class="ui">Open</span>. The local copy is created or updated, and the <strong>Version history</strong> appears.</li>
+              <li>Click <span class="ui">Open</span>. On the <strong>first</strong> open, the local copy is cloned from GitHub. Later opens only load the copy already on this computer — no silent fetch.</li>
             </ol>
-            <div class="callout"><span class="callout-ico">💡</span><div><p>A project followed by <strong>(not on GitHub)</strong> is a local copy whose GitHub repository does not exist (deleted or never published).</p></div></div>
+            <div class="callout"><span class="callout-ico">💡</span><div><p>To pick up what others shared, use the bell → <a href="#compare-shared">Compare with shared</a> (not Open). A project that is already open cannot be reopened (<em>This project is already open.</em>). A project followed by <strong>(not on GitHub)</strong> is a local copy whose GitHub repository does not exist (deleted or never published).</p></div></div>
             <p>Projects you are invited to appear once you accept the invitation (see <a href="#people">People</a>).</p>
           </div>
         </section>
@@ -401,23 +435,23 @@
           <div data-l="fr">
             <ol class="steps">
               <li>Chargez votre volume dans Slicer comme d’habitude (glisser-déposer ou <span class="ui">Add Data</span>).</li>
-              <li><strong>3D Volume</strong> : choisissez ce volume.</li>
-              <li><strong>Segmentation</strong> : choisissez la segmentation (ou une labelmap) à versionner.</li>
-              <li><strong>Ontology map (JSON)</strong> : choisissez <em>Allen Mouse Brain Atlas</em>, <em>Allen Human Brain Atlas</em>, ou chargez votre propre fichier via ⚙ → <span class="ui">Load JSON…</span>.</li>
+              <li><strong>3D Volume</strong> : choisissez ce volume (obligatoire pour Create et Save).</li>
+              <li><strong>Segmentation</strong> : choisissez la segmentation (ou une labelmap) à versionner. Pour Create, elle est optionnelle : une segmentation vide est créée si besoin.</li>
+              <li><strong>Ontology map (JSON)</strong> : choisissez <em>Allen Mouse Brain Atlas</em>, <em>Allen Human Brain Atlas</em>, ou chargez votre propre fichier via ⚙ → <span class="ui">Load JSON…</span>. Le premier choix est <strong>None</strong> ; un projet ouvert peut aussi afficher l’ontologie du dépôt. Obligatoire pour Create et Save.</li>
               <li>Annotez avec le <strong>Segment Editor</strong> de Slicer, puis enregistrez avec <a href="#save">Save</a>.</li>
             </ol>
-            <div class="callout tip"><span class="callout-ico">✅</span><div><p><strong>Nommage des segments</strong> : un segment est relié à une structure de l’ontologie par son identifiant, sous la forme <code>Segment_ID</code> (par exemple <code>Segment_64</code>). C’est ce qui permet à l’<a href="#anatomie">arbre anatomique</a> de savoir ce qui est annoté.</p></div></div>
+            <div class="callout tip"><span class="callout-ico">✅</span><div><p><strong>Nommage des segments</strong> : chaque segment doit s’appeler <code>Segment_ID</code> (par exemple <code>Segment_64</code>), sans doublon. C’est obligatoire pour Create et Save, et c’est ce qui permet à l’<a href="#anatomie">arbre anatomique</a> de savoir ce qui est annoté.</p></div></div>
           </div>
 
           <div data-l="en">
             <ol class="steps">
               <li>Load your volume in Slicer as usual (drag and drop or <span class="ui">Add Data</span>).</li>
-              <li><strong>3D Volume</strong>: pick that volume.</li>
-              <li><strong>Segmentation</strong>: pick the segmentation (or a labelmap) to version.</li>
-              <li><strong>Ontology map (JSON)</strong>: pick <em>Allen Mouse Brain Atlas</em>, <em>Allen Human Brain Atlas</em>, or load your own file via ⚙ → <span class="ui">Load JSON…</span>.</li>
+              <li><strong>3D Volume</strong>: pick that volume (required for Create and Save).</li>
+              <li><strong>Segmentation</strong>: pick the segmentation (or a labelmap) to version. For Create it is optional: an empty segmentation is created if needed.</li>
+              <li><strong>Ontology map (JSON)</strong>: pick <em>Allen Mouse Brain Atlas</em>, <em>Allen Human Brain Atlas</em>, or load your own file via ⚙ → <span class="ui">Load JSON…</span>. The first choice is <strong>None</strong>; an open project may also show the repo ontology. Required for Create and Save.</li>
               <li>Annotate with Slicer’s <strong>Segment Editor</strong>, then record with <a href="#save">Save</a>.</li>
             </ol>
-            <div class="callout tip"><span class="callout-ico">✅</span><div><p><strong>Segment naming</strong>: a segment is linked to an ontology structure through its id, as <code>Segment_ID</code> (for example <code>Segment_64</code>). That is how the <a href="#anatomie">anatomy tree</a> knows what is annotated.</p></div></div>
+            <div class="callout tip"><span class="callout-ico">✅</span><div><p><strong>Segment naming</strong>: every segment must be named <code>Segment_ID</code> (for example <code>Segment_64</code>), with no duplicates. Required for Create and Save, and that is how the <a href="#anatomie">anatomy tree</a> knows what is annotated.</p></div></div>
           </div>
         </section>
 
@@ -439,7 +473,7 @@
               <li><span class="ui">Export JSON…</span> : enregistrer l’ontologie actuelle dans un fichier.</li>
             </ul>
             <h3>L’éditeur</h3>
-            <p>Sélectionnez une structure puis utilisez <span class="ui">Add root</span>, <span class="ui">Add child</span>, <span class="ui">Rename</span> ou <span class="ui">Remove</span>. <span class="ui">Apply</span> valide les changements, <span class="ui">Cancel</span> les abandonne.</p>
+            <p>En haut : <strong>Atlas name</strong> (titre de l’ontologie) et <strong>Levels shown</strong> (profondeur affichée dans l’arbre ; 1 = racine seule). Sélectionnez une structure puis utilisez <span class="ui">Add root</span>, <span class="ui">Add child</span>, <span class="ui">Rename</span> ou <span class="ui">Remove</span>. <span class="ui">Apply</span> valide les changements, <span class="ui">Cancel</span> les abandonne.</p>
             <h3>Format JSON</h3>
             <p>Un objet racine avec <code>atlas_name</code> (titre) et <code>tree</code> (nœud racine). Chaque nœud a un <code>id</code> unique, un <code>symbol</code> (abréviation), un <code>name</code> et une liste <code>children</code> (vide pour une feuille).</p>
           </div>
@@ -452,7 +486,7 @@
               <li><span class="ui">Export JSON…</span>: save the current ontology to a file.</li>
             </ul>
             <h3>The editor</h3>
-            <p>Select a structure, then use <span class="ui">Add root</span>, <span class="ui">Add child</span>, <span class="ui">Rename</span> or <span class="ui">Remove</span>. <span class="ui">Apply</span> keeps the changes, <span class="ui">Cancel</span> drops them.</p>
+            <p>At the top: <strong>Atlas name</strong> (ontology title) and <strong>Levels shown</strong> (tree depth to display; 1 = root only). Select a structure, then use <span class="ui">Add root</span>, <span class="ui">Add child</span>, <span class="ui">Rename</span> or <span class="ui">Remove</span>. <span class="ui">Apply</span> keeps the changes, <span class="ui">Cancel</span> drops them.</p>
             <h3>JSON format</h3>
             <p>A root object with <code>atlas_name</code> (title) and <code>tree</code> (root node). Each node has a unique <code>id</code>, a <code>symbol</code> (abbreviation), a <code>name</code> and a <code>children</code> list (empty for a leaf).</p>
           </div>
@@ -731,19 +765,18 @@
             <ol class="steps">
               <li>Ouvrez <span class="ui">Compare with shared</span> (souvent depuis la cloche).</li>
               <li>Deux graphes côte à côte : <strong>Local (this computer)</strong> et <strong>Shared (remote)</strong>. Les cadres rouges en pointillés marquent les versions qui diffèrent.</li>
-              <li>Dans <strong>Conflicts</strong>, choisissez une action. Le graphe <strong>Result (preview)</strong> montre le résultat ; des tirets verts indiquent ce qui vient du shared et ce qui reste à vous.</li>
-              <li>Cliquez sur <span class="ui">Validate</span> pour appliquer ce choix sur cet ordinateur.</li>
+              <li>Dans <strong>Conflicts</strong>, choisissez une action (selon le cas, certaines sont masquées). Le graphe <strong>Result (preview)</strong> montre le résultat ; des tirets verts indiquent ce qui vient du shared, ce qui reste à vous, ou un merge des deux.</li>
+              <li>Cliquez sur <span class="ui">Validate</span> pour appliquer ce choix sur cet ordinateur. Si vous avez choisi <span class="ui">Compare and merge</span>, le mode <strong>Compare and Merge</strong> s’ouvre ensuite entre votre tip local et le tip shared.</li>
             </ol>
             <div class="table-wrap"><table>
               <thead><tr><th>Action</th><th>Effet</th></tr></thead>
               <tbody>
-                <tr><td><span class="ui">Update version tree</span></td><td>Mettre à jour ce que vous voyez du shared sur cette machine.</td></tr>
-                <tr><td><span class="ui">Keep mine</span></td><td>Garder votre arbre tel quel pour l’instant ; le bout shared n’est pas appliqué.</td></tr>
-                <tr><td><span class="ui">Reset to shared</span></td><td>Aligner les branches en conflit sur le bout shared. Les autres branches locales restent. Attention : les versions locales en conflit quittent ces lignes.</td></tr>
-                <tr><td><span class="ui">Keep both (merge)</span></td><td>Garder les deux côtés en fusionnant les annotations. <em>Pas encore disponible.</em></td></tr>
+                <tr><td><span class="ui">Update version tree</span></td><td>Récupérer ce que le shared a en avance (branches déjà mergées ailleurs, etc.) sans écraser vos tips locaux en conflit. Présélectionné quand il n’y a pas de conflit de tips ; masqué s’il y en a.</td></tr>
+                <tr><td><span class="ui">Reset to shared</span> / <span class="ui">Reset all to shared</span></td><td>Aligner la ou les branches en conflit sur le bout shared. Les autres branches locales restent. Attention : les versions locales en conflit quittent ces lignes.</td></tr>
+                <tr><td><span class="ui">Compare and merge</span></td><td>Après Validate, ouvrir Compare and Merge entre votre tip local et le tip shared sur la branche. Avec plusieurs branches en conflit, le bouton devient <span class="ui">Reset or Compare and merge</span> et ouvre <strong>Resolve conflicting branches</strong> (choix par branche : Reset to shared ou Compare and merge).</td></tr>
               </tbody>
             </table></div>
-            <div class="callout warn"><span class="callout-ico">⚠️</span><div><p><strong>Regarder ne suffit pas.</strong> Il faut choisir une action et cliquer sur <span class="ui">Validate</span>. Et les collègues ne sont pas mis à jour tout seuls : chacun fait Compare / Update de son côté.</p></div></div>
+            <div class="callout warn"><span class="callout-ico">⚠️</span><div><p><strong>Regarder ne suffit pas.</strong> Il faut choisir une action et cliquer sur <span class="ui">Validate</span>. Les collègues ne sont pas mis à jour tout seuls : chacun fait Compare / Update de son côté.</p></div></div>
           </div>
           <div data-l="en">
             <h3>When to use it</h3>
@@ -755,19 +788,18 @@
             <ol class="steps">
               <li>Open <span class="ui">Compare with shared</span> (often from the bell).</li>
               <li>Two graphs side by side: <strong>Local (this computer)</strong> and <strong>Shared (remote)</strong>. Red dashed boxes mark versions that differ.</li>
-              <li>Under <strong>Conflicts</strong>, pick an action. The <strong>Result (preview)</strong> graph shows the outcome; green dashes show what comes from shared and what stays yours.</li>
-              <li>Click <span class="ui">Validate</span> to apply that choice on this computer.</li>
+              <li>Under <strong>Conflicts</strong>, pick an action (some are hidden depending on the case). The <strong>Result (preview)</strong> graph shows the outcome; green dashes show what comes from shared, what stays yours, or a merge of both.</li>
+              <li>Click <span class="ui">Validate</span> to apply that choice on this computer. If you chose <span class="ui">Compare and merge</span>, the <strong>Compare and Merge</strong> layout then opens between your local tip and the shared tip.</li>
             </ol>
             <div class="table-wrap"><table>
               <thead><tr><th>Action</th><th>Effect</th></tr></thead>
               <tbody>
-                <tr><td><span class="ui">Update version tree</span></td><td>Refresh what you see of shared on this machine.</td></tr>
-                <tr><td><span class="ui">Keep mine</span></td><td>Keep your tree as is for now; the shared tip is not applied.</td></tr>
-                <tr><td><span class="ui">Reset to shared</span></td><td>Align conflicting branches on the shared tip. Other local branches stay. Warning: conflicting local versions leave those lines.</td></tr>
-                <tr><td><span class="ui">Keep both (merge)</span></td><td>Keep both sides by merging annotations. <em>Not available yet.</em></td></tr>
+                <tr><td><span class="ui">Update version tree</span></td><td>Pull what shared is ahead on (branches already merged elsewhere, etc.) without overwriting your conflicting local tips. Preselected when there is no tip conflict; hidden when there is.</td></tr>
+                <tr><td><span class="ui">Reset to shared</span> / <span class="ui">Reset all to shared</span></td><td>Align the conflicting branch(es) on the shared tip. Other local branches stay. Warning: conflicting local versions leave those lines.</td></tr>
+                <tr><td><span class="ui">Compare and merge</span></td><td>After Validate, open Compare and Merge between your local tip and the shared tip on that branch. With several conflicting branches, the button becomes <span class="ui">Reset or Compare and merge</span> and opens <strong>Resolve conflicting branches</strong> (per branch: Reset to shared or Compare and merge).</td></tr>
               </tbody>
             </table></div>
-            <div class="callout warn"><span class="callout-ico">⚠️</span><div><p><strong>Looking is not enough.</strong> You must pick an action and click <span class="ui">Validate</span>. And colleagues are not updated automatically: each one runs Compare / Update on their side.</p></div></div>
+            <div class="callout warn"><span class="callout-ico">⚠️</span><div><p><strong>Looking is not enough.</strong> You must pick an action and click <span class="ui">Validate</span>. Colleagues are not updated automatically: each one runs Compare / Update on their side.</p></div></div>
           </div>
         </section>
 
@@ -1084,7 +1116,8 @@
                 <tr><td>Request review</td><td>—</td><td>✅</td></tr>
                 <tr><td>Accept and Merge / Decline</td><td>✅</td><td>—</td></tr>
                 <tr><td>Inviter / retirer (People)</td><td>Owner seulement</td><td>—</td></tr>
-                <tr><td>Delete project</td><td>Owner seulement</td><td>—</td></tr>
+                <tr><td>Delete — copie locale (This computer only)</td><td>✅</td><td>✅</td></tr>
+                <tr><td>Delete — GitHub and this computer</td><td>Owner seulement</td><td>—</td></tr>
               </tbody>
             </table></div>
           </div>
@@ -1106,7 +1139,8 @@
                 <tr><td>Request review</td><td>—</td><td>✅</td></tr>
                 <tr><td>Accept and Merge / Decline</td><td>✅</td><td>—</td></tr>
                 <tr><td>Invite / remove (People)</td><td>Owner only</td><td>—</td></tr>
-                <tr><td>Delete project</td><td>Owner only</td><td>—</td></tr>
+                <tr><td>Delete — local copy (This computer only)</td><td>✅</td><td>✅</td></tr>
+                <tr><td>Delete — GitHub and this computer</td><td>Owner only</td><td>—</td></tr>
               </tbody>
             </table></div>
           </div>
@@ -1123,16 +1157,24 @@
           <div data-l="fr">
             <h3>Une version locale</h3>
             <p>Sur une version en <strong>pointillés</strong>, <strong>Version details</strong> → <span class="ui">Delete</span> retire seulement cette version <strong>locale</strong>. Le projet partagé n’est pas touché. Une version déjà partagée ne peut pas être supprimée ainsi.</p>
-            <h3>Le projet (owner)</h3>
-            <p>Le bouton <span class="ui">Delete</span> du panneau supprime le <strong>projet distant</strong> sur GitHub. GitHub peut demander une autorisation supplémentaire (fenêtre <em>GitHub permission</em>).</p>
-            <div class="callout danger"><span class="callout-ico">⛔</span><div><p><strong>Irréversible.</strong> Toute l’équipe perd l’accès au projet partagé. Les copies locales restantes apparaissent alors avec la mention <em>(not on GitHub)</em>.</p></div></div>
+            <h3>Le projet</h3>
+            <p>Le bouton <span class="ui">Delete</span> du panneau ouvre <strong>Delete project</strong>. Selon votre rôle :</p>
+            <ul>
+              <li><strong>Owner</strong> (en ligne) : <span class="ui">This computer only</span> (garde GitHub) ou <span class="ui">GitHub and this computer</span> (supprime pour tout le monde ; fenêtre <em>GitHub permission</em> possible).</li>
+              <li><strong>Non-owner</strong>, <strong>mode local</strong>, ou projet <em>(not on GitHub)</em> : suppression de la <strong>copie locale</strong> uniquement.</li>
+            </ul>
+            <div class="callout danger"><span class="callout-ico">⛔</span><div><p><strong>GitHub and this computer</strong> est irréversible : toute l’équipe perd l’accès au projet partagé. Les copies locales restantes apparaissent alors avec la mention <em>(not on GitHub)</em>.</p></div></div>
           </div>
           <div data-l="en">
             <h3>A local version</h3>
             <p>On a <strong>dashed</strong> version, <strong>Version details</strong> → <span class="ui">Delete</span> removes only that <strong>local</strong> version. The shared project is untouched. An already shared version cannot be deleted this way.</p>
-            <h3>The project (owner)</h3>
-            <p>The panel’s <span class="ui">Delete</span> button deletes the <strong>remote project</strong> on GitHub. GitHub may ask for an extra permission (<em>GitHub permission</em> window).</p>
-            <div class="callout danger"><span class="callout-ico">⛔</span><div><p><strong>Irreversible.</strong> The whole team loses access to the shared project. Remaining local copies then show <em>(not on GitHub)</em>.</p></div></div>
+            <h3>The project</h3>
+            <p>The panel’s <span class="ui">Delete</span> button opens <strong>Delete project</strong>. Depending on your role:</p>
+            <ul>
+              <li><strong>Owner</strong> (online): <span class="ui">This computer only</span> (keeps GitHub) or <span class="ui">GitHub and this computer</span> (removes it for everyone; <em>GitHub permission</em> window may appear).</li>
+              <li><strong>Non-owner</strong>, <strong>local mode</strong>, or <em>(not on GitHub)</em> project: remove the <strong>local copy</strong> only.</li>
+            </ul>
+            <div class="callout danger"><span class="callout-ico">⛔</span><div><p><strong>GitHub and this computer</strong> is irreversible: the whole team loses access to the shared project. Remaining local copies then show <em>(not on GitHub)</em>.</p></div></div>
           </div>
         </section>
 
@@ -1227,7 +1269,7 @@
           <div data-l="fr">
             <ul>
               <li>Pas encore de « Share my workspace » ni de suivi en temps réel entre collègues.</li>
-              <li><em>Keep both (merge)</em> dans Compare with shared n’est pas encore disponible.</li>
+              <li>En <strong>mode local</strong>, Share, People (ajout), Assign, messages projet et notifications distantes sont indisponibles.</li>
               <li>La version de départ d’une tâche doit être sur <code>main</code> ; les départs depuis d’autres branches viendront plus tard.</li>
               <li>Les détails du Version tree peuvent être un peu plus lents sur certaines sous-branches (calculs de Merge). Une amélioration est prévue.</li>
               <li>Les collègues ne sont pas mis à jour automatiquement : chacun fait Compare / Update.</li>
@@ -1237,7 +1279,7 @@
           <div data-l="en">
             <ul>
               <li>No “Share my workspace” or real-time awareness between colleagues yet.</li>
-              <li><em>Keep both (merge)</em> in Compare with shared is not available yet.</li>
+              <li>In <strong>local mode</strong>, Share, People (add), Assign, project messages and remote notifications are unavailable.</li>
               <li>A task start version must be on <code>main</code>; starts from other branches will come later.</li>
               <li>Version tree details can be a little slower on some sub-branches (Merge computations). An improvement is planned.</li>
               <li>Colleagues are not updated automatically: each one runs Compare / Update.</li>

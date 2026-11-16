@@ -20,7 +20,7 @@ window.BRAVIS_VIDEOS = [
     id: "installation", file: "doc-installation.mp4", cat: "start", section: "installation",
     fr: { title: "Installer et charger l’extension", desc: "Ajouter le module à 3D Slicer et vérifier Git / GitHub CLI." },
     en: { title: "Install and load the extension", desc: "Add the module to 3D Slicer and check Git / GitHub CLI." },
-    hint: { fr: "Ajout du dossier dans Slicer, redémarrage, ouverture du module Collaborative Versioning.", en: "Add the folder in Slicer, restart, open the Collaborative Versioning module." }
+    hint: { fr: "Ajout du dossier dans Slicer, redémarrage, ouverture du module BRAVIS (Informatics).", en: "Add the folder in Slicer, restart, open the BRAVIS module (Informatics)." }
   },
   {
     id: "connexion", file: "doc-connexion.mp4", cat: "start", section: "connexion",
@@ -84,9 +84,9 @@ window.BRAVIS_VIDEOS = [
   },
   {
     id: "compare-shared", file: "compare-with-shared.mp4", cat: "versions", section: "compare-shared",
-    fr: { title: "Compare with shared", desc: "Local en retard : comparer, choisir une action, valider." },
-    en: { title: "Compare with shared", desc: "Local is behind: compare, pick an action, validate." },
-    hint: { fr: "", en: "" }
+    fr: { title: "Compare with shared", desc: "Local en retard : Update, Reset to shared ou Compare and merge, puis Validate." },
+    en: { title: "Compare with shared", desc: "Local is behind: Update, Reset to shared or Compare and merge, then Validate." },
+    hint: { fr: "Cloche ⚠ → Compare with shared → Update / Reset / Compare and merge → Validate.", en: "Bell ⚠ → Compare with shared → Update / Reset / Compare and merge → Validate." }
   },
   {
     id: "merge-compare", file: "merge-compare.mp4", cat: "versions", section: "merge",
@@ -132,9 +132,9 @@ window.BRAVIS_VIDEOS = [
   },
   {
     id: "delete", file: "doc-delete.mp4", cat: "collab", section: "delete",
-    fr: { title: "Supprimer une version locale ou un projet", desc: "Delete sur un nœud en pointillés, Delete project." },
-    en: { title: "Delete a local version or a project", desc: "Delete on a dashed node, Delete project." },
-    hint: { fr: "Détails d’un nœud en pointillés → Delete ; puis bouton Delete (owner) avec confirmation.", en: "Dashed node details → Delete; then the Delete button (owner) with confirmation." }
+    fr: { title: "Supprimer une version locale ou un projet", desc: "Delete sur un nœud en pointillés ; Delete project (local ou GitHub)." },
+    en: { title: "Delete a local version or a project", desc: "Delete on a dashed node; Delete project (local or GitHub)." },
+    hint: { fr: "Nœud en pointillés → Delete ; panneau Delete → This computer only ou GitHub and this computer (owner).", en: "Dashed node → Delete; panel Delete → This computer only or GitHub and this computer (owner)." }
   },
   {
     id: "scenario", file: "doc-scenario.mp4", cat: "tasks", section: "scenarios",
