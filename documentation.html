@@ -241,8 +241,8 @@ gh --version</code></pre>
         <section class="doc-section" id="interface" data-group="start">
           <h2><span class="num">02</span><span class="title"><span data-l="fr">L’interface</span><span data-l="en">The interface</span></span></h2>
           <p class="lead">
-            <span data-l="fr">Le module occupe deux zones de Slicer : un panneau à gauche pour les actions, et un panneau à droite pour explorer l’historique et suivre l’activité.</span>
-            <span data-l="en">The module uses two areas of Slicer: a left panel for actions, and a right panel to explore history and follow activity.</span>
+            <span data-l="fr">Le module occupe deux zones de Slicer : un panneau à gauche pour les actions, et un panneau à droite pour l’arbre anatomique, l’historique des versions et le fil d’activité.</span>
+            <span data-l="en">The module uses two areas of Slicer: a left panel for actions, and a right panel for the anatomy tree, version history and activity feed.</span>
           </p>
 
           <div class="ui-mock" aria-hidden="true">
@@ -274,8 +274,8 @@ gh --version</code></pre>
               <tbody>
                 <tr><td><span class="ui">Connect with GitHub</span></td><td>Se connecter (ou se déconnecter) de GitHub. La cloche 🔔 à côté ouvre les notifications.</td></tr>
                 <tr><td><strong>Project</strong></td><td>Liste de vos projets (ceux que vous possédez ou que vous avez rejoints).</td></tr>
-                <tr><td><strong>3D Volume / Segmentation</strong></td><td>Le volume et la segmentation de la scène Slicer à versionner.</td></tr>
-                <tr><td><strong>Ontology map (JSON)</strong></td><td>L’atlas utilisé (Allen Mouse, Allen Human ou votre JSON) et le menu ⚙.</td></tr>
+                <tr><td><strong>3D Volume / Segmentation</strong></td><td>Volume et segmentation actuellement sélectionnés.</td></tr>
+                <tr><td><strong>Ontology map (JSON)</strong></td><td>Choisit l’ontologie (Allen Mouse, Allen Human, ou un JSON perso). ⚙ ouvre load / edit / export.</td></tr>
                 <tr><td><span class="ui">Create</span> <span class="ui">People</span> <span class="ui">Delete</span></td><td>Créer un projet, gérer l’équipe, supprimer la copie locale (tous) ou le projet GitHub (owner).</td></tr>
                 <tr><td><span class="ui">Open</span> <span class="ui">Save</span> <span class="ui">Share</span></td><td>Ouvrir le projet choisi, enregistrer une version locale, la publier.</td></tr>
                 <tr><td><span class="ui">Tasks</span> <span class="ui">Messages</span></td><td>Les tâches assignées et le fil de discussion du projet. Un badge signale les nouveautés.</td></tr>
@@ -284,7 +284,7 @@ gh --version</code></pre>
             <h3>Panneau de droite</h3>
             <ul>
               <li><strong>Visual exploration</strong> : <span class="ui">View anatomy tree</span> et <span class="ui">View version tree</span> ouvrent les deux graphes.</li>
-              <li><strong>Version history</strong> : la version ouverte (<em>Checked out</em>) et un tableau des versions (Version, Date, Author, Message), avec les mêmes couleurs de branche que le Version tree.</li>
+              <li><strong>Version history</strong> : une autre représentation de l’historique — la version ouverte (<em>Checked out</em>) et un tableau des versions (Version, Date, Author, Message), en complément du graphe Version tree.</li>
               <li><strong>Live activity feed</strong> : le journal de ce que fait le module (connexion, ouverture, erreurs…). <span class="ui">Clear</span> le vide.</li>
             </ul>
             <div class="callout"><span class="callout-ico">💡</span><div><p>Pendant un Merge, la section <strong>Active project</strong> est remplacée par le panneau <strong>Compare and Merge</strong>. <span class="ui">Quit</span> rétablit l’affichage normal.</p></div></div>
@@ -297,8 +297,8 @@ gh --version</code></pre>
               <tbody>
                 <tr><td><span class="ui">Connect with GitHub</span></td><td>Sign in to (or out of) GitHub. The 🔔 bell next to it opens notifications.</td></tr>
                 <tr><td><strong>Project</strong></td><td>Your projects (the ones you own or have joined).</td></tr>
-                <tr><td><strong>3D Volume / Segmentation</strong></td><td>The Slicer scene volume and segmentation to version.</td></tr>
-                <tr><td><strong>Ontology map (JSON)</strong></td><td>The atlas in use (Allen Mouse, Allen Human or your JSON) and the ⚙ menu.</td></tr>
+                <tr><td><strong>3D Volume / Segmentation</strong></td><td>Volume and segmentation currently selected.</td></tr>
+                <tr><td><strong>Ontology map (JSON)</strong></td><td>Chooses the ontology (Allen Mouse, Allen Human, or a custom JSON). ⚙ opens load / edit / export.</td></tr>
                 <tr><td><span class="ui">Create</span> <span class="ui">People</span> <span class="ui">Delete</span></td><td>Create a project, manage the team, remove the local copy (anyone) or the GitHub project (owner).</td></tr>
                 <tr><td><span class="ui">Open</span> <span class="ui">Save</span> <span class="ui">Share</span></td><td>Open the selected project, save a local version, publish it.</td></tr>
                 <tr><td><span class="ui">Tasks</span> <span class="ui">Messages</span></td><td>Assigned tasks and the project chat. A badge flags anything new.</td></tr>
@@ -307,7 +307,7 @@ gh --version</code></pre>
             <h3>Right panel</h3>
             <ul>
               <li><strong>Visual exploration</strong>: <span class="ui">View anatomy tree</span> and <span class="ui">View version tree</span> open the two graphs.</li>
-              <li><strong>Version history</strong>: the open version (<em>Checked out</em>) and a table of versions (Version, Date, Author, Message), using the same branch colors as the Version tree.</li>
+              <li><strong>Version history</strong>: another view of the history — the open version (<em>Checked out</em>) and a table of versions (Version, Date, Author, Message), alongside the Version tree graph.</li>
               <li><strong>Live activity feed</strong>: a log of what the module does (sign-in, opening, errors…). <span class="ui">Clear</span> empties it.</li>
             </ul>
             <div class="callout"><span class="callout-ico">💡</span><div><p>During a Merge, the <strong>Active project</strong> section is replaced by the <strong>Compare and Merge</strong> panel. <span class="ui">Quit</span> restores the normal layout.</p></div></div>
