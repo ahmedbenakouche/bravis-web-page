@@ -169,8 +169,8 @@
         <section class="doc-section" id="installation" data-group="start">
           <h2><span class="num">01</span><span class="title"><span data-l="fr">Installation et prérequis</span><span data-l="en">Installation &amp; requirements</span></span></h2>
           <p class="lead">
-            <span data-l="fr">BRAVIS est un module Python de 3D Slicer (catégorie <em>Informatics</em>). Dans la liste des modules, il apparaît sous le nom <strong>BRAVIS</strong>. Il s’appuie sur Git et sur la GitHub CLI pour enregistrer et partager les versions.</span>
-            <span data-l="en">BRAVIS is a 3D Slicer Python module (<em>Informatics</em> category). In the module list it appears as <strong>BRAVIS</strong>. It relies on Git and the GitHub CLI to record and share versions.</span>
+            <span data-l="fr">BRAVIS n’est pas encore publié comme extension officielle de 3D Slicer : le projet est encore en développement, donc il n’apparaît pas dans l’<strong>Extensions Manager</strong>. Pour l’instant, on l’installe à la main (dossier du dépôt + chemin de module), comme ci-dessous.</span>
+            <span data-l="en">BRAVIS is not published yet as an official 3D Slicer extension: the project is still in development, so it does not appear in the <strong>Extensions Manager</strong>. For now, install it manually (repository folder + module path), as below.</span>
           </p>
           <figure class="video-slot" data-video="installation"></figure>
 
@@ -178,54 +178,62 @@
             <h3>Ce qu’il vous faut</h3>
             <ul>
               <li><strong>3D Slicer</strong>, version récente.</li>
-              <li><strong>Git</strong> installé et accessible depuis le terminal (<code>git --version</code>).</li>
-              <li><strong>GitHub CLI</strong> (<code>gh</code>) installée et accessible (<code>gh --version</code>).</li>
+              <li><strong>Git</strong> et <strong>GitHub CLI</strong> (<code>gh</code>), accessibles depuis le terminal.</li>
               <li>Un <strong>compte GitHub</strong>.</li>
               <li>Le paquet Python <strong><code>xxhash</code></strong> dans le Python de Slicer.</li>
             </ul>
 
-            <h3>Installer le module</h3>
+            <h3>Installer Git et GitHub CLI</h3>
             <ol class="steps">
-              <li>Récupérez le dossier de l’extension. Il contient un fichier <code>CMakeLists.txt</code> et un dossier <code>CollaborativeVersioning</code>.</li>
+              <li>Installez <strong>Git</strong> : <a href="https://git-scm.com/downloads" target="_blank" rel="noopener">git-scm.com/downloads</a>.</li>
+              <li>Installez <strong>GitHub CLI</strong> : <a href="https://cli.github.com/" target="_blank" rel="noopener">cli.github.com</a>.</li>
+              <li>Vérifiez dans un terminal :</li>
+            </ol>
+            <pre><code>git --version
+gh --version</code></pre>
+
+            <h3>Installer le module <span style="font-weight: 400">(la vidéo ci-dessus montre ces étapes)</span></h3>
+            <ol class="steps">
+              <li>Depuis le dépôt GitHub du projet (bouton <strong>Code</strong> du site) : <span class="ui">Code</span> → <span class="ui">Download ZIP</span>, puis décompressez l’archive.</li>
               <li>Dans Slicer, ouvrez <span class="ui">Edit</span> → <span class="ui">Application Settings</span> → <span class="ui">Modules</span>.</li>
-              <li>Dans <strong>Additional module paths</strong>, ajoutez le dossier <code>CollaborativeVersioning</code> (celui qui contient <code>CollaborativeVersioning.py</code>).</li>
+              <li>Dans <strong>Additional module paths</strong>, cliquez sur le bouton pour ajouter un chemin et sélectionnez le dossier <code>CollaborativeVersioning</code>.</li>
+              <li>Installez <code>xxhash</code> : console Python (<span class="ui">View</span> → <span class="ui">Python Console</span>), puis :
+                <pre><code>slicer.util.pip_install("xxhash")</code></pre>
+              </li>
               <li>Redémarrez Slicer.</li>
               <li>Ouvrez le module : liste des modules → <strong>Informatics</strong> → <strong>BRAVIS</strong>.</li>
             </ol>
-            <p>Alternative pour les développeurs : <span class="ui">Developer Tools</span> → <span class="ui">Extension Wizard</span> → <span class="ui">Select Extension</span>, puis choisir le dossier de l’extension.</p>
-
-            <h3>Installer <code>xxhash</code></h3>
-            <p>Dans Slicer, ouvrez la console Python (<span class="ui">View</span> → <span class="ui">Python Console</span>) et lancez :</p>
-            <pre><code>slicer.util.pip_install("xxhash")</code></pre>
-
-            <div class="callout warn"><span class="callout-ico">⚠️</span><div><p><strong>Git ou gh introuvable ?</strong> Après avoir installé Git ou la GitHub CLI, redémarrez Slicer pour qu’il les trouve dans le <code>PATH</code>.</p></div></div>
           </div>
 
           <div data-l="en">
             <h3>What you need</h3>
             <ul>
               <li><strong>3D Slicer</strong>, a recent version.</li>
-              <li><strong>Git</strong> installed and reachable from the terminal (<code>git --version</code>).</li>
-              <li><strong>GitHub CLI</strong> (<code>gh</code>) installed and reachable (<code>gh --version</code>).</li>
+              <li><strong>Git</strong> and <strong>GitHub CLI</strong> (<code>gh</code>), reachable from the terminal.</li>
               <li>A <strong>GitHub account</strong>.</li>
               <li>The <strong><code>xxhash</code></strong> Python package in Slicer’s Python.</li>
             </ul>
 
-            <h3>Install the module</h3>
+            <h3>Install Git and GitHub CLI</h3>
             <ol class="steps">
-              <li>Get the extension folder. It contains a <code>CMakeLists.txt</code> file and a <code>CollaborativeVersioning</code> folder.</li>
+              <li>Install <strong>Git</strong>: <a href="https://git-scm.com/downloads" target="_blank" rel="noopener">git-scm.com/downloads</a>.</li>
+              <li>Install <strong>GitHub CLI</strong>: <a href="https://cli.github.com/" target="_blank" rel="noopener">cli.github.com</a>.</li>
+              <li>Check in a terminal:</li>
+            </ol>
+            <pre><code>git --version
+gh --version</code></pre>
+
+            <h3>Install the module <span style="font-weight: 400">(the video above walks through these steps)</span></h3>
+            <ol class="steps">
+              <li>From the project’s GitHub repository (site <strong>Code</strong> button): <span class="ui">Code</span> → <span class="ui">Download ZIP</span>, then unzip the archive.</li>
               <li>In Slicer, open <span class="ui">Edit</span> → <span class="ui">Application Settings</span> → <span class="ui">Modules</span>.</li>
-              <li>Under <strong>Additional module paths</strong>, add the <code>CollaborativeVersioning</code> folder (the one containing <code>CollaborativeVersioning.py</code>).</li>
+              <li>Under <strong>Additional module paths</strong>, click the button to add a path and select the <code>CollaborativeVersioning</code> folder.</li>
+              <li>Install <code>xxhash</code>: open the Python console (<span class="ui">View</span> → <span class="ui">Python Console</span>), then run:
+                <pre><code>slicer.util.pip_install("xxhash")</code></pre>
+              </li>
               <li>Restart Slicer.</li>
               <li>Open the module: module list → <strong>Informatics</strong> → <strong>BRAVIS</strong>.</li>
             </ol>
-            <p>Developer alternative: <span class="ui">Developer Tools</span> → <span class="ui">Extension Wizard</span> → <span class="ui">Select Extension</span>, then pick the extension folder.</p>
-
-            <h3>Install <code>xxhash</code></h3>
-            <p>In Slicer, open the Python console (<span class="ui">View</span> → <span class="ui">Python Console</span>) and run:</p>
-            <pre><code>slicer.util.pip_install("xxhash")</code></pre>
-
-            <div class="callout warn"><span class="callout-ico">⚠️</span><div><p><strong>Git or gh not found?</strong> After installing Git or the GitHub CLI, restart Slicer so it finds them on the <code>PATH</code>.</p></div></div>
           </div>
         </section>
 

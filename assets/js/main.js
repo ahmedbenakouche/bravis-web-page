@@ -338,6 +338,54 @@
     document.querySelectorAll("[data-year]").forEach(function (n) { n.textContent = new Date().getFullYear(); });
   }
 
+  /* ---------- Copy button on <pre><code> blocks ---------- */
+  function initCodeCopy() {
+    document.querySelectorAll("pre > code").forEach(function (code) {
+      var pre = code.parentElement;
+      if (!pre || pre.closest(".code-block")) return;
+      var wrap = el("div", { class: "code-block" });
+      pre.parentNode.insertBefore(wrap, pre);
+      wrap.appendChild(pre);
+      var btn = el("button", {
+        type: "button",
+        class: "code-copy",
+        "data-fr-aria-label": "Copier",
+        "data-en-aria-label": "Copy",
+        "aria-label": lang() === "en" ? "Copy" : "Copier",
+        text: lang() === "en" ? "Copy" : "Copier"
+      });
+      btn.addEventListener("click", function () {
+        var text = code.textContent || "";
+        var done = function () {
+          btn.textContent = lang() === "en" ? "Copied" : "Copié";
+          btn.classList.add("is-copied");
+          toast("Copié", "Copied");
+          clearTimeout(btn._t);
+          btn._t = setTimeout(function () {
+            btn.textContent = lang() === "en" ? "Copy" : "Copier";
+            btn.classList.remove("is-copied");
+          }, 1600);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done, done);
+        } else {
+          done();
+        }
+      });
+      wrap.appendChild(btn);
+    });
+    document.addEventListener("bravis:lang", function () {
+      document.querySelectorAll(".code-copy").forEach(function (btn) {
+        if (btn.classList.contains("is-copied")) {
+          btn.textContent = lang() === "en" ? "Copied" : "Copié";
+        } else {
+          btn.textContent = lang() === "en" ? "Copy" : "Copier";
+        }
+        btn.setAttribute("aria-label", lang() === "en" ? "Copy" : "Copier");
+      });
+    });
+  }
+
   window.BRAVIS = {
     isLocal: isLocal,
     lang: lang,
@@ -359,4 +407,5 @@
   initLightbox();
   initReveal();
   initYear();
+  initCodeCopy();
 })();

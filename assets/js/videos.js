@@ -20,7 +20,7 @@ window.BRAVIS_VIDEOS = [
     id: "installation", file: "doc-installation.mp4", cat: "start", section: "installation",
     fr: { title: "Installer et charger l’extension", desc: "Ajouter le module à 3D Slicer et vérifier Git / GitHub CLI." },
     en: { title: "Install and load the extension", desc: "Add the module to 3D Slicer and check Git / GitHub CLI." },
-    hint: { fr: "Ajout du dossier dans Slicer, redémarrage, ouverture du module BRAVIS (Informatics).", en: "Add the folder in Slicer, restart, open the BRAVIS module (Informatics)." }
+    hint: { fr: "Download ZIP → Additional module paths → pip_install xxhash → redémarrage → Informatics → BRAVIS.", en: "Download ZIP → Additional module paths → pip_install xxhash → restart → Informatics → BRAVIS." }
   },
   {
     id: "connexion", file: "doc-connexion.mp4", cat: "start", section: "connexion",
