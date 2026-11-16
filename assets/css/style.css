@@ -582,16 +582,6 @@ pre code { background: none; padding: 0; color: var(--text-soft); white-space: p
 .doc-section h2:hover .anchor-btn, .anchor-btn:focus-visible { opacity: 1; }
 .anchor-btn:hover { color: var(--accent); }
 
-.doc-pager { display: flex; justify-content: space-between; gap: 1rem; margin-top: 2rem; }
-.doc-pager a {
-  flex: 1 1 0; max-width: 48%; padding: .8rem 1rem; border-radius: var(--radius-sm);
-  border: 1px solid var(--border); background: var(--surface); color: var(--text-soft); font-size: .9rem;
-  transition: border-color .2s, color .2s;
-}
-.doc-pager a:hover { border-color: var(--accent); color: var(--text); text-decoration: none; }
-.doc-pager a small { display: block; color: var(--muted); font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
-.doc-pager a.next { text-align: right; margin-left: auto; }
-
 .search-empty { display: none; padding: 3rem 1rem; text-align: center; color: var(--muted); border: 2px dashed var(--border); border-radius: var(--radius); }
 .search-empty.is-visible { display: block; }
 
@@ -792,7 +782,7 @@ details.faq .faq-body p:last-child, details.faq .faq-body ul:last-child, details
 }
 
 @media print {
-  .site-header, .site-footer, .doc-sidebar, .doc-toc-toggle, .to-top, .video-slot, .doc-pager, .anchor-btn { display: none !important; }
+  .site-header, .site-footer, .doc-sidebar, .doc-toc-toggle, .to-top, .video-slot, .anchor-btn { display: none !important; }
   body { background: #fff; color: #000; }
   .doc-layout { display: block; }
   .doc-section { break-inside: avoid-page; }

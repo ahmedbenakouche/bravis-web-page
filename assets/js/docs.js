@@ -12,11 +12,6 @@
   }
   var index = sections.map(function (s) { return normalize(s.textContent); });
 
-  function titleHtml(section) {
-    var t = section.querySelector("h2 .title");
-    return t ? t.innerHTML : section.id;
-  }
-
   /* ---------- Copy-link buttons on chapter titles ---------- */
   sections.forEach(function (section) {
     var h2 = section.querySelector("h2");
@@ -35,22 +30,6 @@
       else done();
     });
     h2.appendChild(btn);
-  });
-
-  /* ---------- Previous / next at the end of each chapter ---------- */
-  sections.forEach(function (section, i) {
-    var pager = B.el("nav", { class: "doc-pager", "aria-label": "Pagination" });
-    function item(target, cls, fr, en) {
-      var a = B.el("a", { href: "#" + target.id, class: cls });
-      var small = B.el("small");
-      small.appendChild(B.bi(fr, en));
-      a.appendChild(small);
-      a.appendChild(B.el("span", { html: titleHtml(target) }));
-      return a;
-    }
-    if (sections[i - 1]) pager.appendChild(item(sections[i - 1], "prev", "← Précédent", "← Previous"));
-    if (sections[i + 1]) pager.appendChild(item(sections[i + 1], "next", "Suivant →", "Next →"));
-    section.appendChild(pager);
   });
 
   /* ---------- Video marker in the table of contents ---------- */
