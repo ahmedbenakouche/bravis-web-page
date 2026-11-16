@@ -26,7 +26,7 @@ window.BRAVIS_VIDEOS = [
     id: "connexion", file: "doc-connexion.mp4", cat: "start", section: "connexion",
     fr: { title: "Se connecter à GitHub", desc: "Connect with GitHub, code à usage unique, I have signed in." },
     en: { title: "Connect to GitHub", desc: "Connect with GitHub, one-time code, I have signed in." },
-    hint: { fr: "Clic sur Connect with GitHub, fenêtre de connexion, code collé dans le navigateur, statut connecté.", en: "Click Connect with GitHub, sign-in window, code pasted in the browser, connected status." }
+    hint: { fr: "Connect with GitHub → Open sign-in → Yes → code → navigateur → I have signed in (+ Continue optionnel).", en: "Connect with GitHub → Open sign-in → Yes → code → browser → I have signed in (+ optional Continue)." }
   },
   {
     id: "projet", file: "doc-projet.mp4", cat: "start", section: "projet",

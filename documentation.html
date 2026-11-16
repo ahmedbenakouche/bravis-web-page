@@ -318,27 +318,28 @@ gh --version</code></pre>
         <section class="doc-section" id="connexion" data-group="start">
           <h2><span class="num">03</span><span class="title"><span data-l="fr">Connexion GitHub</span><span data-l="en">GitHub sign-in</span></span></h2>
           <p class="lead">
-            <span data-l="fr">La connexion passe par la GitHub CLI et un code à usage unique, sans jamais saisir votre mot de passe dans Slicer.</span>
-            <span data-l="en">Sign-in goes through the GitHub CLI and a one-time code, without ever typing your password into Slicer.</span>
+            <span data-l="fr">Il vous faut un <strong>compte GitHub</strong> (créez-en un sur github.com si besoin — cette étape se fait hors de BRAVIS). La connexion passe par la <strong>GitHub CLI</strong> et ouvre une page dans le <strong>navigateur</strong> pour vous authentifier sur GitHub comme d’habitude. Les connexions suivantes sur cet ordinateur peuvent réutiliser le compte enregistré, sans refaire tout le flux navigateur — voir <em>Première connexion</em> et <em>Compte déjà présent</em> ci-dessous.</span>
+            <span data-l="en">You need a <strong>GitHub account</strong> (create one on github.com if you don’t have one — that step is outside BRAVIS). Sign-in uses the <strong>GitHub CLI</strong> and opens a <strong>browser</strong> page so you authenticate with GitHub as usual. Later connections on this computer can reuse the saved account without repeating the full browser flow — see <em>First sign-in</em> and <em>Account already on this computer</em> below.</span>
           </p>
-          <figure class="video-slot" data-video="connexion"></figure>
+          <figure class="video-slot" data-video="connexion" data-no-caption></figure>
 
           <div data-l="fr">
-            <h3>Compte déjà présent sur cet ordinateur</h3>
-            <p>Si la GitHub CLI est déjà connectée, une fenêtre <strong>GitHub account</strong> s’affiche d’abord : <em>This computer is already signed in to GitHub as …</em></p>
-            <ul>
-              <li><span class="ui">Continue</span> — reprendre ce compte (sans rouvrir le navigateur).</li>
-              <li><span class="ui">Switch account</span> — se déconnecter puis refaire le parcours web ci-dessous.</li>
-              <li><span class="ui">Cancel</span> — annuler.</li>
-            </ul>
-            <h3>Première connexion (ou Switch account)</h3>
+            <h3>Première connexion (ou Switch account) <span style="font-weight: 400">(la vidéo ci-dessus montre ces étapes)</span></h3>
+            <p>La première fois (ou après <span class="ui">Switch account</span>), BRAVIS ouvre un parcours navigateur pour lier votre compte GitHub.</p>
             <ol class="steps">
               <li>Cliquez sur <span class="ui">Connect with GitHub</span>. Une fenêtre résume les étapes : cliquez sur <span class="ui">Open sign-in window</span>.</li>
-              <li>Dans la fenêtre de connexion qui s’ouvre, répondez <strong>Yes</strong> si on vous demande d’authentifier Git avec vos identifiants GitHub. Au besoin, connectez-vous à GitHub dans le navigateur.</li>
+              <li>Dans la fenêtre de connexion qui s’ouvre, répondez <strong>Yes</strong> si on vous demande d’authentifier Git avec vos identifiants GitHub.</li>
               <li>Un <strong>code à usage unique</strong> s’affiche (il est aussi copié dans le presse-papiers). Appuyez sur <kbd>Entrée</kbd> : le navigateur s’ouvre sur <code>github.com/login/device</code>.</li>
-              <li>Collez le code et autorisez l’accès.</li>
+              <li>Si besoin, connectez-vous à votre compte GitHub dans le navigateur (e-mail et mot de passe, ou votre méthode habituelle). Puis collez le code et autorisez l’accès.</li>
               <li>Revenez dans Slicer et cliquez sur <span class="ui">I have signed in</span>. Le statut affiche votre compte, et le bouton devient <span class="ui">Disconnect</span>.</li>
             </ol>
+            <h3>Compte déjà présent sur cet ordinateur</h3>
+            <p>Une fois la GitHub CLI connectée sur cet ordinateur, BRAVIS propose de réutiliser ce compte au lieu de rouvrir le navigateur.</p>
+            <ul>
+              <li><span class="ui">Continue</span> — reprendre ce compte (sans rouvrir le navigateur).</li>
+              <li><span class="ui">Switch account</span> — se déconnecter puis refaire le parcours <em>Première connexion</em> ci-dessus.</li>
+              <li><span class="ui">Cancel</span> — annuler.</li>
+            </ul>
             <h3>Mode local (hors ligne)</h3>
             <p>Si GitHub est injoignable après <span class="ui">Continue</span>, la fenêtre <strong>Cannot reach GitHub</strong> propose :</p>
             <ul>
@@ -346,28 +347,28 @@ gh --version</code></pre>
               <li><span class="ui">Local mode</span> — travailler hors ligne avec les projets déjà présents sur cet ordinateur (Open, Save) ; Share, People (ajout), Assign, messages projet et notifications distantes restent indisponibles ;</li>
               <li><span class="ui">Cancel</span> — annuler.</li>
             </ul>
-            <p>En mode local, le statut ressemble à <em>Not connected — … (local mode)</em>. Le bouton reste <span class="ui">Connect with GitHub</span> pour revenir en ligne plus tard.</p>
+            <p>En mode local, le statut ressemble à <em>Not connected — yourlogin (local mode)</em> (avec votre nom d’utilisateur GitHub). Le bouton reste <span class="ui">Connect with GitHub</span> pour revenir en ligne plus tard.</p>
             <h3>Se déconnecter</h3>
             <p><span class="ui">Disconnect</span> → <span class="ui">Sign out</span>. La prochaine connexion redemandera de se connecter dans le navigateur. C’est utile pour changer de compte ou sur un ordinateur partagé.</p>
-            <div class="callout"><span class="callout-ico">🔐</span><div><p>Certaines actions, comme supprimer un projet sur GitHub, demandent une autorisation GitHub supplémentaire. Une fenêtre <strong>GitHub permission</strong> vous guide ; terminez dans le navigateur puis cliquez sur <span class="ui">I have authorized</span>.</p></div></div>
           </div>
 
           <div data-l="en">
-            <h3>Account already on this computer</h3>
-            <p>If the GitHub CLI is already signed in, a <strong>GitHub account</strong> window appears first: <em>This computer is already signed in to GitHub as …</em></p>
-            <ul>
-              <li><span class="ui">Continue</span> — keep that account (no browser flow).</li>
-              <li><span class="ui">Switch account</span> — sign out, then follow the web flow below.</li>
-              <li><span class="ui">Cancel</span> — cancel.</li>
-            </ul>
-            <h3>First sign-in (or Switch account)</h3>
+            <h3>First sign-in (or Switch account) <span style="font-weight: 400">(the video above walks through these steps)</span></h3>
+            <p>The first time (or after <span class="ui">Switch account</span>), BRAVIS opens a browser flow to link your GitHub account.</p>
             <ol class="steps">
               <li>Click <span class="ui">Connect with GitHub</span>. A window sums up the steps: click <span class="ui">Open sign-in window</span>.</li>
-              <li>In the sign-in window that opens, answer <strong>Yes</strong> if asked to authenticate Git with your GitHub credentials. If needed, sign in to GitHub in the browser.</li>
+              <li>In the sign-in window that opens, answer <strong>Yes</strong> if asked to authenticate Git with your GitHub credentials.</li>
               <li>A <strong>one-time code</strong> is shown (it is also copied to the clipboard). Press <kbd>Enter</kbd>: the browser opens <code>github.com/login/device</code>.</li>
-              <li>Paste the code and authorize.</li>
+              <li>If needed, sign in to your GitHub account in the browser (email and password, or your usual GitHub sign-in). Then paste the code and authorize.</li>
               <li>Back in Slicer, click <span class="ui">I have signed in</span>. The status shows your account and the button becomes <span class="ui">Disconnect</span>.</li>
             </ol>
+            <h3>Account already on this computer</h3>
+            <p>Once the GitHub CLI is signed in on this computer, BRAVIS offers to reuse that account instead of opening the browser again.</p>
+            <ul>
+              <li><span class="ui">Continue</span> — keep that account (no browser flow).</li>
+              <li><span class="ui">Switch account</span> — sign out, then follow the <em>First sign-in</em> flow above.</li>
+              <li><span class="ui">Cancel</span> — cancel.</li>
+            </ul>
             <h3>Local mode (offline)</h3>
             <p>If GitHub is unreachable after <span class="ui">Continue</span>, the <strong>Cannot reach GitHub</strong> window offers:</p>
             <ul>
@@ -375,10 +376,9 @@ gh --version</code></pre>
               <li><span class="ui">Local mode</span> — work offline with projects already on this computer (Open, Save); Share, People (add), Assign, project messages and remote notifications stay unavailable;</li>
               <li><span class="ui">Cancel</span> — cancel.</li>
             </ul>
-            <p>In local mode, the status looks like <em>Not connected — … (local mode)</em>. The button stays <span class="ui">Connect with GitHub</span> so you can go back online later.</p>
+            <p>In local mode, the status looks like <em>Not connected — yourlogin (local mode)</em> (with your GitHub username). The button stays <span class="ui">Connect with GitHub</span> so you can go back online later.</p>
             <h3>Signing out</h3>
             <p><span class="ui">Disconnect</span> → <span class="ui">Sign out</span>. The next connection will ask you to sign in again in the browser. Useful to switch account or on a shared computer.</p>
-            <div class="callout"><span class="callout-ico">🔐</span><div><p>Some actions, such as deleting a project on GitHub, need an extra GitHub permission. A <strong>GitHub permission</strong> window guides you; finish in the browser, then click <span class="ui">I have authorized</span>.</p></div></div>
           </div>
         </section>
 
