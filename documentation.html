@@ -104,12 +104,6 @@
               <li><a href="#interface"><span data-l="fr">L’interface</span><span data-l="en">The interface</span></a></li>
               <li><a href="#connexion"><span data-l="fr">Connexion GitHub</span><span data-l="en">GitHub sign-in</span></a></li>
               <li><a href="#projet"><span data-l="fr">Créer ou ouvrir un projet</span><span data-l="en">Create or open a project</span></a></li>
-            </ol>
-          </div>
-          <div class="toc-group" data-group="data">
-            <p class="toc-group-title"><span data-l="fr">Données et atlas</span><span data-l="en">Data &amp; atlases</span></p>
-            <ol>
-              <li><a href="#donnees"><span data-l="fr">Volume, segmentation, ontologie</span><span data-l="en">Volume, segmentation, ontology</span></a></li>
               <li><a href="#ontologie"><span data-l="fr">Ontologies et éditeur</span><span data-l="en">Ontologies &amp; editor</span></a></li>
               <li><a href="#anatomie"><span data-l="fr">Arbre anatomique</span><span data-l="en">Anatomy tree</span></a></li>
             </ol>
@@ -425,43 +419,9 @@ gh --version</code></pre>
         </section>
 
         <!-- ======================= DATA ======================= -->
-        <p class="doc-group-title" data-group="data"><span data-l="fr">Données et atlas</span><span data-l="en">Data &amp; atlases</span></p>
-
-        <!-- 05 Données -->
-        <section class="doc-section" id="donnees" data-group="data">
-          <h2><span class="num">05</span><span class="title"><span data-l="fr">Volume, segmentation et ontologie</span><span data-l="en">Volume, segmentation and ontology</span></span></h2>
-          <p class="lead">
-            <span data-l="fr">BRAVIS versionne la segmentation d’un volume. Indiquez-lui quels éléments de la scène Slicer suivre.</span>
-            <span data-l="en">BRAVIS versions the segmentation of a volume. Tell it which items of the Slicer scene to track.</span>
-          </p>
-          <figure class="video-slot" data-video="donnees"></figure>
-
-          <div data-l="fr">
-            <ol class="steps">
-              <li>Chargez votre volume dans Slicer comme d’habitude (glisser-déposer ou <span class="ui">Add Data</span>).</li>
-              <li><strong>3D Volume</strong> : choisissez ce volume (obligatoire pour Create et Save).</li>
-              <li><strong>Segmentation</strong> : choisissez la segmentation (ou une labelmap) à versionner. Pour Create, elle est optionnelle : une segmentation vide est créée si besoin.</li>
-              <li><strong>Ontology map (JSON)</strong> : choisissez <em>Allen Mouse Brain Atlas</em>, <em>Allen Human Brain Atlas</em>, ou chargez votre propre fichier via ⚙ → <span class="ui">Load JSON…</span>. Le premier choix est <strong>None</strong> ; un projet ouvert peut aussi afficher l’ontologie du dépôt. Obligatoire pour Create et Save.</li>
-              <li>Annotez avec le <strong>Segment Editor</strong> de Slicer, puis enregistrez avec <a href="#save">Save</a>.</li>
-            </ol>
-            <div class="callout tip"><span class="callout-ico">✅</span><div><p><strong>Nommage des segments</strong> : chaque segment doit s’appeler <code>Segment_ID</code> (par exemple <code>Segment_64</code>), sans doublon. C’est obligatoire pour Create et Save, et c’est ce qui permet à l’<a href="#anatomie">arbre anatomique</a> de savoir ce qui est annoté.</p></div></div>
-          </div>
-
-          <div data-l="en">
-            <ol class="steps">
-              <li>Load your volume in Slicer as usual (drag and drop or <span class="ui">Add Data</span>).</li>
-              <li><strong>3D Volume</strong>: pick that volume (required for Create and Save).</li>
-              <li><strong>Segmentation</strong>: pick the segmentation (or a labelmap) to version. For Create it is optional: an empty segmentation is created if needed.</li>
-              <li><strong>Ontology map (JSON)</strong>: pick <em>Allen Mouse Brain Atlas</em>, <em>Allen Human Brain Atlas</em>, or load your own file via ⚙ → <span class="ui">Load JSON…</span>. The first choice is <strong>None</strong>; an open project may also show the repo ontology. Required for Create and Save.</li>
-              <li>Annotate with Slicer’s <strong>Segment Editor</strong>, then record with <a href="#save">Save</a>.</li>
-            </ol>
-            <div class="callout tip"><span class="callout-ico">✅</span><div><p><strong>Segment naming</strong>: every segment must be named <code>Segment_ID</code> (for example <code>Segment_64</code>), with no duplicates. Required for Create and Save, and that is how the <a href="#anatomie">anatomy tree</a> knows what is annotated.</p></div></div>
-          </div>
-        </section>
-
-        <!-- 06 Ontologie -->
-        <section class="doc-section" id="ontologie" data-group="data">
-          <h2><span class="num">06</span><span class="title"><span data-l="fr">Ontologies et éditeur</span><span data-l="en">Ontologies &amp; editor</span></span></h2>
+        <!-- Ontologie -->
+        <section class="doc-section" id="ontologie" data-group="start">
+          <h2><span class="num">05</span><span class="title"><span data-l="fr">Ontologies et éditeur</span><span data-l="en">Ontologies &amp; editor</span></span></h2>
           <p class="lead">
             <span data-l="fr">Une ontologie décrit la hiérarchie des structures anatomiques. Deux atlas Allen sont fournis ; vous pouvez aussi créer ou modifier la vôtre.</span>
             <span data-l="en">An ontology describes the hierarchy of anatomical structures. Two Allen atlases are included; you can also create or edit your own.</span>
@@ -506,11 +466,17 @@ gh --version</code></pre>
     ]
   }
 }</code></pre>
+          <div data-l="fr">
+            <div class="callout tip"><span class="callout-ico">✅</span><div><p><strong>Nommage des segments</strong> : chaque segment doit s’appeler <code>Segment_ID</code> (par exemple <code>Segment_64</code>), sans doublon. C’est obligatoire pour Create et Save, et c’est ce qui permet à l’<a href="#anatomie">arbre anatomique</a> de savoir ce qui est annoté.</p></div></div>
+          </div>
+          <div data-l="en">
+            <div class="callout tip"><span class="callout-ico">✅</span><div><p><strong>Segment naming</strong>: every segment must be named <code>Segment_ID</code> (for example <code>Segment_64</code>), with no duplicates. Required for Create and Save, and that is how the <a href="#anatomie">anatomy tree</a> knows what is annotated.</p></div></div>
+          </div>
         </section>
 
-        <!-- 07 Anatomie -->
-        <section class="doc-section" id="anatomie" data-group="data">
-          <h2><span class="num">07</span><span class="title"><span data-l="fr">Arbre anatomique</span><span data-l="en">Anatomy tree</span></span></h2>
+        <!-- Anatomie -->
+        <section class="doc-section" id="anatomie" data-group="start">
+          <h2><span class="num">06</span><span class="title"><span data-l="fr">Arbre anatomique</span><span data-l="en">Anatomy tree</span></span></h2>
           <p class="lead">
             <span data-l="fr"><span class="ui">View anatomy tree</span> affiche l’ontologie sous forme d’arbre et montre, structure par structure, ce qui est déjà annoté.</span>
             <span data-l="en"><span class="ui">View anatomy tree</span> shows the ontology as a tree and, structure by structure, what is already annotated.</span>
@@ -566,7 +532,7 @@ gh --version</code></pre>
 
         <!-- 08 Version tree -->
         <section class="doc-section" id="version-tree" data-group="versions">
-          <h2><span class="num">08</span><span class="title"><span data-l="fr">Lire le Version tree</span><span data-l="en">Reading the Version tree</span></span></h2>
+          <h2><span class="num">07</span><span class="title"><span data-l="fr">Lire le Version tree</span><span data-l="en">Reading the Version tree</span></span></h2>
           <p class="lead">
             <span data-l="fr"><span class="ui">View version tree</span> ouvre le graphe de toutes les versions du projet : branches, fusions, ce qui est partagé et ce qui ne l’est pas encore.</span>
             <span data-l="en"><span class="ui">View version tree</span> opens the graph of all project versions: branches, merges, what is shared and what is not yet.</span>
@@ -627,7 +593,7 @@ gh --version</code></pre>
 
         <!-- 09 Switch -->
         <section class="doc-section" id="switch" data-group="versions">
-          <h2><span class="num">09</span><span class="title">Switch version</span></h2>
+          <h2><span class="num">08</span><span class="title">Switch version</span></h2>
           <p class="lead">
             <span data-l="fr">Charger n’importe quelle version dans Slicer pour la consulter ou repartir de là.</span>
             <span data-l="en">Load any version in Slicer to look at it or start again from there.</span>
@@ -653,7 +619,7 @@ gh --version</code></pre>
 
         <!-- 10 Save -->
         <section class="doc-section" id="save" data-group="versions">
-          <h2><span class="num">10</span><span class="title">Save version</span></h2>
+          <h2><span class="num">09</span><span class="title">Save version</span></h2>
           <p class="lead">
             <span data-l="fr"><span class="ui">Save</span> enregistre l’état actuel comme une nouvelle version, <strong>sur votre ordinateur</strong>. Elle apparaît en pointillés jusqu’au Share.</span>
             <span data-l="en"><span class="ui">Save</span> records the current state as a new version, <strong>on your computer</strong>. It shows dashed until you Share.</span>
@@ -689,7 +655,7 @@ gh --version</code></pre>
 
         <!-- 11 Branches -->
         <section class="doc-section" id="branches" data-group="versions">
-          <h2><span class="num">11</span><span class="title"><span data-l="fr">Branches et sous-branches</span><span data-l="en">Branches &amp; sub-branches</span></span></h2>
+          <h2><span class="num">10</span><span class="title"><span data-l="fr">Branches et sous-branches</span><span data-l="en">Branches &amp; sub-branches</span></span></h2>
           <p class="lead">
             <span data-l="fr">Une branche permet d’essayer une annotation sans toucher à la ligne principale. On la crée depuis <span class="ui">Save</span> → <span class="ui">Create a branch</span>.</span>
             <span data-l="en">A branch lets you try an annotation without touching the main line. Create one from <span class="ui">Save</span> → <span class="ui">Create a branch</span>.</span>
@@ -715,7 +681,7 @@ gh --version</code></pre>
 
         <!-- 12 Share -->
         <section class="doc-section" id="share" data-group="versions">
-          <h2><span class="num">12</span><span class="title">Share</span></h2>
+          <h2><span class="num">11</span><span class="title">Share</span></h2>
           <p class="lead">
             <span data-l="fr"><span class="ui">Share</span> publie sur le projet partagé les versions locales de la branche courante. Les pointillés deviennent pleins.</span>
             <span data-l="en"><span class="ui">Share</span> publishes the local versions of the current branch to the shared project. Dashed nodes turn solid.</span>
@@ -753,7 +719,7 @@ gh --version</code></pre>
 
         <!-- 13 Compare with shared -->
         <section class="doc-section" id="compare-shared" data-group="versions">
-          <h2><span class="num">13</span><span class="title">Compare with shared</span></h2>
+          <h2><span class="num">12</span><span class="title">Compare with shared</span></h2>
           <p class="lead">
             <span data-l="fr">Quand le projet partagé a avancé sans vous, comparez votre arbre local avec lui, choisissez quoi faire, puis validez.</span>
             <span data-l="en">When the shared project moved on without you, compare your local tree with it, choose what to do, then validate.</span>
@@ -809,7 +775,7 @@ gh --version</code></pre>
 
         <!-- 14 Merge -->
         <section class="doc-section" id="merge" data-group="versions">
-          <h2><span class="num">14</span><span class="title">Merge &amp; Compare</span></h2>
+          <h2><span class="num">13</span><span class="title">Merge &amp; Compare</span></h2>
           <p class="lead">
             <span data-l="fr">Fusionner une branche dans une autre, après avoir comparé les deux versions côte à côte dans 6 vues synchronisées.</span>
             <span data-l="en">Merge one branch into another, after comparing both versions side by side in 6 synchronized views.</span>
@@ -921,7 +887,7 @@ gh --version</code></pre>
 
         <!-- 15 People -->
         <section class="doc-section" id="people" data-group="collab">
-          <h2><span class="num">15</span><span class="title"><span data-l="fr">People : inviter et attribuer les rôles</span><span data-l="en">People: invite and set roles</span></span></h2>
+          <h2><span class="num">14</span><span class="title"><span data-l="fr">People : inviter et attribuer les rôles</span><span data-l="en">People: invite and set roles</span></span></h2>
           <p class="lead">
             <span data-l="fr"><span class="ui">People</span> liste l’équipe du projet, sa présence, et permet à l’owner d’inviter ou de retirer des collègues.</span>
             <span data-l="en"><span class="ui">People</span> lists the project team and its presence, and lets the owner invite or remove colleagues.</span>
@@ -965,7 +931,7 @@ gh --version</code></pre>
 
         <!-- 16 Tasks assign -->
         <section class="doc-section" id="tasks-assign" data-group="collab">
-          <h2><span class="num">16</span><span class="title"><span data-l="fr">Tasks : assigner une tâche</span><span data-l="en">Tasks: assigning a task</span></span></h2>
+          <h2><span class="num">15</span><span class="title"><span data-l="fr">Tasks : assigner une tâche</span><span data-l="en">Tasks: assigning a task</span></span></h2>
           <p class="lead">
             <span data-l="fr">Le senior décrit le travail, choisit les juniors et une version de départ. BRAVIS crée une branche partagée pour la tâche.</span>
             <span data-l="en">The senior describes the work, picks the juniors and a start version. BRAVIS creates a shared branch for the task.</span>
@@ -1001,7 +967,7 @@ gh --version</code></pre>
 
         <!-- 17 Tasks junior -->
         <section class="doc-section" id="tasks-junior" data-group="collab">
-          <h2><span class="num">17</span><span class="title"><span data-l="fr">Tasks : côté junior</span><span data-l="en">Tasks: the junior side</span></span></h2>
+          <h2><span class="num">16</span><span class="title"><span data-l="fr">Tasks : côté junior</span><span data-l="en">Tasks: the junior side</span></span></h2>
           <p class="lead">
             <span data-l="fr">Le junior travaille sur la branche de sa tâche, publie, puis demande une review au senior.</span>
             <span data-l="en">The junior works on the task branch, publishes, then asks the senior for a review.</span>
@@ -1035,7 +1001,7 @@ gh --version</code></pre>
 
         <!-- 18 Tasks review -->
         <section class="doc-section" id="tasks-review" data-group="collab">
-          <h2><span class="num">18</span><span class="title"><span data-l="fr">Tasks : Accept ou Decline</span><span data-l="en">Tasks: Accept or Decline</span></span></h2>
+          <h2><span class="num">17</span><span class="title"><span data-l="fr">Tasks : Accept ou Decline</span><span data-l="en">Tasks: Accept or Decline</span></span></h2>
           <p class="lead">
             <span data-l="fr">Le senior examine la version soumise, garde ce qu’il veut, et l’intègre dans <code>main</code>, ou la renvoie au junior.</span>
             <span data-l="en">The senior reviews the submitted version, keeps what they want and brings it into <code>main</code>, or sends it back to the junior.</span>
@@ -1061,7 +1027,7 @@ gh --version</code></pre>
 
         <!-- 19 Messages -->
         <section class="doc-section" id="messages" data-group="collab">
-          <h2><span class="num">19</span><span class="title"><span data-l="fr">Messages, cloche et fil d’activité</span><span data-l="en">Messages, bell and activity feed</span></span></h2>
+          <h2><span class="num">18</span><span class="title"><span data-l="fr">Messages, cloche et fil d’activité</span><span data-l="en">Messages, bell and activity feed</span></span></h2>
           <p class="lead">
             <span data-l="fr">Trois façons de suivre l’équipe sans quitter Slicer.</span>
             <span data-l="en">Three ways to keep up with the team without leaving Slicer.</span>
@@ -1097,7 +1063,7 @@ gh --version</code></pre>
 
         <!-- 20 Permissions -->
         <section class="doc-section" id="permissions" data-group="collab">
-          <h2><span class="num">20</span><span class="title"><span data-l="fr">Cadenas et permissions</span><span data-l="en">Padlocks &amp; permissions</span></span></h2>
+          <h2><span class="num">19</span><span class="title"><span data-l="fr">Cadenas et permissions</span><span data-l="en">Padlocks &amp; permissions</span></span></h2>
           <p class="lead">
             <span data-l="fr">Le cadenas 🔒 protège le travail des autres : un junior peut tout regarder, mais n’écrit que là où on lui a confié une tâche.</span>
             <span data-l="en">The 🔒 padlock protects other people’s work: a junior can look at everything, but only writes where they were given a task.</span>
@@ -1152,7 +1118,7 @@ gh --version</code></pre>
 
         <!-- 21 Delete -->
         <section class="doc-section" id="delete" data-group="collab">
-          <h2><span class="num">21</span><span class="title">Delete</span></h2>
+          <h2><span class="num">20</span><span class="title">Delete</span></h2>
           <p class="lead">
             <span data-l="fr">Deux suppressions très différentes : une version locale, ou le projet entier.</span>
             <span data-l="en">Two very different deletions: a local version, or the whole project.</span>
@@ -1187,7 +1153,7 @@ gh --version</code></pre>
 
         <!-- 22 Scenarios -->
         <section class="doc-section" id="scenarios" data-group="ref">
-          <h2><span class="num">22</span><span class="title"><span data-l="fr">Scénarios utiles</span><span data-l="en">Useful scenarios</span></span></h2>
+          <h2><span class="num">21</span><span class="title"><span data-l="fr">Scénarios utiles</span><span data-l="en">Useful scenarios</span></span></h2>
           <p class="lead">
             <span data-l="fr">Les enchaînements les plus courants, du plus simple au plus collaboratif.</span>
             <span data-l="en">The most common flows, from the simplest to the most collaborative.</span>
@@ -1223,7 +1189,7 @@ gh --version</code></pre>
 
         <!-- 23 Storage -->
         <section class="doc-section" id="stockage" data-group="ref">
-          <h2><span class="num">23</span><span class="title"><span data-l="fr">Stockage des segmentations</span><span data-l="en">Segmentation storage</span></span></h2>
+          <h2><span class="num">22</span><span class="title"><span data-l="fr">Stockage des segmentations</span><span data-l="en">Segmentation storage</span></span></h2>
           <p class="lead">
             <span data-l="fr">Pour aller plus loin : comment BRAVIS garde un historique léger, même avec de gros volumes.</span>
             <span data-l="en">Going further: how BRAVIS keeps a lightweight history, even with large volumes.</span>
@@ -1265,7 +1231,7 @@ gh --version</code></pre>
 
         <!-- 24 Limits -->
         <section class="doc-section" id="limites" data-group="ref">
-          <h2><span class="num">24</span><span class="title"><span data-l="fr">Limites actuelles</span><span data-l="en">Current limitations</span></span></h2>
+          <h2><span class="num">23</span><span class="title"><span data-l="fr">Limites actuelles</span><span data-l="en">Current limitations</span></span></h2>
           <p class="lead">
             <span data-l="fr">Pour ne pas chercher en vain.</span>
             <span data-l="en">So you don’t look for them in vain.</span>

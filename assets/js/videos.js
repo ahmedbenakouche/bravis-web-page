@@ -3,7 +3,6 @@
    Optional preview image: same name with .jpg (e.g. doc-save.jpg). */
 window.BRAVIS_VIDEO_CATEGORIES = [
   { id: "start", fr: "Débuter", en: "Getting started" },
-  { id: "data", fr: "Données et atlas", en: "Data & atlases" },
   { id: "versions", fr: "Versions", en: "Versions" },
   { id: "collab", fr: "Collaboration", en: "Collaboration" },
   { id: "tasks", fr: "Tâches et reviews", en: "Tasks & reviews" }
@@ -35,19 +34,13 @@ window.BRAVIS_VIDEOS = [
     hint: { fr: "Volume + Ontology → Create → New project → Open d’un projet existant.", en: "Volume + Ontology → Create → New project → Open an existing project." }
   },
   {
-    id: "donnees", file: "doc-donnees.mp4", cat: "data", section: "donnees",
-    fr: { title: "Charger volume, segmentation et ontologie", desc: "Choisir le volume 3D, la segmentation et un atlas Allen." },
-    en: { title: "Load volume, segmentation and ontology", desc: "Pick the 3D volume, the segmentation and an Allen atlas." },
-    hint: { fr: "Sélecteurs 3D Volume et Segmentation, puis Ontology map → Allen Mouse Brain Atlas.", en: "3D Volume and Segmentation selectors, then Ontology map → Allen Mouse Brain Atlas." }
-  },
-  {
-    id: "ontologie", file: "doc-ontologie.mp4", cat: "data", section: "ontologie",
+    id: "ontologie", file: "doc-ontologie.mp4", cat: "start", section: "ontologie",
     fr: { title: "Éditer une ontologie", desc: "Load JSON, Edit (Add root, Add child, Rename), Export JSON." },
     en: { title: "Edit an ontology", desc: "Load JSON, Edit (Add root, Add child, Rename), Export JSON." },
     hint: { fr: "Menu ⚙ → Edit… : ajout d’une structure, renommage, Apply, puis Export JSON…", en: "⚙ menu → Edit…: add a structure, rename, Apply, then Export JSON…" }
   },
   {
-    id: "anatomie", file: "doc-anatomie.mp4", cat: "data", section: "anatomie",
+    id: "anatomie", file: "doc-anatomie.mp4", cat: "start", section: "anatomie",
     fr: { title: "Naviguer dans l’arbre anatomique", desc: "Déplier les structures, lire les pastilles d’annotation." },
     en: { title: "Browse the anatomy tree", desc: "Expand structures, read the annotation marks." },
     hint: { fr: "View anatomy tree, clic pour déplier, double-clic pour les détails, bouton ? et Collapse all.", en: "View anatomy tree, click to expand, double-click for details, ? button and Collapse all." }
