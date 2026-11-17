@@ -32,7 +32,7 @@ window.BRAVIS_VIDEOS = [
     id: "projet", file: "doc-projet.mp4", cat: "start", section: "projet",
     fr: { title: "Créer ou ouvrir un projet", desc: "Create (nom + description) puis Open d’un projet existant." },
     en: { title: "Create or open a project", desc: "Create (name + description), then Open an existing project." },
-    hint: { fr: "Create → New project → nom → Create. Puis choix d’un projet dans la liste → Open.", en: "Create → New project → name → Create. Then pick a project in the list → Open." }
+    hint: { fr: "Volume + Ontology → Create → New project → Open d’un projet existant.", en: "Volume + Ontology → Create → New project → Open an existing project." }
   },
   {
     id: "donnees", file: "doc-donnees.mp4", cat: "data", section: "donnees",
