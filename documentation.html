@@ -528,8 +528,8 @@ gh --version</code></pre>
         <section class="doc-section" id="version-tree" data-group="versions">
           <h2><span class="num">07</span><span class="title"><span data-l="fr">Lire le Version tree</span><span data-l="en">Reading the Version tree</span></span></h2>
           <p class="lead">
-            <span data-l="fr"><span class="ui">View version tree</span> ouvre le graphe de toutes les versions du projet : branches, fusions, ce qui est partagé et ce qui ne l’est pas encore.</span>
-            <span data-l="en"><span class="ui">View version tree</span> opens the graph of all project versions: branches, merges, what is shared and what is not yet.</span>
+            <span data-l="fr"><span class="ui">View version tree</span> affiche l’historique du projet en graphe : chaque version, comment les branches se séparent et se rejoignent, et si un nœud est déjà partagé ou encore local.</span>
+            <span data-l="en"><span class="ui">View version tree</span> shows the project history as a graph: every version, how branches split and join, and whether a node is already shared or still local.</span>
           </p>
           <figure class="video-slot" data-video="version-tree"></figure>
 
@@ -538,14 +538,17 @@ gh --version</code></pre>
             <div class="table-wrap"><table>
               <thead><tr><th>Apparence</th><th>Sens</th></tr></thead>
               <tbody>
-                <tr><td><strong>Cadre plein</strong></td><td>Version <strong>shared</strong> : elle est sur le projet distant.</td></tr>
-                <tr><td><strong>Cadre en pointillés</strong></td><td>Version <strong>locale</strong> seulement, pas encore partagée.</td></tr>
-                <tr><td>🔒</td><td>Junior : vous pouvez regarder et faire Switch, mais <strong>pas</strong> Save ni Share ici.</td></tr>
-                <tr><td>🔵</td><td>Une review a été demandée sur cette version.</td></tr>
-                <tr><td>▶ / flèche</td><td>La version actuellement ouverte.</td></tr>
+                <tr><td class="doc-legend-look"><span class="swatch" aria-hidden="true"></span><strong>Cadre plein</strong></td><td>Version partagée (sur le projet distant).</td></tr>
+                <tr><td class="doc-legend-look"><span class="swatch dashed" aria-hidden="true"></span><strong>Cadre en pointillés</strong></td><td>Version locale seulement, pas encore partagée.</td></tr>
+                <tr><td class="doc-legend-look"><span class="swatch plain" aria-hidden="true">🔒</span><strong>Cadenas</strong></td><td>Sur chaque version non autorisée : consultable (Switch), mais pas de Save ni Share.</td></tr>
+                <tr><td class="doc-legend-look"><span class="swatch plain" aria-hidden="true">🔵</span><strong>Review demandée</strong></td><td>Une review a été demandée sur cette version.</td></tr>
+                <tr><td class="doc-legend-look"><span class="swatch plain checkout-swatch" aria-hidden="true"></span><strong>Pointeur à gauche</strong></td><td>La version actuellement ouverte.</td></tr>
               </tbody>
             </table></div>
             <p>Les noms ressemblent à <code>main/3</code>, <code>sos/2</code>, <code>sos/ok/1</code> ou <code>ma-tache/start</code> : la branche, puis le numéro de version sur cette branche. Chaque branche a sa couleur.</p>
+
+            <h3>Le nœud <code>…/start</code></h3>
+            <p>Sur une tâche assignée, un nœud de départ <code>…/start</code> marque l’ancrage de la branche. Ce n’est pas une version à merger : il sert de repère. Le premier Save sur la branche crée <code>…/1</code>. Les branches créées à la main (DIY) n’ont en général pas de <code>start</code>.</p>
 
             <h3>Naviguer et consulter</h3>
             <ul>
@@ -554,23 +557,23 @@ gh --version</code></pre>
               <li><strong>Double-clic</strong> : la fenêtre <strong>Version details</strong> (version, branche, message, date, auteur, statut, parent, fusion, tâche liée).</li>
             </ul>
             <p>Selon le contexte et votre rôle, <strong>Version details</strong> propose les actions <span class="ui">Request review</span>, <span class="ui">Merge</span>, <span class="ui">Accept and Merge</span>, <span class="ui">Decline</span> ou <span class="ui">Delete</span>. S’il n’y a rien à faire, seul <span class="ui">Close</span> apparaît.</p>
-
-            <h3>Le nœud <code>…/start</code></h3>
-            <p>Sur une tâche assignée, un nœud de départ <code>…/start</code> marque l’ancrage de la branche. Ce n’est pas une version à merger : il sert de repère. Le premier Save sur la branche crée <code>…/1</code>. Les branches créées à la main (DIY) n’ont en général pas de <code>start</code>.</p>
           </div>
           <div data-l="en">
             <h3>Legend</h3>
             <div class="table-wrap"><table>
               <thead><tr><th>Look</th><th>Meaning</th></tr></thead>
               <tbody>
-                <tr><td><strong>Solid border</strong></td><td><strong>Shared</strong> version: it is on the remote project.</td></tr>
-                <tr><td><strong>Dashed border</strong></td><td><strong>Local</strong> version only, not shared yet.</td></tr>
-                <tr><td>🔒</td><td>Junior: you can look and Switch, but <strong>not</strong> Save or Share here.</td></tr>
-                <tr><td>🔵</td><td>A review was requested on this version.</td></tr>
-                <tr><td>▶ / arrow</td><td>The version currently open.</td></tr>
+                <tr><td class="doc-legend-look"><span class="swatch" aria-hidden="true"></span><strong>Solid border</strong></td><td>Shared version (on the remote project).</td></tr>
+                <tr><td class="doc-legend-look"><span class="swatch dashed" aria-hidden="true"></span><strong>Dashed border</strong></td><td>Local only, not shared yet.</td></tr>
+                <tr><td class="doc-legend-look"><span class="swatch plain" aria-hidden="true">🔒</span><strong>Padlock</strong></td><td>On every unauthorized version: viewable (Switch), but no Save or Share.</td></tr>
+                <tr><td class="doc-legend-look"><span class="swatch plain" aria-hidden="true">🔵</span><strong>Review requested</strong></td><td>A review was requested on this version.</td></tr>
+                <tr><td class="doc-legend-look"><span class="swatch plain checkout-swatch" aria-hidden="true"></span><strong>Left pointer</strong></td><td>The version currently open.</td></tr>
               </tbody>
             </table></div>
             <p>Names look like <code>main/3</code>, <code>sos/2</code>, <code>sos/ok/1</code> or <code>my-task/start</code>: the branch, then the version number on that branch. Each branch has its own color.</p>
+
+            <h3>The <code>…/start</code> node</h3>
+            <p>On an assigned task, a <code>…/start</code> node marks where the branch is anchored. It is not a version to merge: it is a landmark. The first Save on the branch creates <code>…/1</code>. Hand-made (DIY) branches usually have no <code>start</code>.</p>
 
             <h3>Browsing and inspecting</h3>
             <ul>
@@ -579,9 +582,6 @@ gh --version</code></pre>
               <li><strong>Double-click</strong>: the <strong>Version details</strong> window (version, branch, message, date, author, status, parent, merge, linked task).</li>
             </ul>
             <p>Depending on context and your role, <strong>Version details</strong> offers <span class="ui">Request review</span>, <span class="ui">Merge</span>, <span class="ui">Accept and Merge</span>, <span class="ui">Decline</span> or <span class="ui">Delete</span>. When there is nothing to do, only <span class="ui">Close</span> shows.</p>
-
-            <h3>The <code>…/start</code> node</h3>
-            <p>On an assigned task, a <code>…/start</code> node marks where the branch is anchored. It is not a version to merge: it is a landmark. The first Save on the branch creates <code>…/1</code>. Hand-made (DIY) branches usually have no <code>start</code>.</p>
           </div>
         </section>
 

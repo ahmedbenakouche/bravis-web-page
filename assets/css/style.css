@@ -651,6 +651,10 @@ ol.steps > li::before {
 
 /* tables */
 .table-wrap { overflow-x: auto; margin: 1.2rem 0 1.5rem; border: 1px solid var(--border); border-radius: var(--radius-sm); }
+.doc-legend-look {
+  display: flex; align-items: center; gap: .65rem; white-space: nowrap;
+}
+.doc-legend-look .swatch { margin-top: 0; flex-shrink: 0; }
 table { width: 100%; border-collapse: collapse; font-size: .93rem; }
 th, td { text-align: left; padding: .7rem .9rem; border-bottom: 1px solid var(--border); vertical-align: top; }
 th { background: var(--surface-2); font-weight: 650; color: var(--text); white-space: nowrap; }
