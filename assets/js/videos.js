@@ -37,7 +37,7 @@ window.BRAVIS_VIDEOS = [
     id: "ontologie", file: "doc-ontologie.mp4", cat: "start", section: "ontologie",
     fr: { title: "Éditer une ontologie", desc: "Load JSON, Edit (Add root, Add child, Rename), Export JSON." },
     en: { title: "Edit an ontology", desc: "Load JSON, Edit (Add root, Add child, Rename), Export JSON." },
-    hint: { fr: "Menu ⚙ → Edit… : ajout d’une structure, renommage, Apply, puis Export JSON…", en: "⚙ menu → Edit…: add a structure, rename, Apply, then Export JSON…" }
+    hint: { fr: "Ontology map → ⚙ → Edit… (Add child / Rename / Apply) → Export JSON…", en: "Ontology map → ⚙ → Edit… (Add child / Rename / Apply) → Export JSON…" }
   },
   {
     id: "anatomie", file: "doc-anatomie.mp4", cat: "start", section: "anatomie",
