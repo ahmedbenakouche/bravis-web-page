@@ -476,17 +476,22 @@ gh --version</code></pre>
               <li>Chaque niveau de profondeur a sa couleur de bordure.</li>
             </ul>
             <h3>Les pastilles</h3>
+            <p>Chaque nœud peut avoir <strong>deux</strong> pastilles :</p>
+            <ul>
+              <li><strong>À gauche</strong> — cette structure elle-même : y a-t-il un segment <code>Segment_ID</code> dans Slicer ?</li>
+              <li><strong>À droite</strong> — ses enfants : parmi les structures de plus bas niveau en dessous, combien sont annotées ?</li>
+            </ul>
             <div class="table-wrap"><table>
               <thead><tr><th>Pastille</th><th>Signification</th></tr></thead>
               <tbody>
-                <tr><td><strong>Gauche</strong> <span style="color:var(--mint)">●</span></td><td>La structure a une annotation dans Slicer (un segment <code>Segment_ID</code> existe ; il peut encore être vide).</td></tr>
-                <tr><td><strong>Gauche</strong> ○</td><td>Pas d’annotation pour cette structure.</td></tr>
-                <tr><td><strong>Droite</strong> <span style="color:var(--indigo)">●</span></td><td>Parents seulement : <em>toutes</em> les structures de plus bas niveau en dessous sont annotées.</td></tr>
-                <tr><td><strong>Droite</strong> <span style="color:var(--amber)">●</span></td><td>Certaines, mais pas toutes, sont annotées.</td></tr>
-                <tr><td><strong>Droite</strong> ○</td><td>Aucune n’est annotée.</td></tr>
+                <tr><td><strong>Gauche</strong> <span style="color:var(--mint)">●</span></td><td>Un segment <code>Segment_ID</code> existe pour cette structure (il peut encore être vide).</td></tr>
+                <tr><td><strong>Gauche</strong> ○</td><td>Pas de segment pour cette structure.</td></tr>
+                <tr><td><strong>Droite</strong> <span style="color:var(--indigo)">●</span></td><td>Toutes les feuilles en dessous sont annotées.</td></tr>
+                <tr><td><strong>Droite</strong> <span style="color:var(--amber)">●</span></td><td>Certaines feuilles en dessous sont annotées, pas toutes.</td></tr>
+                <tr><td><strong>Droite</strong> ○</td><td>Aucune feuille en dessous n’est annotée.</td></tr>
               </tbody>
             </table></div>
-            <p>Les deux pastilles sont indépendantes. Le bouton <span class="ui">?</span> rappelle cette légende.</p>
+            <p>Gauche et droite ne se suivent pas : une structure peut avoir un segment (gauche ●) alors qu’aucune de ses feuilles n’est faite (droite ○), et l’inverse.</p>
           </div>
           <div data-l="en">
             <h3>Navigating</h3>
@@ -497,17 +502,22 @@ gh --version</code></pre>
               <li>Each depth level has its own border color.</li>
             </ul>
             <h3>The marks</h3>
+            <p>Each node can show <strong>two</strong> marks:</p>
+            <ul>
+              <li><strong>Left</strong> — this structure itself: is there a <code>Segment_ID</code> segment in Slicer?</li>
+              <li><strong>Right</strong> — its children: among the lowest-level structures below, how many are annotated?</li>
+            </ul>
             <div class="table-wrap"><table>
               <thead><tr><th>Mark</th><th>Meaning</th></tr></thead>
               <tbody>
-                <tr><td><strong>Left</strong> <span style="color:var(--mint)">●</span></td><td>The structure has an annotation in Slicer (a <code>Segment_ID</code> segment exists; it may still be empty).</td></tr>
-                <tr><td><strong>Left</strong> ○</td><td>No annotation for this structure.</td></tr>
-                <tr><td><strong>Right</strong> <span style="color:var(--indigo)">●</span></td><td>Parents only: <em>every</em> lowest-level structure below is annotated.</td></tr>
-                <tr><td><strong>Right</strong> <span style="color:var(--amber)">●</span></td><td>Some, but not all, are annotated.</td></tr>
-                <tr><td><strong>Right</strong> ○</td><td>None are annotated.</td></tr>
+                <tr><td><strong>Left</strong> <span style="color:var(--mint)">●</span></td><td>A <code>Segment_ID</code> segment exists for this structure (it may still be empty).</td></tr>
+                <tr><td><strong>Left</strong> ○</td><td>No segment for this structure.</td></tr>
+                <tr><td><strong>Right</strong> <span style="color:var(--indigo)">●</span></td><td>Every leaf below is annotated.</td></tr>
+                <tr><td><strong>Right</strong> <span style="color:var(--amber)">●</span></td><td>Some leaves below are annotated, not all.</td></tr>
+                <tr><td><strong>Right</strong> ○</td><td>No leaf below is annotated.</td></tr>
               </tbody>
             </table></div>
-            <p>The two marks are independent. The <span class="ui">?</span> button recalls this legend.</p>
+            <p>Left and right are separate: a structure can have its own segment (left ●) while none of its leaves are done (right ○), and the other way around.</p>
           </div>
         </section>
 
