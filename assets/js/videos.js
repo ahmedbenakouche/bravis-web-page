@@ -43,7 +43,7 @@ window.BRAVIS_VIDEOS = [
     id: "anatomie", file: "doc-anatomie.mp4", cat: "start", section: "anatomie",
     fr: { title: "Naviguer dans l’arbre anatomique", desc: "Déplier les structures, lire les pastilles d’annotation." },
     en: { title: "Browse the anatomy tree", desc: "Expand structures, read the annotation marks." },
-    hint: { fr: "View anatomy tree, clic pour déplier, double-clic pour les détails, bouton ? et Collapse all.", en: "View anatomy tree, click to expand, double-click for details, ? button and Collapse all." }
+    hint: { fr: "View anatomy tree → déplier / pastilles gauche-droite → double-clic Structure details → Collapse all.", en: "View anatomy tree → expand / left-right marks → double-click Structure details → Collapse all." }
   },
   {
     id: "version-tree", file: "doc-version-tree.mp4", cat: "versions", section: "version-tree",
