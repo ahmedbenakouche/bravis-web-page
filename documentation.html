@@ -423,8 +423,8 @@ gh --version</code></pre>
         <section class="doc-section" id="ontologie" data-group="start">
           <h2><span class="num">05</span><span class="title"><span data-l="fr">Ontologies et éditeur</span><span data-l="en">Ontologies &amp; editor</span></span></h2>
           <p class="lead">
-            <span data-l="fr">Une ontologie décrit la hiérarchie des structures anatomiques. Deux atlas Allen sont fournis ; vous pouvez aussi créer ou modifier la vôtre.</span>
-            <span data-l="en">An ontology describes the hierarchy of anatomical structures. Two Allen atlases are included; you can also create or edit your own.</span>
+            <span data-l="fr">Une ontologie décrit la hiérarchie des structures anatomiques. Les ontologies Allen Mouse et Human Brain Atlas sont intégrées (<a href="https://brain-map.org/support/tutorials/downloading-an-ontologys-structure-graph" target="_blank" rel="noopener">brain-map.org</a>) ; vous pouvez aussi créer ou modifier la vôtre.</span>
+            <span data-l="en">An ontology describes the hierarchy of anatomical structures. Allen Mouse and Human Brain Atlas ontologies are built in (<a href="https://brain-map.org/support/tutorials/downloading-an-ontologys-structure-graph" target="_blank" rel="noopener">brain-map.org</a>); you can also create or edit your own.</span>
           </p>
           <figure class="video-slot" data-video="ontologie"></figure>
 
@@ -438,8 +438,6 @@ gh --version</code></pre>
             </ul>
             <h3>L’éditeur</h3>
             <p>En haut : <strong>Atlas name</strong> (titre de l’ontologie) et <strong>Levels shown</strong> (profondeur affichée dans l’arbre ; 1 = racine seule). Sélectionnez une structure puis utilisez <span class="ui">Add root</span>, <span class="ui">Add child</span>, <span class="ui">Rename</span> ou <span class="ui">Remove</span>. <span class="ui">Apply</span> valide les changements, <span class="ui">Cancel</span> les abandonne.</p>
-            <h3>Format JSON</h3>
-            <p>Un objet racine avec <code>atlas_name</code> (titre) et <code>tree</code> (nœud racine). Chaque nœud a un <code>id</code> unique, un <code>symbol</code> (abréviation), un <code>name</code> et une liste <code>children</code> (vide pour une feuille).</p>
           </div>
           <div data-l="en">
             <h3>The ⚙ menu</h3>
@@ -451,26 +449,12 @@ gh --version</code></pre>
             </ul>
             <h3>The editor</h3>
             <p>At the top: <strong>Atlas name</strong> (ontology title) and <strong>Levels shown</strong> (tree depth to display; 1 = root only). Select a structure, then use <span class="ui">Add root</span>, <span class="ui">Add child</span>, <span class="ui">Rename</span> or <span class="ui">Remove</span>. <span class="ui">Apply</span> keeps the changes, <span class="ui">Cancel</span> drops them.</p>
-            <h3>JSON format</h3>
-            <p>A root object with <code>atlas_name</code> (title) and <code>tree</code> (root node). Each node has a unique <code>id</code>, a <code>symbol</code> (abbreviation), a <code>name</code> and a <code>children</code> list (empty for a leaf).</p>
           </div>
-<pre><code>{
-  "atlas_name": "My brain atlas",
-  "tree": {
-    "id": "997", "symbol": "root", "name": "Brain",
-    "children": [
-      { "id": "8",  "symbol": "grey", "name": "Basic cell groups and regions",
-        "children": [
-          { "id": "567", "symbol": "CH", "name": "Cerebrum", "children": [] }
-        ] }
-    ]
-  }
-}</code></pre>
           <div data-l="fr">
-            <div class="callout tip"><span class="callout-ico">✅</span><div><p><strong>Nommage des segments</strong> : chaque segment doit s’appeler <code>Segment_ID</code> (par exemple <code>Segment_64</code>), sans doublon. C’est obligatoire pour Create et Save, et c’est ce qui permet à l’<a href="#anatomie">arbre anatomique</a> de savoir ce qui est annoté.</p></div></div>
+            <div class="callout tip"><span class="callout-ico">✅</span><div><p><strong>Nommage des segments</strong> : chaque segment doit s’appeler <code>Segment_ID</code> (par exemple <code>Segment_64</code>). C’est obligatoire pour Create et Save, et c’est ce qui permet à l’<a href="#anatomie">arbre anatomique</a> de savoir ce qui est annoté.</p></div></div>
           </div>
           <div data-l="en">
-            <div class="callout tip"><span class="callout-ico">✅</span><div><p><strong>Segment naming</strong>: every segment must be named <code>Segment_ID</code> (for example <code>Segment_64</code>), with no duplicates. Required for Create and Save, and that is how the <a href="#anatomie">anatomy tree</a> knows what is annotated.</p></div></div>
+            <div class="callout tip"><span class="callout-ico">✅</span><div><p><strong>Segment naming</strong>: every segment must be named <code>Segment_ID</code> (for example <code>Segment_64</code>). Required for Create and Save, and that is how the <a href="#anatomie">anatomy tree</a> knows what is annotated.</p></div></div>
           </div>
         </section>
 
