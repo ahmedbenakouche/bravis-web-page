@@ -135,7 +135,6 @@
           <div class="toc-group" data-group="ref">
             <p class="toc-group-title"><span data-l="fr">Référence</span><span data-l="en">Reference</span></p>
             <ol>
-              <li><a href="#scenarios"><span data-l="fr">Scénarios utiles</span><span data-l="en">Useful scenarios</span></a></li>
               <li><a href="#stockage"><span data-l="fr">Stockage des segmentations</span><span data-l="en">Segmentation storage</span></a></li>
               <li><a href="#limites"><span data-l="fr">Limites actuelles</span><span data-l="en">Current limitations</span></a></li>
             </ol>
@@ -1145,45 +1144,9 @@ gh --version</code></pre>
         <!-- ======================= REFERENCE ======================= -->
         <p class="doc-group-title" data-group="ref"><span data-l="fr">Référence</span><span data-l="en">Reference</span></p>
 
-        <!-- 22 Scenarios -->
-        <section class="doc-section" id="scenarios" data-group="ref">
-          <h2><span class="num">21</span><span class="title"><span data-l="fr">Scénarios utiles</span><span data-l="en">Useful scenarios</span></span></h2>
-          <p class="lead">
-            <span data-l="fr">Les enchaînements les plus courants, du plus simple au plus collaboratif.</span>
-            <span data-l="en">The most common flows, from the simplest to the most collaborative.</span>
-          </p>
-          <figure class="video-slot" data-video="scenario"></figure>
-          <div data-l="fr">
-            <div class="table-wrap"><table>
-              <thead><tr><th>Scénario</th><th>Étapes</th></tr></thead>
-              <tbody>
-                <tr><td><strong>Senior seul</strong></td><td>Connect → Create → annoter → Save → Share sur main. Le tree avance : <code>main/1</code>, <code>main/2</code>…</td></tr>
-                <tr><td><strong>Inviter un junior</strong></td><td>People → invitation → le junior fait Join → Open le projet.</td></tr>
-                <tr><td><strong>Tâche + review</strong></td><td>Le senior assigne (start shared + nom de branche) → le junior Save / Share → Request review → le senior Accept and Merge → tâche fermée.</td></tr>
-                <tr><td><strong>Sous-branches DIY</strong></td><td>Sur <code>sos</code> (bout) → Create <code>ok</code> → travail sur <code>sos/ok</code> → Share → Merge dans <code>sos</code>. Puis <code>yoi</code> sous <code>sos/ok</code> → Merge dans <code>sos/ok</code>, seulement si <code>sos/ok</code> n’est pas déjà fermé dans <code>sos</code>.</td></tr>
-                <tr><td><strong>Deux juniors, même tâche</strong></td><td>Même branche de tâche. L’un demande la review → 🔵, l’autre attend. Accept clôture pour les deux.</td></tr>
-                <tr><td><strong>Share refusé alors que « ma » branche semble bonne</strong></td><td>La vérification regarde <em>tout</em> le projet (main ou d’autres branches en avance), pas seulement la branche affichée. Compare with shared, puis réessayer.</td></tr>
-              </tbody>
-            </table></div>
-          </div>
-          <div data-l="en">
-            <div class="table-wrap"><table>
-              <thead><tr><th>Scenario</th><th>Steps</th></tr></thead>
-              <tbody>
-                <tr><td><strong>Solo senior</strong></td><td>Connect → Create → annotate → Save → Share on main. The tree grows: <code>main/1</code>, <code>main/2</code>…</td></tr>
-                <tr><td><strong>Inviting a junior</strong></td><td>People → invitation → the junior clicks Join → Opens the project.</td></tr>
-                <tr><td><strong>Task + review</strong></td><td>The senior assigns (shared start + branch name) → the junior Saves / Shares → Request review → the senior Accepts and Merges → task closed.</td></tr>
-                <tr><td><strong>DIY sub-branches</strong></td><td>On <code>sos</code> (tip) → Create <code>ok</code> → work on <code>sos/ok</code> → Share → Merge into <code>sos</code>. Then <code>yoi</code> under <code>sos/ok</code> → Merge into <code>sos/ok</code>, only if <code>sos/ok</code> is not already closed into <code>sos</code>.</td></tr>
-                <tr><td><strong>Two juniors, same task</strong></td><td>Same task branch. One requests the review → 🔵, the other waits. Accept closes it for both.</td></tr>
-                <tr><td><strong>Share refused although “my” branch looks fine</strong></td><td>The check looks at the <em>whole</em> project (main or other branches ahead), not only the branch on screen. Compare with shared, then retry.</td></tr>
-              </tbody>
-            </table></div>
-          </div>
-        </section>
-
-        <!-- 23 Storage -->
+        <!-- 21 Storage -->
         <section class="doc-section" id="stockage" data-group="ref">
-          <h2><span class="num">22</span><span class="title"><span data-l="fr">Stockage des segmentations</span><span data-l="en">Segmentation storage</span></span></h2>
+          <h2><span class="num">21</span><span class="title"><span data-l="fr">Stockage des segmentations</span><span data-l="en">Segmentation storage</span></span></h2>
           <p class="lead">
             <span data-l="fr">Pour aller plus loin : comment BRAVIS garde un historique léger, même avec de gros volumes.</span>
             <span data-l="en">Going further: how BRAVIS keeps a lightweight history, even with large volumes.</span>
@@ -1223,9 +1186,9 @@ gh --version</code></pre>
           </div>
         </section>
 
-        <!-- 24 Limits -->
+        <!-- 22 Limits -->
         <section class="doc-section" id="limites" data-group="ref">
-          <h2><span class="num">23</span><span class="title"><span data-l="fr">Limites actuelles</span><span data-l="en">Current limitations</span></span></h2>
+          <h2><span class="num">22</span><span class="title"><span data-l="fr">Limites actuelles</span><span data-l="en">Current limitations</span></span></h2>
           <p class="lead">
             <span data-l="fr">Pour ne pas chercher en vain.</span>
             <span data-l="en">So you don’t look for them in vain.</span>
@@ -1276,7 +1239,7 @@ gh --version</code></pre>
           <ul>
             <li><a href="documentation.html#installation">Installation</a></li>
             <li><a href="documentation.html#connexion"><span data-l="fr">Connexion GitHub</span><span data-l="en">GitHub sign-in</span></a></li>
-            <li><a href="documentation.html#scenarios"><span data-l="fr">Scénarios</span><span data-l="en">Scenarios</span></a></li>
+            <li><a href="documentation.html#projet"><span data-l="fr">Créer ou ouvrir</span><span data-l="en">Create or open</span></a></li>
             <li><a data-source-link href="#" hidden><span data-l="fr">Code source</span><span data-l="en">Source code</span></a></li>
           </ul>
         </div>

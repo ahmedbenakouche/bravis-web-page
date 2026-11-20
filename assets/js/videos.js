@@ -128,11 +128,5 @@ window.BRAVIS_VIDEOS = [
     fr: { title: "Supprimer une version locale ou un projet", desc: "Delete sur un nœud en pointillés ; Delete project (local ou GitHub)." },
     en: { title: "Delete a local version or a project", desc: "Delete on a dashed node; Delete project (local or GitHub)." },
     hint: { fr: "Nœud en pointillés → Delete ; panneau Delete → This computer only ou GitHub and this computer (owner).", en: "Dashed node → Delete; panel Delete → This computer only or GitHub and this computer (owner)." }
-  },
-  {
-    id: "scenario", file: "doc-scenario.mp4", cat: "tasks", section: "scenarios",
-    fr: { title: "Scénario complet senior + junior", desc: "De la création du projet à la tâche acceptée." },
-    en: { title: "Full senior + junior scenario", desc: "From project creation to the accepted task." },
-    hint: { fr: "Deux écrans ou montage : Create, invitation, Assign, travail du junior, review, Accept.", en: "Two screens or an edit: Create, invitation, Assign, junior work, review, Accept." }
   }
 ];
