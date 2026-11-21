@@ -544,7 +544,7 @@ gh --version</code></pre>
                 <tr><td class="doc-legend-look"><span class="swatch plain checkout-swatch" aria-hidden="true"></span><strong>Pointeur à gauche</strong></td><td>La version actuellement ouverte.</td></tr>
               </tbody>
             </table></div>
-            <p>Les noms ressemblent à <code>main/3</code>, <code>sos/2</code>, <code>sos/ok/1</code> ou <code>ma-tache/start</code> : la branche, puis le numéro de version sur cette branche. Chaque branche a sa couleur.</p>
+            <p>Les noms ressemblent à <code>main/3</code>, <code>cortex/2</code>, <code>cortex/alice/1</code> ou <code>ma-tache/start</code> : la branche, puis le numéro de version sur cette branche. Chaque branche a sa couleur.</p>
 
             <h3>Le nœud <code>…/start</code></h3>
             <p>Sur une tâche assignée, un nœud de départ <code>…/start</code> marque l’ancrage de la branche. Ce n’est pas une version à merger : il sert de repère. Le premier Save sur la branche crée <code>…/1</code>. Les branches créées à la main (DIY) n’ont en général pas de <code>start</code>.</p>
@@ -569,7 +569,7 @@ gh --version</code></pre>
                 <tr><td class="doc-legend-look"><span class="swatch plain checkout-swatch" aria-hidden="true"></span><strong>Left pointer</strong></td><td>The version currently open.</td></tr>
               </tbody>
             </table></div>
-            <p>Names look like <code>main/3</code>, <code>sos/2</code>, <code>sos/ok/1</code> or <code>my-task/start</code>: the branch, then the version number on that branch. Each branch has its own color.</p>
+            <p>Names look like <code>main/3</code>, <code>cortex/2</code>, <code>cortex/alice/1</code> or <code>my-task/start</code>: the branch, then the version number on that branch. Each branch has its own color.</p>
 
             <h3>The <code>…/start</code> node</h3>
             <p>On an assigned task, a <code>…/start</code> node marks where the branch is anchored. It is not a version to merge: it is a landmark. The first Save on the branch creates <code>…/1</code>. Hand-made (DIY) branches usually have no <code>start</code>.</p>
@@ -646,25 +646,23 @@ gh --version</code></pre>
         <section class="doc-section" id="branches" data-group="versions">
           <h2><span class="num">10</span><span class="title"><span data-l="fr">Branches et sous-branches</span><span data-l="en">Branches &amp; sub-branches</span></span></h2>
           <p class="lead">
-            <span data-l="fr">Une branche permet d’essayer une annotation sans toucher à la ligne principale. On la crée depuis <span class="ui">Save</span> → <span class="ui">Create a branch</span>.</span>
-            <span data-l="en">A branch lets you try an annotation without touching the main line. Create one from <span class="ui">Save</span> → <span class="ui">Create a branch</span>.</span>
+            <span data-l="fr">Une branche sert à annoter à part — une zone, une passe, ou le travail d’un annotateur — puis à <a href="#merge">merger</a> pour compléter ou combiner le résultat dans la ligne principale. On la crée depuis <span class="ui">Save</span> → <span class="ui">Create a branch</span>.</span>
+            <span data-l="en">A branch is for annotating aside — a region, a pass, or one annotator’s work — then <a href="#merge">merging</a> to complete or combine the result into the main line. Create one from <span class="ui">Save</span> → <span class="ui">Create a branch</span>.</span>
           </p>
           <figure class="video-slot" data-video="branches"></figure>
           <div data-l="fr">
             <ul>
-              <li>Depuis <code>main</code>, le nom reste simple : <code>sos</code>, <code>lol</code>…</li>
-              <li>Depuis une autre branche, le nom devient <strong>parent/enfant</strong> : depuis <code>sos</code> → <code>sos/ok</code> ; depuis <code>sos/ok</code> → <code>sos/ok/yoi</code>.</li>
-              <li>Vous ne tapez que le <strong>dernier morceau</strong>, sans <code>/</code> ni <code>+</code>. Le parent est ajouté automatiquement.</li>
+              <li>Depuis <code>main</code>, le nom reste simple : <code>cortex</code>, <code>thalamus</code>…</li>
+              <li>Depuis une autre branche, le nom s’imbrique : depuis <code>cortex</code> → <code>cortex/alice</code> ; depuis <code>cortex/alice</code> → <code>cortex/alice/pass2</code>.</li>
             </ul>
-            <p>Ensuite : Save sur cette sous-branche, puis <a href="#share">Share</a> pour la publier, et <a href="#merge">Merge</a> pour la ramener dans son parent.</p>
+            <p>Ensuite : Save sur cette sous-branche, puis <a href="#share">Share</a> pour la publier, et <a href="#merge">Merge</a> pour la ramener dans sa branche d’origine.</p>
           </div>
           <div data-l="en">
             <ul>
-              <li>From <code>main</code>, the name stays flat: <code>sos</code>, <code>lol</code>…</li>
-              <li>From another branch, the name becomes <strong>parent/child</strong>: from <code>sos</code> → <code>sos/ok</code>; from <code>sos/ok</code> → <code>sos/ok/yoi</code>.</li>
-              <li>You only type the <strong>last part</strong>, without <code>/</code> or <code>+</code>. The parent is added automatically.</li>
+              <li>From <code>main</code>, the name stays flat: <code>cortex</code>, <code>thalamus</code>…</li>
+              <li>From another branch, the name nests: from <code>cortex</code> → <code>cortex/alice</code>; from <code>cortex/alice</code> → <code>cortex/alice/pass2</code>.</li>
             </ul>
-            <p>Then: Save on that sub-branch, <a href="#share">Share</a> to publish it, and <a href="#merge">Merge</a> to bring it back into its parent.</p>
+            <p>Then: Save on that sub-branch, <a href="#share">Share</a> to publish it, and <a href="#merge">Merge</a> to bring it back into its origin branch.</p>
           </div>
         </section>
 
@@ -824,14 +822,14 @@ gh --version</code></pre>
             <div class="table-wrap"><table>
               <thead><tr><th>Branche</th><th>Qui</th><th>Vers</th><th>Condition</th></tr></thead>
               <tbody>
-                <tr><td>DIY « plate » (<code>sos</code>)</td><td>Senior</td><td><code>main</code></td><td>Bout de branche, déjà shared, pas encore intégré dans main</td></tr>
-                <tr><td>Sous-branche (<code>sos/ok</code>, <code>sos/ok/yoi</code>)</td><td>Senior, ou junior assigné à la tâche dont elle dépend</td><td>Le parent immédiat</td><td>Bout shared, pas déjà mergé dans son parent</td></tr>
+                <tr><td>DIY « plate » (<code>cortex</code>)</td><td>Senior</td><td><code>main</code></td><td>Bout de branche, déjà shared, pas encore intégré dans main</td></tr>
+                <tr><td>Sous-branche (<code>cortex/alice</code>, <code>cortex/alice/pass2</code>)</td><td>Senior, ou junior assigné à la tâche dont elle dépend</td><td>Le parent immédiat</td><td>Bout shared, pas déjà mergé dans son parent</td></tr>
                 <tr><td>Branche de tâche (<code>ma-tache</code>)</td><td colspan="3">Pas de Merge direct : le junior fait <a href="#tasks-junior">Request review</a>, le senior fait <a href="#tasks-review">Accept and Merge</a> vers main.</td></tr>
               </tbody>
             </table></div>
             <ul>
               <li>Avant le merge, la même <strong>vérification</strong> que pour Share est faite (projet shared à jour).</li>
-              <li><strong>Parent déjà mergé plus haut</strong> : si <code>sos/ok</code> est déjà rentré dans <code>sos</code>, Merge n’apparaît plus sur ses enfants non mergés (<code>sos/ok/yoi</code>). La ligne du parent est « fermée » vers le haut.</li>
+              <li><strong>Parent déjà mergé plus haut</strong> : si <code>cortex/alice</code> est déjà rentré dans <code>cortex</code>, Merge n’apparaît plus sur ses enfants non mergés (<code>cortex/alice/pass2</code>). La ligne du parent est « fermée » vers le haut.</li>
               <li>Après un merge réussi, le bout enfant est intégré : plus de bouton Merge dessus.</li>
               <li>Jamais de Merge, Accept ni Request review sur : les nœuds <code>…/start</code>, les versions en pointillés, les vieux nœuds qui ne sont plus le bout de leur branche.</li>
             </ul>
@@ -857,14 +855,14 @@ gh --version</code></pre>
             <div class="table-wrap"><table>
               <thead><tr><th>Branch</th><th>Who</th><th>Into</th><th>Condition</th></tr></thead>
               <tbody>
-                <tr><td>Flat DIY (<code>sos</code>)</td><td>Senior</td><td><code>main</code></td><td>Branch tip, already shared, not yet in main</td></tr>
-                <tr><td>Sub-branch (<code>sos/ok</code>, <code>sos/ok/yoi</code>)</td><td>Senior, or a junior assigned to the task it belongs to</td><td>The immediate parent</td><td>Shared tip, not already merged into its parent</td></tr>
+                <tr><td>Flat DIY (<code>cortex</code>)</td><td>Senior</td><td><code>main</code></td><td>Branch tip, already shared, not yet in main</td></tr>
+                <tr><td>Sub-branch (<code>cortex/alice</code>, <code>cortex/alice/pass2</code>)</td><td>Senior, or a junior assigned to the task it belongs to</td><td>The immediate parent</td><td>Shared tip, not already merged into its parent</td></tr>
                 <tr><td>Task branch (<code>my-task</code>)</td><td colspan="3">No direct Merge: the junior uses <a href="#tasks-junior">Request review</a>, the senior uses <a href="#tasks-review">Accept and Merge</a> into main.</td></tr>
               </tbody>
             </table></div>
             <ul>
               <li>Before merging, the same <strong>check</strong> as Share runs (shared project up to date).</li>
-              <li><strong>Parent already merged higher up</strong>: if <code>sos/ok</code> is already in <code>sos</code>, Merge no longer shows on its unmerged children (<code>sos/ok/yoi</code>). The parent line is “closed” upwards.</li>
+              <li><strong>Parent already merged higher up</strong>: if <code>cortex/alice</code> is already in <code>cortex</code>, Merge no longer shows on its unmerged children (<code>cortex/alice/pass2</code>). The parent line is “closed” upwards.</li>
               <li>After a successful merge, the child tip is integrated: no more Merge button on it.</li>
               <li>Never Merge, Accept or Request review on: <code>…/start</code> nodes, dashed versions, old nodes that are no longer their branch tip.</li>
             </ul>
