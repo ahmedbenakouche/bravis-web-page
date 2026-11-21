@@ -917,26 +917,26 @@ gh --version</code></pre>
               <li>Cliquez sur <span class="ui">Tasks</span>.</li>
               <li><strong>Description</strong> : ce qu’il faut faire.</li>
               <li><strong>Juniors</strong> : cochez un ou plusieurs juniors. Un junior peut être sur plusieurs tâches.</li>
-              <li><strong>Start version</strong> : <span class="ui">Choose on tree</span>, puis cliquez sur une version de <code>main</code> <strong>déjà partagée</strong> (cadre plein). Une version en pointillés doit d’abord être partagée.</li>
-              <li><span class="ui">Assign</span>, puis donnez un <strong>nom de branche</strong> (lettres, chiffres, tirets). La branche est créée et publiée : tout le monde la voit, même vide.</li>
+              <li><strong>Start version</strong> : <span class="ui">Choose on tree</span>, puis cliquez sur une version <strong>déjà partagée</strong> (cadre plein) — <strong>uniquement sur <code>main</code></strong> pour l’instant. Une version en pointillés doit d’abord être partagée.</li>
+              <li><span class="ui">Assign</span>, puis donnez un <strong>nom de branche</strong>. La branche est créée et publiée : tout le monde la voit, même vide.</li>
             </ol>
             <div class="callout tip"><span class="callout-ico">✅</span><div><p><strong>Une tâche = une branche</strong>, partagée par tous les juniors cochés. Pas une branche par personne.</p></div></div>
             <h3>Statuts</h3>
             <p>🟠 <strong>In progress</strong> · 🔵 <strong>Submitted</strong> (review demandée) · ✅ <strong>Closed</strong> (acceptée, pour tous les juniors de la tâche).</p>
-            <p>Double-cliquez sur une tâche pour lire sa description complète. Le senior peut aussi <span class="ui">Update task</span> ou <span class="ui">Cancel task</span>, et <span class="ui">New task</span> vide le formulaire.</p>
+            <p>Double-cliquez sur une tâche pour lire sa description complète. Le senior peut aussi <span class="ui">Update task</span> ou <span class="ui">Cancel task</span>.</p>
           </div>
           <div data-l="en">
             <ol class="steps">
               <li>Click <span class="ui">Tasks</span>.</li>
               <li><strong>Description</strong>: what needs doing.</li>
               <li><strong>Juniors</strong>: tick one or more juniors. A junior can be on several tasks.</li>
-              <li><strong>Start version</strong>: <span class="ui">Choose on tree</span>, then click a <strong>shared</strong> version of <code>main</code> (solid border). A dashed version must be shared first.</li>
-              <li><span class="ui">Assign</span>, then give a <strong>branch name</strong> (letters, numbers, dashes). The branch is created and published: everyone sees it, even empty.</li>
+              <li><strong>Start version</strong>: <span class="ui">Choose on tree</span>, then click a <strong>shared</strong> version (solid border) — <strong>on <code>main</code> only</strong> for now. A dashed version must be shared first.</li>
+              <li><span class="ui">Assign</span>, then give a <strong>branch name</strong>. The branch is created and published: everyone sees it, even empty.</li>
             </ol>
             <div class="callout tip"><span class="callout-ico">✅</span><div><p><strong>One task = one branch</strong>, shared by all ticked juniors. Not one branch per person.</p></div></div>
             <h3>Statuses</h3>
             <p>🟠 <strong>In progress</strong> · 🔵 <strong>Submitted</strong> (review requested) · ✅ <strong>Closed</strong> (accepted, for every junior on the task).</p>
-            <p>Double-click a task to read its full description. The senior can also <span class="ui">Update task</span> or <span class="ui">Cancel task</span>, and <span class="ui">New task</span> clears the form.</p>
+            <p>Double-click a task to read its full description. The senior can also <span class="ui">Update task</span> or <span class="ui">Cancel task</span>.</p>
           </div>
         </section>
 
@@ -985,16 +985,16 @@ gh --version</code></pre>
           <div data-l="fr">
             <ol class="steps">
               <li>Une notification vous guide vers le nœud 🔵. Ouvrez ses <strong>Version details</strong>.</li>
-              <li><span class="ui">Accept and Merge</span> → <span class="ui">Compare and Merge</span> : la comparaison côte à côte s’ouvre (voir <a href="#merge">Compare &amp; Merge</a>). Choisissez ce qu’il faut garder, puis <span class="ui">Apply merge</span>.</li>
-              <li>La version arrive sur <code>main</code>, la demande de review est close et la tâche passe ✅ pour tous les juniors assignés.</li>
+              <li><span class="ui">Accept and Merge</span> → <span class="ui">Compare and Merge</span> : la comparaison côte à côte s’ouvre (voir <a href="#merge">Compare &amp; Merge</a>). Vous pouvez choisir les cubes puis <span class="ui">Apply merge</span>, ou <span class="ui">Quit</span> sans fusionner (puis <span class="ui">Decline</span>).</li>
+              <li>Si vous appliquez : la version arrive sur <code>main</code>, la demande de review est close et la tâche passe ✅ pour tous les juniors assignés. La branche de tâche devient alors en cadenas 🔒 pour ces juniors.</li>
             </ol>
             <p><span class="ui">Decline</span> : la tâche repart en cours 🟠, et le junior peut redemander une review plus tard.</p>
           </div>
           <div data-l="en">
             <ol class="steps">
               <li>A notification guides you to the 🔵 node. Open its <strong>Version details</strong>.</li>
-              <li><span class="ui">Accept and Merge</span> → <span class="ui">Compare and Merge</span>: the side-by-side comparison opens (see <a href="#merge">Compare &amp; Merge</a>). Choose what to keep, then <span class="ui">Apply merge</span>.</li>
-              <li>The version lands on <code>main</code>, the review request is closed and the task turns ✅ for every assigned junior.</li>
+              <li><span class="ui">Accept and Merge</span> → <span class="ui">Compare and Merge</span>: the side-by-side comparison opens (see <a href="#merge">Compare &amp; Merge</a>). You can pick cubes then <span class="ui">Apply merge</span>, or <span class="ui">Quit</span> without merging (then <span class="ui">Decline</span>).</li>
+              <li>If you apply: the version lands on <code>main</code>, the review request is closed and the task turns ✅ for every assigned junior. The task branch then shows the 🔒 padlock for those juniors.</li>
             </ol>
             <p><span class="ui">Decline</span>: the task goes back to in progress 🟠, and the junior can request a review again later.</p>
           </div>
@@ -1004,8 +1004,8 @@ gh --version</code></pre>
         <section class="doc-section" id="messages" data-group="collab">
           <h2><span class="num">18</span><span class="title"><span data-l="fr">Messages, cloche et fil d’activité</span><span data-l="en">Messages, bell and activity feed</span></span></h2>
           <p class="lead">
-            <span data-l="fr">Trois façons de suivre l’équipe sans quitter Slicer.</span>
-            <span data-l="en">Three ways to keep up with the team without leaving Slicer.</span>
+            <span data-l="fr">Le chat du projet et la cloche pour suivre l’équipe ; le fil d’activité, à droite, journalise ce que fait le module sur cet ordinateur.</span>
+            <span data-l="en">Project chat and the bell to keep up with the team; the activity feed on the right logs what the module does on this computer.</span>
           </p>
           <figure class="video-slot" data-video="messages"></figure>
           <div data-l="fr">
