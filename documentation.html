@@ -670,37 +670,25 @@ gh --version</code></pre>
         <section class="doc-section" id="share" data-group="versions">
           <h2><span class="num">11</span><span class="title">Share</span></h2>
           <p class="lead">
-            <span data-l="fr"><span class="ui">Share</span> publie sur le projet partagé les versions locales de la branche courante. Les pointillés deviennent pleins.</span>
-            <span data-l="en"><span class="ui">Share</span> publishes the local versions of the current branch to the shared project. Dashed nodes turn solid.</span>
+            <span data-l="fr"><span class="ui">Share</span> envoie vos versions <strong>locales</strong> (cadres en pointillés) sur le projet partagé : elles passent en cadre plein, visibles par l’équipe.</span>
+            <span data-l="en"><span class="ui">Share</span> sends your <strong>local</strong> versions (dashed borders) to the shared project: they turn solid, so the team can see them.</span>
           </p>
           <figure class="video-slot" data-video="share"></figure>
           <div data-l="fr">
             <ol class="steps">
               <li>Cliquez sur <span class="ui">Share</span>. Une confirmation indique la <strong>branche</strong> et la version jusqu’où publier (<em>Up to</em>).</li>
-              <li>BRAVIS publie la branche jusqu’à ce bout, avec les versions parentes non partagées dont l’historique a besoin. Les autres branches locales ne bougent pas.</li>
-              <li>Avant d’envoyer, l’outil <strong>vérifie</strong> le projet partagé. S’il contient des versions que vous n’avez pas, ou des bouts divergents, Share est refusé : passez par <a href="#compare-shared">Compare with shared</a>, puis réessayez.</li>
+              <li>BRAVIS publie cette ligne jusqu’à ce bout. S’il manque encore des versions locales sur les branches au-dessus (ex. vous partagez <code>cortex/alice</code> et <code>cortex</code> a des nœuds en pointillés), elles partent aussi. Les autres branches (ex. <code>thalamus</code>) restent locales.</li>
+              <li>Avant d’envoyer, l’outil <strong>vérifie</strong> le projet partagé. S’il est en avance — par exemple des collègues ont partagé des versions entre-temps — Share est refusé : passez par <a href="#compare-shared">Compare with shared</a>, puis réessayez.</li>
             </ol>
-            <h3>Share est aussi bloqué si…</h3>
-            <ul>
-              <li>il n’y a rien de nouveau à partager ;</li>
-              <li>vous êtes junior hors de votre zone autorisée (cadenas) ;</li>
-              <li>une review 🔵 est ouverte sur cette branche de tâche : Share est en pause jusqu’à Accept ou Decline.</li>
-            </ul>
-            <div class="callout"><span class="callout-ico">💡</span><div><p>Pour une sous-branche, Share publie aussi ce qu’il faut des branches parentes pour que le graphe distant reste cohérent. Rien à cocher.</p></div></div>
+            <p>Share est aussi en pause si une review 🔵 est ouverte sur cette branche de tâche, jusqu’à Accept ou Decline.</p>
           </div>
           <div data-l="en">
             <ol class="steps">
               <li>Click <span class="ui">Share</span>. A confirmation shows the <strong>branch</strong> and the version to publish up to (<em>Up to</em>).</li>
-              <li>BRAVIS publishes the branch up to that tip, with any unshared parent versions the history needs. Other local branches do not move.</li>
-              <li>Before sending, the tool <strong>checks</strong> the shared project. If it holds versions you do not have, or diverging tips, Share is refused: go through <a href="#compare-shared">Compare with shared</a>, then retry.</li>
+              <li>BRAVIS publishes that line up to that tip. If parent branches still have local versions this history needs (e.g. you share <code>cortex/alice</code> and <code>cortex</code> still has dashed nodes), those go too. Other branches (e.g. <code>thalamus</code>) stay local.</li>
+              <li>Before sending, the tool <strong>checks</strong> the shared project. If it is ahead — for example teammates shared versions in the meantime — Share is refused: go through <a href="#compare-shared">Compare with shared</a>, then retry.</li>
             </ol>
-            <h3>Share is also blocked when…</h3>
-            <ul>
-              <li>there is nothing new to share;</li>
-              <li>you are a junior outside your allowed area (padlock);</li>
-              <li>a 🔵 review is open on that task branch: Share is paused until Accept or Decline.</li>
-            </ul>
-            <div class="callout"><span class="callout-ico">💡</span><div><p>For a sub-branch, Share also publishes what is needed from the parent branches so the remote graph stays consistent. Nothing to tick.</p></div></div>
+            <p>Share is also paused if a 🔵 review is open on that task branch, until Accept or Decline.</p>
           </div>
         </section>
 
