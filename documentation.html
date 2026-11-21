@@ -696,8 +696,8 @@ gh --version</code></pre>
         <section class="doc-section" id="compare-shared" data-group="versions">
           <h2><span class="num">12</span><span class="title">Compare with shared</span></h2>
           <p class="lead">
-            <span data-l="fr">Quand le projet partagé a avancé sans vous, comparez votre arbre local avec lui, choisissez quoi faire, puis validez.</span>
-            <span data-l="en">When the shared project moved on without you, compare your local tree with it, choose what to do, then validate.</span>
+            <span data-l="fr">À utiliser quand la <a href="#messages">cloche</a> signale que votre projet local n’est pas aligné avec la copie distante — comparez les deux arbres de versions, choisissez comment mettre à jour, puis <span class="ui">Validate</span>.</span>
+            <span data-l="en">Use this when the <a href="#messages">bell</a> warns that your local project is not aligned with the remote copy — compare both version trees, choose how to update, then <span class="ui">Validate</span>.</span>
           </p>
           <figure class="video-slot" data-video="compare-shared" data-show-desc></figure>
           <div data-l="fr">
@@ -708,17 +708,18 @@ gh --version</code></pre>
             </ul>
             <h3>La fenêtre</h3>
             <ol class="steps">
-              <li>Ouvrez <span class="ui">Compare with shared</span> (souvent depuis la cloche).</li>
+              <li>Ouvrez <span class="ui">Compare with shared</span> depuis la <a href="#messages">cloche</a>.</li>
               <li>Deux graphes côte à côte : <strong>Local (this computer)</strong> et <strong>Shared (remote)</strong>. Les cadres rouges en pointillés marquent les versions qui diffèrent.</li>
-              <li>Dans <strong>Conflicts</strong>, choisissez une action (selon le cas, certaines sont masquées). Le graphe <strong>Result (preview)</strong> montre le résultat ; des tirets verts indiquent ce qui vient du shared, ce qui reste à vous, ou un merge des deux.</li>
+              <li><strong>Conflicts</strong> est le panneau sous les graphes. Il dit ce qui se passe — par exemple : pas de conflit, ou conflit (local et shared ont divergé sur la <strong>même</strong> branche) — et propose les actions adaptées (voir le tableau plus bas).</li>
+              <li>Le graphe <strong>Result (preview)</strong> montre à quoi ressemblerait votre arbre après l’action choisie. Des tirets verts étiquettent les nœuds de l’aperçu : venant du shared, versions locales non partagées qui restent, ou merge shared + les vôtres.</li>
               <li>Cliquez sur <span class="ui">Validate</span> pour appliquer ce choix sur cet ordinateur. Si vous avez choisi <span class="ui">Compare and merge</span>, le mode <strong>Compare and Merge</strong> s’ouvre ensuite entre votre tip local et le tip shared.</li>
             </ol>
             <div class="table-wrap"><table>
               <thead><tr><th>Action</th><th>Effet</th></tr></thead>
               <tbody>
-                <tr><td><span class="ui">Update version tree</span></td><td>Récupérer ce que le shared a en avance (branches déjà mergées ailleurs, etc.) sans écraser vos tips locaux en conflit. Présélectionné quand il n’y a pas de conflit de tips ; masqué s’il y en a.</td></tr>
-                <tr><td><span class="ui">Reset to shared</span> / <span class="ui">Reset all to shared</span></td><td>Aligner la ou les branches en conflit sur le bout shared. Les autres branches locales restent. Attention : les versions locales en conflit quittent ces lignes.</td></tr>
-                <tr><td><span class="ui">Compare and merge</span></td><td>Après Validate, ouvrir Compare and Merge entre votre tip local et le tip shared sur la branche. Avec plusieurs branches en conflit, le bouton devient <span class="ui">Reset or Compare and merge</span> et ouvre <strong>Resolve conflicting branches</strong> (choix par branche : Reset to shared ou Compare and merge).</td></tr>
+                <tr><td><span class="ui">Update version tree</span></td><td>Quand le shared est en avance <strong>sans</strong> conflit de tips : intégrer ces versions (ou branches) dans votre arbre local ; vos versions locales non partagées restent.</td></tr>
+                <tr><td><span class="ui">Reset to shared</span></td><td>Quand il y a un <strong>conflit de tips</strong> : aligner la ou les branches concernées sur le bout shared. Les versions locales en conflit quittent ces lignes.</td></tr>
+                <tr><td><span class="ui">Compare and merge</span></td><td>Quand il y a un <strong>conflit de tips</strong> : après Validate, ouvrir Compare and Merge entre votre tip local et le tip shared. Avec plusieurs branches en conflit, le bouton devient <span class="ui">Reset or Compare and merge</span> et ouvre <strong>Resolve conflicting branches</strong> (choix par branche : Reset to shared ou Compare and merge).</td></tr>
               </tbody>
             </table></div>
             <div class="callout warn"><span class="callout-ico">⚠️</span><div><p><strong>Regarder ne suffit pas.</strong> Il faut choisir une action et cliquer sur <span class="ui">Validate</span>. Les collègues ne sont pas mis à jour tout seuls : chacun fait Compare / Update de son côté.</p></div></div>
@@ -731,17 +732,18 @@ gh --version</code></pre>
             </ul>
             <h3>The window</h3>
             <ol class="steps">
-              <li>Open <span class="ui">Compare with shared</span> (often from the bell).</li>
+              <li>Open <span class="ui">Compare with shared</span> from the <a href="#messages">bell</a>.</li>
               <li>Two graphs side by side: <strong>Local (this computer)</strong> and <strong>Shared (remote)</strong>. Red dashed boxes mark versions that differ.</li>
-              <li>Under <strong>Conflicts</strong>, pick an action (some are hidden depending on the case). The <strong>Result (preview)</strong> graph shows the outcome; green dashes show what comes from shared, what stays yours, or a merge of both.</li>
+              <li><strong>Conflicts</strong> is the panel under the graphs. It states the situation — for example: no conflict, or conflict (local and shared have diverged on the <strong>same</strong> branch) — and offers the matching actions (see the table below).</li>
+              <li>The <strong>Result (preview)</strong> graph shows what your tree would look like after the chosen action. Green dashes label preview nodes: from shared, local unshared versions that remain, or a merge of shared + yours.</li>
               <li>Click <span class="ui">Validate</span> to apply that choice on this computer. If you chose <span class="ui">Compare and merge</span>, the <strong>Compare and Merge</strong> layout then opens between your local tip and the shared tip.</li>
             </ol>
             <div class="table-wrap"><table>
               <thead><tr><th>Action</th><th>Effect</th></tr></thead>
               <tbody>
-                <tr><td><span class="ui">Update version tree</span></td><td>Pull what shared is ahead on (branches already merged elsewhere, etc.) without overwriting your conflicting local tips. Preselected when there is no tip conflict; hidden when there is.</td></tr>
-                <tr><td><span class="ui">Reset to shared</span> / <span class="ui">Reset all to shared</span></td><td>Align the conflicting branch(es) on the shared tip. Other local branches stay. Warning: conflicting local versions leave those lines.</td></tr>
-                <tr><td><span class="ui">Compare and merge</span></td><td>After Validate, open Compare and Merge between your local tip and the shared tip on that branch. With several conflicting branches, the button becomes <span class="ui">Reset or Compare and merge</span> and opens <strong>Resolve conflicting branches</strong> (per branch: Reset to shared or Compare and merge).</td></tr>
+                <tr><td><span class="ui">Update version tree</span></td><td>When shared is ahead <strong>with no</strong> tip conflict: bring those versions (or branches) into your local tree; your local unshared versions stay.</td></tr>
+                <tr><td><span class="ui">Reset to shared</span></td><td>When there is a <strong>tip conflict</strong>: align the branch(es) involved on the shared tip. Conflicting local versions leave those lines.</td></tr>
+                <tr><td><span class="ui">Compare and merge</span></td><td>When there is a <strong>tip conflict</strong>: after Validate, open Compare and Merge between your local tip and the shared tip. With several conflicting branches, the button becomes <span class="ui">Reset or Compare and merge</span> and opens <strong>Resolve conflicting branches</strong> (per branch: Reset to shared or Compare and merge).</td></tr>
               </tbody>
             </table></div>
             <div class="callout warn"><span class="callout-ico">⚠️</span><div><p><strong>Looking is not enough.</strong> You must pick an action and click <span class="ui">Validate</span>. Colleagues are not updated automatically: each one runs Compare / Update on their side.</p></div></div>
