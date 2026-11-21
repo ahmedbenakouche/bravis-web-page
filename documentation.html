@@ -117,7 +117,7 @@
               <li><a href="#branches"><span data-l="fr">Branches et sous-branches</span><span data-l="en">Branches &amp; sub-branches</span></a></li>
               <li><a href="#share">Share</a></li>
               <li><a href="#compare-shared">Compare with shared</a></li>
-              <li><a href="#merge">Merge &amp; Compare</a></li>
+              <li><a href="#merge">Compare &amp; Merge</a></li>
             </ol>
           </div>
           <div class="toc-group" data-group="collab">
@@ -752,10 +752,10 @@ gh --version</code></pre>
 
         <!-- 14 Merge -->
         <section class="doc-section" id="merge" data-group="versions">
-          <h2><span class="num">13</span><span class="title">Merge &amp; Compare</span></h2>
+          <h2><span class="num">13</span><span class="title">Compare &amp; Merge</span></h2>
           <p class="lead">
-            <span data-l="fr">Fusionner une branche dans une autre, après avoir comparé les deux versions côte à côte dans 6 vues synchronisées.</span>
-            <span data-l="en">Merge one branch into another, after comparing both versions side by side in 6 synchronized views.</span>
+            <span data-l="fr">Fusionner une branche dans une autre, après avoir comparé les deux versions côte à côte dans des vues synchronisées.</span>
+            <span data-l="en">Merge one branch into another, after comparing both versions side by side in synchronized views.</span>
           </p>
           <figure class="video-slot" data-video="merge-compare" data-show-desc></figure>
           <div data-l="fr">
@@ -766,10 +766,10 @@ gh --version</code></pre>
             </ol>
             <h3>La disposition Compare and Merge</h3>
             <ul>
-              <li>En haut, les deux vues 3D ; en bas, pour chaque version, les vues Axial, Sagittal et Coronal. La version cible est à gauche en 3D et en haut en 2D ; la version source à droite en 3D et en bas en 2D.</li>
-              <li>La liste <strong>SEGMENTS</strong> indique pour chaque segment s’il existe dans les deux versions. <span class="ui">◀ Prev</span> et <span class="ui">Next ▶</span> passent de l’un à l’autre.</li>
-              <li><strong>Show all segments</strong> : tous les segments avec leurs vraies couleurs. Décoché : un segment à la fois, vert pour la cible et rouge pour la source.</li>
-              <li><strong>Show 3D</strong> : construire les surfaces 3D (désactivé par défaut, plus rapide).</li>
+              <li>En haut, les deux vues 3D ; en bas, pour chaque version, les vues Axial, Sagittal et Coronal. La version <strong>cible</strong> (celle dans laquelle on merge, ex. <code>main</code>) est à gauche en 3D et en haut en 2D ; la version <strong>source</strong> (la branche qu’on fusionne) est à droite en 3D et en bas en 2D.</li>
+              <li>La liste <strong>SEGMENTS</strong> indique pour chaque segment s’il existe dans les deux versions. <span class="ui">◀ Prev</span> et <span class="ui">Next ▶</span> passent de l’un à l’autre (les coupes 2D et les caméras 3D se placent sur ce segment).</li>
+              <li><strong>Show all segments</strong> : tous les segments. Décoché : un segment à la fois, vert pour la cible et rouge pour la source.</li>
+              <li><strong>Show 3D</strong> : construire les surfaces 3D (désactivé par défaut).</li>
               <li><strong>Show cube diffs</strong> : entourer les cubes modifiés sur les vues 2D.</li>
             </ul>
           </div>
@@ -781,10 +781,10 @@ gh --version</code></pre>
             </ol>
             <h3>The Compare and Merge layout</h3>
             <ul>
-              <li>Both 3D views on top; below, for each version, the Axial, Sagittal and Coronal views. The target version is left in 3D and upper in 2D; the source version is right in 3D and lower in 2D.</li>
-              <li>The <strong>SEGMENTS</strong> list shows whether each segment exists in both versions. <span class="ui">◀ Prev</span> and <span class="ui">Next ▶</span> step through them.</li>
-              <li><strong>Show all segments</strong>: every segment in its real colors. Unchecked: one segment at a time, green for target and red for source.</li>
-              <li><strong>Show 3D</strong>: build 3D surfaces (off by default, faster).</li>
+              <li>Both 3D views on top; below, for each version, the Axial, Sagittal and Coronal views. The <strong>target</strong> version (the one you merge into, e.g. <code>main</code>) is left in 3D and upper in 2D; the <strong>source</strong> version (the branch you are merging) is right in 3D and lower in 2D.</li>
+              <li>The <strong>SEGMENTS</strong> list shows whether each segment exists in both versions. <span class="ui">◀ Prev</span> and <span class="ui">Next ▶</span> step through them (2D cuts and 3D cameras move to that segment).</li>
+              <li><strong>Show all segments</strong>: every segment. Unchecked: one segment at a time, green for target and red for source.</li>
+              <li><strong>Show 3D</strong>: build 3D surfaces (off by default).</li>
               <li><strong>Show cube diffs</strong>: outline changed cubes on the 2D views.</li>
             </ul>
           </div>
@@ -795,9 +795,10 @@ gh --version</code></pre>
             <h3>Choisir et appliquer</h3>
             <ol class="steps">
               <li>Cliquez sur les vues 2D le cube que vous voulez garder : il devient <strong style="color:var(--cyan)">cyan</strong> de ce côté. Recliquez du même côté pour annuler.</li>
-              <li><strong>Auto-select</strong> garde automatiquement le côté qui a du contenu quand l’autre est vide. Si les deux côtés ont du contenu, c’est vous qui choisissez.</li>
-              <li><span class="ui">Apply merge</span> construit la nouvelle version à partir des cubes choisis. <span class="ui">Quit</span> quitte sans fusionner et rétablit l’affichage.</li>
+              <li><strong>Auto-select</strong> : si un cube est annoté d’un seul côté et vide de l’autre, ce côté est gardé automatiquement. Si les deux côtés ont une annotation, c’est vous qui choisissez.</li>
+              <li><span class="ui">Apply merge</span> construit la nouvelle version à partir des cubes choisis. Sur un Merge (ou Accept and Merge) « normal », le résultat est <strong>publié</strong> sur le projet partagé (tip sur la cible). Après un conflit de tips via <a href="#compare-shared">Compare with shared</a>, le résultat reste <strong>local</strong> (pointillés) jusqu’à un <a href="#share">Share</a>. <span class="ui">Quit</span> quitte sans fusionner et rétablit l’affichage.</li>
             </ol>
+            <div class="callout warn"><span class="callout-ico">⚠️</span><div><p>Hors ligne (Local mode), vous pouvez encore ouvrir la comparaison et choisir les cubes, mais <span class="ui">Apply merge</span> échoue au moment de publier. Un ajustement est en cours pour éviter ce piège.</p></div></div>
             <div class="cube-diagram">
               <div class="cube-grid" aria-hidden="true">
                 <span></span><span></span><span class="changed"></span><span></span><span></span><span></span><span></span><span></span>
@@ -812,25 +813,24 @@ gh --version</code></pre>
             <div class="table-wrap"><table>
               <thead><tr><th>Branche</th><th>Qui</th><th>Vers</th><th>Condition</th></tr></thead>
               <tbody>
-                <tr><td>DIY « plate » (<code>cortex</code>)</td><td>Senior</td><td><code>main</code></td><td>Bout de branche, déjà shared, pas encore intégré dans main</td></tr>
-                <tr><td>Sous-branche (<code>cortex/alice</code>, <code>cortex/alice/pass2</code>)</td><td>Senior, ou junior assigné à la tâche dont elle dépend</td><td>Le parent immédiat</td><td>Bout shared, pas déjà mergé dans son parent</td></tr>
+                <tr><td>Branche créée depuis <code>main</code> (ex. <code>cortex</code>)</td><td>Senior</td><td><code>main</code></td><td>Bout de branche, déjà shared, pas encore intégré dans main</td></tr>
+                <tr><td>Sous-branche (<code>cortex/alice</code>, <code>cortex/alice/pass2</code>)</td><td>Senior, ou junior assigné à la tâche dont elle dépend</td><td>Parent branch</td><td>Bout shared, pas déjà mergé dans son parent</td></tr>
                 <tr><td>Branche de tâche (<code>ma-tache</code>)</td><td colspan="3">Pas de Merge direct : le junior fait <a href="#tasks-junior">Request review</a>, le senior fait <a href="#tasks-review">Accept and Merge</a> vers main.</td></tr>
               </tbody>
             </table></div>
             <ul>
               <li>Avant le merge, la même <strong>vérification</strong> que pour Share est faite (projet shared à jour).</li>
-              <li><strong>Parent déjà mergé plus haut</strong> : si <code>cortex/alice</code> est déjà rentré dans <code>cortex</code>, Merge n’apparaît plus sur ses enfants non mergés (<code>cortex/alice/pass2</code>). La ligne du parent est « fermée » vers le haut.</li>
-              <li>Après un merge réussi, le bout enfant est intégré : plus de bouton Merge dessus.</li>
-              <li>Jamais de Merge, Accept ni Request review sur : les nœuds <code>…/start</code>, les versions en pointillés, les vieux nœuds qui ne sont plus le bout de leur branche.</li>
+              <li>Une fois un bout intégré dans son parent (ex. <code>cortex/alice</code> dans <code>cortex</code>), plus de bouton Merge dessus — ni sur ses enfants non mergés (ex. <code>cortex/alice/pass2</code>).</li>
             </ul>
           </div>
           <div data-l="en">
             <h3>Choosing and applying</h3>
             <ol class="steps">
               <li>On the 2D views, click the cube you want to keep: it turns <strong style="color:var(--cyan)">cyan</strong> on that side. Click again on the same side to clear.</li>
-              <li><strong>Auto-select</strong> keeps the side with content when the other is empty. When both sides have content, you choose.</li>
-              <li><span class="ui">Apply merge</span> builds the new version from the chosen cubes. <span class="ui">Quit</span> leaves without merging and restores the layout.</li>
+              <li><strong>Auto-select</strong>: if a cube is annotated on one side and empty on the other, that side is kept automatically. If both sides have an annotation, you choose.</li>
+              <li><span class="ui">Apply merge</span> builds the new version from the chosen cubes. On a normal Merge (or Accept and Merge), the result is <strong>published</strong> to the shared project (tip on the target). After a tip conflict via <a href="#compare-shared">Compare with shared</a>, the result stays <strong>local</strong> (dashed) until you <a href="#share">Share</a>. <span class="ui">Quit</span> leaves without merging and restores the layout.</li>
             </ol>
+            <div class="callout warn"><span class="callout-ico">⚠️</span><div><p>Offline (Local mode), you can still open the comparison and pick cubes, but <span class="ui">Apply merge</span> fails when it tries to publish. An adjustment is in progress to avoid that trap.</p></div></div>
             <div class="cube-diagram">
               <div class="cube-grid" aria-hidden="true">
                 <span></span><span></span><span class="changed"></span><span></span><span></span><span></span><span></span><span></span>
@@ -845,16 +845,14 @@ gh --version</code></pre>
             <div class="table-wrap"><table>
               <thead><tr><th>Branch</th><th>Who</th><th>Into</th><th>Condition</th></tr></thead>
               <tbody>
-                <tr><td>Flat DIY (<code>cortex</code>)</td><td>Senior</td><td><code>main</code></td><td>Branch tip, already shared, not yet in main</td></tr>
-                <tr><td>Sub-branch (<code>cortex/alice</code>, <code>cortex/alice/pass2</code>)</td><td>Senior, or a junior assigned to the task it belongs to</td><td>The immediate parent</td><td>Shared tip, not already merged into its parent</td></tr>
+                <tr><td>Branch created from <code>main</code> (e.g. <code>cortex</code>)</td><td>Senior</td><td><code>main</code></td><td>Branch tip, already shared, not yet in main</td></tr>
+                <tr><td>Sub-branch (<code>cortex/alice</code>, <code>cortex/alice/pass2</code>)</td><td>Senior, or a junior assigned to the task it belongs to</td><td>Parent branch</td><td>Shared tip, not already merged into its parent</td></tr>
                 <tr><td>Task branch (<code>my-task</code>)</td><td colspan="3">No direct Merge: the junior uses <a href="#tasks-junior">Request review</a>, the senior uses <a href="#tasks-review">Accept and Merge</a> into main.</td></tr>
               </tbody>
             </table></div>
             <ul>
               <li>Before merging, the same <strong>check</strong> as Share runs (shared project up to date).</li>
-              <li><strong>Parent already merged higher up</strong>: if <code>cortex/alice</code> is already in <code>cortex</code>, Merge no longer shows on its unmerged children (<code>cortex/alice/pass2</code>). The parent line is “closed” upwards.</li>
-              <li>After a successful merge, the child tip is integrated: no more Merge button on it.</li>
-              <li>Never Merge, Accept or Request review on: <code>…/start</code> nodes, dashed versions, old nodes that are no longer their branch tip.</li>
+              <li>Once a tip is integrated into its parent (e.g. <code>cortex/alice</code> into <code>cortex</code>), Merge no longer shows on it — nor on its unmerged children (e.g. <code>cortex/alice/pass2</code>).</li>
             </ul>
           </div>
         </section>
@@ -987,7 +985,7 @@ gh --version</code></pre>
           <div data-l="fr">
             <ol class="steps">
               <li>Une notification vous guide vers le nœud 🔵. Ouvrez ses <strong>Version details</strong>.</li>
-              <li><span class="ui">Accept and Merge</span> → <span class="ui">Compare and Merge</span> : la comparaison côte à côte s’ouvre (voir <a href="#merge">Merge &amp; Compare</a>). Choisissez ce qu’il faut garder, puis <span class="ui">Apply merge</span>.</li>
+              <li><span class="ui">Accept and Merge</span> → <span class="ui">Compare and Merge</span> : la comparaison côte à côte s’ouvre (voir <a href="#merge">Compare &amp; Merge</a>). Choisissez ce qu’il faut garder, puis <span class="ui">Apply merge</span>.</li>
               <li>La version arrive sur <code>main</code>, la demande de review est close et la tâche passe ✅ pour tous les juniors assignés.</li>
             </ol>
             <p><span class="ui">Decline</span> : la tâche repart en cours 🟠, et le junior peut redemander une review plus tard.</p>
@@ -995,7 +993,7 @@ gh --version</code></pre>
           <div data-l="en">
             <ol class="steps">
               <li>A notification guides you to the 🔵 node. Open its <strong>Version details</strong>.</li>
-              <li><span class="ui">Accept and Merge</span> → <span class="ui">Compare and Merge</span>: the side-by-side comparison opens (see <a href="#merge">Merge &amp; Compare</a>). Choose what to keep, then <span class="ui">Apply merge</span>.</li>
+              <li><span class="ui">Accept and Merge</span> → <span class="ui">Compare and Merge</span>: the side-by-side comparison opens (see <a href="#merge">Compare &amp; Merge</a>). Choose what to keep, then <span class="ui">Apply merge</span>.</li>
               <li>The version lands on <code>main</code>, the review request is closed and the task turns ✅ for every assigned junior.</li>
             </ol>
             <p><span class="ui">Decline</span>: the task goes back to in progress 🟠, and the junior can request a review again later.</p>
