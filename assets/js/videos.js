@@ -10,12 +10,6 @@ window.BRAVIS_VIDEO_CATEGORIES = [
 
 window.BRAVIS_VIDEOS = [
   {
-    id: "presentation", file: "presentation.mp4", cat: "start", section: "",
-    fr: { title: "BRAVIS en 2 minutes", desc: "Vue d’ensemble : un projet partagé, des versions, une review." },
-    en: { title: "BRAVIS in 2 minutes", desc: "Overview: a shared project, versions, a review." },
-    hint: { fr: "1 à 2 min : Connect, Open, Save, Share, Version tree, Merge Compare.", en: "1–2 min: Connect, Open, Save, Share, Version tree, Merge Compare." }
-  },
-  {
     id: "installation", file: "doc-installation.mp4", cat: "start", section: "installation",
     fr: { title: "Installer et charger l’extension", desc: "Ajouter le module à 3D Slicer et vérifier Git / GitHub CLI." },
     en: { title: "Install and load the extension", desc: "Add the module to 3D Slicer and check Git / GitHub CLI." },
