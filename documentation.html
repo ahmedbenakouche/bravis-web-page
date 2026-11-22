@@ -911,7 +911,7 @@ gh --version</code></pre>
             <span data-l="fr">Le senior décrit le travail, choisit les juniors et une version de départ. BRAVIS crée une branche partagée pour la tâche.</span>
             <span data-l="en">The senior describes the work, picks the juniors and a start version. BRAVIS creates a shared branch for the task.</span>
           </p>
-          <figure class="video-slot" data-video="tasks-assign"></figure>
+          <figure class="video-slot" data-video="tasks-assign" data-no-caption></figure>
           <div data-l="fr">
             <ol class="steps">
               <li>Cliquez sur <span class="ui">Tasks</span>.</li>
@@ -947,7 +947,7 @@ gh --version</code></pre>
             <span data-l="fr">Le junior travaille sur la branche de sa tâche, publie, puis demande une review au senior.</span>
             <span data-l="en">The junior works on the task branch, publishes, then asks the senior for a review.</span>
           </p>
-          <figure class="video-slot" data-video="tasks-junior"></figure>
+          <figure class="video-slot" data-video="tasks-junior" data-no-caption></figure>
           <div data-l="fr">
             <ol class="steps">
               <li>Dans le Version tree, faites <a href="#switch">Switch</a> sur la branche de votre tâche (nœuds sans 🔒).</li>
@@ -1044,18 +1044,13 @@ gh --version</code></pre>
             <span data-l="en">The 🔒 padlock protects other people’s work: a junior can look at everything, but only writes where they were given a task.</span>
           </p>
           <div data-l="fr">
-            <ul>
-              <li><strong>Sans tâche active</strong> : l’écriture est bloquée presque partout.</li>
-              <li><strong>Avec des tâches</strong> : Save et Share autorisés sur ces branches <em>et</em> leurs sous-branches.</li>
-              <li><strong>Ailleurs</strong> : 🔒, Switch pour regarder, pas de modification.</li>
-            </ul>
             <div class="table-wrap"><table>
               <thead><tr><th>Action</th><th>Owner / Senior</th><th>Junior</th></tr></thead>
               <tbody>
                 <tr><td>Switch (consulter)</td><td>✅ partout</td><td>✅ partout</td></tr>
                 <tr><td>Save / Share sur <code>main</code></td><td>✅</td><td>—</td></tr>
                 <tr><td>Save / Share sur sa branche de tâche et ses sous-branches</td><td>✅</td><td>✅</td></tr>
-                <tr><td>Merge d’une branche DIY vers <code>main</code></td><td>✅</td><td>—</td></tr>
+                <tr><td>Merge d’une branche vers <code>main</code></td><td>✅</td><td>—</td></tr>
                 <tr><td>Merge d’une sous-branche vers son parent</td><td>✅</td><td>✅ si assigné à la tâche</td></tr>
                 <tr><td>Assign / Update / Cancel task</td><td>✅</td><td>—</td></tr>
                 <tr><td>Request review</td><td>—</td><td>✅</td></tr>
@@ -1067,18 +1062,13 @@ gh --version</code></pre>
             </table></div>
           </div>
           <div data-l="en">
-            <ul>
-              <li><strong>No active task</strong>: writing is blocked almost everywhere.</li>
-              <li><strong>With tasks</strong>: Save and Share allowed on those branches <em>and</em> their sub-branches.</li>
-              <li><strong>Elsewhere</strong>: 🔒, Switch to look, no changes.</li>
-            </ul>
             <div class="table-wrap"><table>
               <thead><tr><th>Action</th><th>Owner / Senior</th><th>Junior</th></tr></thead>
               <tbody>
                 <tr><td>Switch (view)</td><td>✅ everywhere</td><td>✅ everywhere</td></tr>
                 <tr><td>Save / Share on <code>main</code></td><td>✅</td><td>—</td></tr>
                 <tr><td>Save / Share on their task branch and its sub-branches</td><td>✅</td><td>✅</td></tr>
-                <tr><td>Merge a DIY branch into <code>main</code></td><td>✅</td><td>—</td></tr>
+                <tr><td>Merge a branch into <code>main</code></td><td>✅</td><td>—</td></tr>
                 <tr><td>Merge a sub-branch into its parent</td><td>✅</td><td>✅ if assigned to the task</td></tr>
                 <tr><td>Assign / Update / Cancel task</td><td>✅</td><td>—</td></tr>
                 <tr><td>Request review</td><td>—</td><td>✅</td></tr>
@@ -1105,8 +1095,8 @@ gh --version</code></pre>
             <h3>Le projet</h3>
             <p>Le bouton <span class="ui">Delete</span> du panneau ouvre <strong>Delete project</strong>. Selon votre rôle :</p>
             <ul>
-              <li><strong>Owner</strong> (en ligne) : <span class="ui">This computer only</span> (garde GitHub) ou <span class="ui">GitHub and this computer</span> (supprime pour tout le monde ; fenêtre <em>GitHub permission</em> possible).</li>
-              <li><strong>Non-owner</strong>, <strong>mode local</strong>, ou projet <em>(not on GitHub)</em> : suppression de la <strong>copie locale</strong> uniquement.</li>
+              <li><strong>Owner</strong> : <span class="ui">This computer only</span> (garde GitHub) ou <span class="ui">GitHub and this computer</span> (supprime pour tout le monde ; fenêtre <em>GitHub permission</em> possible).</li>
+              <li><strong>Non-owner</strong> : <span class="ui">This computer only</span> — suppression de la <strong>copie locale</strong> uniquement.</li>
             </ul>
             <div class="callout danger"><span class="callout-ico">⛔</span><div><p><strong>GitHub and this computer</strong> est irréversible : toute l’équipe perd l’accès au projet partagé. Les copies locales restantes apparaissent alors avec la mention <em>(not on GitHub)</em>.</p></div></div>
           </div>
@@ -1116,8 +1106,8 @@ gh --version</code></pre>
             <h3>The project</h3>
             <p>The panel’s <span class="ui">Delete</span> button opens <strong>Delete project</strong>. Depending on your role:</p>
             <ul>
-              <li><strong>Owner</strong> (online): <span class="ui">This computer only</span> (keeps GitHub) or <span class="ui">GitHub and this computer</span> (removes it for everyone; <em>GitHub permission</em> window may appear).</li>
-              <li><strong>Non-owner</strong>, <strong>local mode</strong>, or <em>(not on GitHub)</em> project: remove the <strong>local copy</strong> only.</li>
+              <li><strong>Owner</strong>: <span class="ui">This computer only</span> (keeps GitHub) or <span class="ui">GitHub and this computer</span> (removes it for everyone; <em>GitHub permission</em> window may appear).</li>
+              <li><strong>Non-owner</strong>: <span class="ui">This computer only</span> — remove the <strong>local copy</strong> only.</li>
             </ul>
             <div class="callout danger"><span class="callout-ico">⛔</span><div><p><strong>GitHub and this computer</strong> is irreversible: the whole team loses access to the shared project. Remaining local copies then show <em>(not on GitHub)</em>.</p></div></div>
           </div>
@@ -1130,8 +1120,8 @@ gh --version</code></pre>
         <section class="doc-section" id="stockage" data-group="ref">
           <h2><span class="num">21</span><span class="title"><span data-l="fr">Stockage des segmentations</span><span data-l="en">Segmentation storage</span></span></h2>
           <p class="lead">
-            <span data-l="fr">Pour aller plus loin : comment BRAVIS garde un historique léger, même avec de gros volumes.</span>
-            <span data-l="en">Going further: how BRAVIS keeps a lightweight history, even with large volumes.</span>
+            <span data-l="fr">Pour aller plus loin : comment BRAVIS garde un historique léger, même avec de grandes segmentations.</span>
+            <span data-l="en">Going further: how BRAVIS keeps a lightweight history, even with large segmentations.</span>
           </p>
           <div data-l="fr">
             <p>La segmentation est découpée en <strong>cubes de 64×64×64 voxels</strong>. Chaque cube est compressé (zlib) et nommé par l’empreinte <strong>xxHash64</strong> de son contenu. Un cube identique n’est donc stocké qu’une fois : un Save n’ajoute au dépôt que les cubes qui ont changé.</p>
@@ -1155,15 +1145,11 @@ gh --version</code></pre>
           <div data-l="fr">
             <ul>
               <li><strong>Open</strong> et <strong>Switch</strong> reconstruisent la labelmap en mémoire à partir des cubes, puis la chargent dans le nœud de segmentation.</li>
-              <li>Les anciennes versions enregistrées au format <code>*_segmentation.nii.gz</code> restent lisibles.</li>
-              <li>Le projet est un dépôt GitHub privé créé avec la GitHub CLI ; l’historique est un historique Git classique.</li>
             </ul>
           </div>
           <div data-l="en">
             <ul>
               <li><strong>Open</strong> and <strong>Switch</strong> rebuild the labelmap in memory from the cubes, then load it into the segmentation node.</li>
-              <li>Older versions saved as <code>*_segmentation.nii.gz</code> remain readable.</li>
-              <li>The project is a private GitHub repository created with the GitHub CLI; its history is a regular Git history.</li>
             </ul>
           </div>
         </section>
