@@ -114,7 +114,6 @@
               <li><a href="#version-tree"><span data-l="fr">Lire le Version tree</span><span data-l="en">Reading the Version tree</span></a></li>
               <li><a href="#switch">Switch version</a></li>
               <li><a href="#save">Save version</a></li>
-              <li><a href="#branches"><span data-l="fr">Branches et sous-branches</span><span data-l="en">Branches &amp; sub-branches</span></a></li>
               <li><a href="#share">Share</a></li>
               <li><a href="#compare-shared">Compare with shared</a></li>
               <li><a href="#merge">Compare &amp; Merge</a></li>
@@ -591,7 +590,7 @@ gh --version</code></pre>
             <span data-l="fr">Charger n’importe quelle version dans Slicer pour la consulter ou repartir de là.</span>
             <span data-l="en">Load any version in Slicer to look at it or start again from there.</span>
           </p>
-          <figure class="video-slot" data-video="switch"></figure>
+          <figure class="video-slot" data-video="switch" data-no-caption></figure>
           <div data-l="fr">
             <ol class="steps">
               <li>Dans le Version tree, cliquez sur le nœud voulu.</li>
@@ -640,17 +639,9 @@ gh --version</code></pre>
               </tbody>
             </table></div>
           </div>
-        </section>
-
-        <!-- 11 Branches -->
-        <section class="doc-section" id="branches" data-group="versions">
-          <h2><span class="num">10</span><span class="title"><span data-l="fr">Branches et sous-branches</span><span data-l="en">Branches &amp; sub-branches</span></span></h2>
-          <p class="lead">
-            <span data-l="fr">Une branche sert à annoter à part — une zone, une passe, ou le travail d’un annotateur — puis à <a href="#merge">merger</a> pour compléter ou combiner le résultat dans la ligne principale. On la crée depuis <span class="ui">Save</span> → <span class="ui">Create a branch</span>.</span>
-            <span data-l="en">A branch is for annotating aside — a region, a pass, or one annotator’s work — then <a href="#merge">merging</a> to complete or combine the result into the main line. Create one from <span class="ui">Save</span> → <span class="ui">Create a branch</span>.</span>
-          </p>
-          <figure class="video-slot" data-video="branches"></figure>
+          <h3 id="branches"><span data-l="fr">Branches et sous-branches</span><span data-l="en">Branches &amp; sub-branches</span></h3>
           <div data-l="fr">
+            <p>Une branche sert à annoter à part — une zone, une passe, ou le travail d’un annotateur — puis à <a href="#merge">merger</a> pour compléter ou combiner le résultat dans la ligne principale. On la crée depuis <span class="ui">Save</span> → <span class="ui">Create a branch</span>.</p>
             <ul>
               <li>Depuis <code>main</code>, le nom reste simple : <code>cortex</code>, <code>thalamus</code>…</li>
               <li>Depuis une autre branche, le nom s’imbrique : depuis <code>cortex</code> → <code>cortex/alice</code> ; depuis <code>cortex/alice</code> → <code>cortex/alice/pass2</code>.</li>
@@ -658,6 +649,7 @@ gh --version</code></pre>
             <p>Ensuite : Save sur cette sous-branche, puis <a href="#share">Share</a> pour la publier, et <a href="#merge">Merge</a> pour la ramener dans sa branche d’origine.</p>
           </div>
           <div data-l="en">
+            <p>A branch is for annotating aside — a region, a pass, or one annotator’s work — then <a href="#merge">merging</a> to complete or combine the result into the main line. Create one from <span class="ui">Save</span> → <span class="ui">Create a branch</span>.</p>
             <ul>
               <li>From <code>main</code>, the name stays flat: <code>cortex</code>, <code>thalamus</code>…</li>
               <li>From another branch, the name nests: from <code>cortex</code> → <code>cortex/alice</code>; from <code>cortex/alice</code> → <code>cortex/alice/pass2</code>.</li>
@@ -666,9 +658,9 @@ gh --version</code></pre>
           </div>
         </section>
 
-        <!-- 12 Share -->
+        <!-- 11 Share -->
         <section class="doc-section" id="share" data-group="versions">
-          <h2><span class="num">11</span><span class="title">Share</span></h2>
+          <h2><span class="num">10</span><span class="title">Share</span></h2>
           <p class="lead">
             <span data-l="fr"><span class="ui">Share</span> envoie vos versions <strong>locales</strong> (cadres en pointillés) sur le projet partagé : elles passent en cadre plein, visibles par l’équipe.</span>
             <span data-l="en"><span class="ui">Share</span> sends your <strong>local</strong> versions (dashed borders) to the shared project: they turn solid, so the team can see them.</span>
@@ -694,7 +686,7 @@ gh --version</code></pre>
 
         <!-- 13 Compare with shared -->
         <section class="doc-section" id="compare-shared" data-group="versions">
-          <h2><span class="num">12</span><span class="title">Compare with shared</span></h2>
+          <h2><span class="num">11</span><span class="title">Compare with shared</span></h2>
           <p class="lead">
             <span data-l="fr">À utiliser quand la <a href="#messages">cloche</a> signale que votre projet local n’est pas aligné avec la copie distante — comparez les deux arbres de versions, choisissez comment mettre à jour, puis <span class="ui">Validate</span>.</span>
             <span data-l="en">Use this when the <a href="#messages">bell</a> warns that your local project is not aligned with the remote copy — compare both version trees, choose how to update, then <span class="ui">Validate</span>.</span>
@@ -752,7 +744,7 @@ gh --version</code></pre>
 
         <!-- 14 Merge -->
         <section class="doc-section" id="merge" data-group="versions">
-          <h2><span class="num">13</span><span class="title">Compare &amp; Merge</span></h2>
+          <h2><span class="num">12</span><span class="title">Compare &amp; Merge</span></h2>
           <p class="lead">
             <span data-l="fr">Fusionner une branche dans une autre, après avoir comparé les deux versions côte à côte dans des vues synchronisées.</span>
             <span data-l="en">Merge one branch into another, after comparing both versions side by side in synchronized views.</span>
@@ -862,7 +854,7 @@ gh --version</code></pre>
 
         <!-- 15 People -->
         <section class="doc-section" id="people" data-group="collab">
-          <h2><span class="num">14</span><span class="title"><span data-l="fr">People : inviter et attribuer les rôles</span><span data-l="en">People: invite and set roles</span></span></h2>
+          <h2><span class="num">13</span><span class="title"><span data-l="fr">People : inviter et attribuer les rôles</span><span data-l="en">People: invite and set roles</span></span></h2>
           <p class="lead">
             <span data-l="fr"><span class="ui">People</span> liste l’équipe du projet, sa présence, et permet à l’owner d’inviter ou de retirer des collègues.</span>
             <span data-l="en"><span class="ui">People</span> lists the project team and its presence, and lets the owner invite or remove colleagues.</span>
@@ -906,7 +898,7 @@ gh --version</code></pre>
 
         <!-- 16 Tasks assign -->
         <section class="doc-section" id="tasks-assign" data-group="collab">
-          <h2><span class="num">15</span><span class="title"><span data-l="fr">Tasks : assigner une tâche</span><span data-l="en">Tasks: assigning a task</span></span></h2>
+          <h2><span class="num">14</span><span class="title"><span data-l="fr">Tasks : assigner une tâche</span><span data-l="en">Tasks: assigning a task</span></span></h2>
           <p class="lead">
             <span data-l="fr">Le senior décrit le travail, choisit les juniors et une version de départ. BRAVIS crée une branche partagée pour la tâche.</span>
             <span data-l="en">The senior describes the work, picks the juniors and a start version. BRAVIS creates a shared branch for the task.</span>
@@ -942,7 +934,7 @@ gh --version</code></pre>
 
         <!-- 17 Tasks junior -->
         <section class="doc-section" id="tasks-junior" data-group="collab">
-          <h2><span class="num">16</span><span class="title"><span data-l="fr">Tasks : côté junior</span><span data-l="en">Tasks: the junior side</span></span></h2>
+          <h2><span class="num">15</span><span class="title"><span data-l="fr">Tasks : côté junior</span><span data-l="en">Tasks: the junior side</span></span></h2>
           <p class="lead">
             <span data-l="fr">Le junior travaille sur la branche de sa tâche, publie, puis demande une review au senior.</span>
             <span data-l="en">The junior works on the task branch, publishes, then asks the senior for a review.</span>
@@ -976,7 +968,7 @@ gh --version</code></pre>
 
         <!-- 18 Tasks review -->
         <section class="doc-section" id="tasks-review" data-group="collab">
-          <h2><span class="num">17</span><span class="title"><span data-l="fr">Tasks : Accept ou Decline</span><span data-l="en">Tasks: Accept or Decline</span></span></h2>
+          <h2><span class="num">16</span><span class="title"><span data-l="fr">Tasks : Accept ou Decline</span><span data-l="en">Tasks: Accept or Decline</span></span></h2>
           <p class="lead">
             <span data-l="fr">Le senior examine la version soumise, garde ce qu’il veut, et l’intègre dans <code>main</code>, ou la renvoie au junior.</span>
             <span data-l="en">The senior reviews the submitted version, keeps what they want and brings it into <code>main</code>, or sends it back to the junior.</span>
@@ -1002,7 +994,7 @@ gh --version</code></pre>
 
         <!-- 19 Messages -->
         <section class="doc-section" id="messages" data-group="collab">
-          <h2><span class="num">18</span><span class="title"><span data-l="fr">Messages, cloche et fil d’activité</span><span data-l="en">Messages, bell and activity feed</span></span></h2>
+          <h2><span class="num">17</span><span class="title"><span data-l="fr">Messages, cloche et fil d’activité</span><span data-l="en">Messages, bell and activity feed</span></span></h2>
           <p class="lead">
             <span data-l="fr">Le chat du projet et la cloche pour suivre l’équipe ; le fil d’activité, à droite, journalise ce que fait le module sur cet ordinateur.</span>
             <span data-l="en">Project chat and the bell to keep up with the team; the activity feed on the right logs what the module does on this computer.</span>
@@ -1038,7 +1030,7 @@ gh --version</code></pre>
 
         <!-- 20 Permissions -->
         <section class="doc-section" id="permissions" data-group="collab">
-          <h2><span class="num">19</span><span class="title"><span data-l="fr">Cadenas et permissions</span><span data-l="en">Padlocks &amp; permissions</span></span></h2>
+          <h2><span class="num">18</span><span class="title"><span data-l="fr">Cadenas et permissions</span><span data-l="en">Padlocks &amp; permissions</span></span></h2>
           <p class="lead">
             <span data-l="fr">Le cadenas 🔒 protège le travail des autres : un junior peut tout regarder, mais n’écrit que là où on lui a confié une tâche.</span>
             <span data-l="en">The 🔒 padlock protects other people’s work: a junior can look at everything, but only writes where they were given a task.</span>
@@ -1083,7 +1075,7 @@ gh --version</code></pre>
 
         <!-- 21 Delete -->
         <section class="doc-section" id="delete" data-group="collab">
-          <h2><span class="num">20</span><span class="title">Delete</span></h2>
+          <h2><span class="num">19</span><span class="title">Delete</span></h2>
           <p class="lead">
             <span data-l="fr">Deux suppressions très différentes : une version locale, ou le projet entier.</span>
             <span data-l="en">Two very different deletions: a local version, or the whole project.</span>
@@ -1118,7 +1110,7 @@ gh --version</code></pre>
 
         <!-- 21 Storage -->
         <section class="doc-section" id="stockage" data-group="ref">
-          <h2><span class="num">21</span><span class="title"><span data-l="fr">Stockage des segmentations</span><span data-l="en">Segmentation storage</span></span></h2>
+          <h2><span class="num">20</span><span class="title"><span data-l="fr">Stockage des segmentations</span><span data-l="en">Segmentation storage</span></span></h2>
           <p class="lead">
             <span data-l="fr">Pour aller plus loin : comment BRAVIS garde un historique léger, même avec de grandes segmentations.</span>
             <span data-l="en">Going further: how BRAVIS keeps a lightweight history, even with large segmentations.</span>
@@ -1156,7 +1148,7 @@ gh --version</code></pre>
 
         <!-- 22 Limits -->
         <section class="doc-section" id="limites" data-group="ref">
-          <h2><span class="num">22</span><span class="title"><span data-l="fr">Limites actuelles</span><span data-l="en">Current limitations</span></span></h2>
+          <h2><span class="num">21</span><span class="title"><span data-l="fr">Limites actuelles</span><span data-l="en">Current limitations</span></span></h2>
           <p class="lead">
             <span data-l="fr">Pour ne pas chercher en vain.</span>
             <span data-l="en">So you don’t look for them in vain.</span>

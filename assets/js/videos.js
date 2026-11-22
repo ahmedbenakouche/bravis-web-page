@@ -59,15 +59,9 @@ window.BRAVIS_VIDEOS = [
   },
   {
     id: "save", file: "doc-save.mp4", cat: "versions", section: "save",
-    fr: { title: "Enregistrer une version (Save)", desc: "Les choix Put on main, Save on this branch, Create a branch." },
-    en: { title: "Save a version", desc: "The Put on main, Save on this branch, Create a branch choices." },
-    hint: { fr: "Annoter quelques coupes → Save → message → nouveau nœud en pointillés dans le tree.", en: "Annotate a few slices → Save → message → new dashed node in the tree." }
-  },
-  {
-    id: "branches", file: "doc-branches.mp4", cat: "versions", section: "branches",
-    fr: { title: "Créer une branche et une sous-branche", desc: "sos → sos/ok → sos/ok/yoi." },
-    en: { title: "Create a branch and a sub-branch", desc: "sos → sos/ok → sos/ok/yoi." },
-    hint: { fr: "Save → Create a branch → nom court ; puis depuis cette branche, nouvelle sous-branche.", en: "Save → Create a branch → short name; then a sub-branch from that branch." }
+    fr: { title: "Enregistrer une version (Save)", desc: "Put on main, Save on this branch, Create a branch — et le nommage des sous-branches." },
+    en: { title: "Save a version", desc: "Put on main, Save on this branch, Create a branch — and nested branch names." },
+    hint: { fr: "Annoter → Save → message → Put on main / Create a branch → nœud en pointillés.", en: "Annotate → Save → message → Put on main / Create a branch → dashed node." }
   },
   {
     id: "share", file: "doc-share.mp4", cat: "versions", section: "share",
