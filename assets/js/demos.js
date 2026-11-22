@@ -21,9 +21,6 @@
     var h3 = B.el("h3");
     h3.appendChild(B.bi(meta.fr.title, meta.en.title));
     article.appendChild(h3);
-    var p = B.el("p");
-    p.appendChild(B.bi(meta.fr.desc, meta.en.desc));
-    article.appendChild(p);
     var footer = B.el("div", { class: "demo-meta" });
     var pill = B.el("span", { class: "cat-pill" });
     pill.appendChild(B.bi(cat.fr, cat.en));
