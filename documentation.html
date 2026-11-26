@@ -195,6 +195,10 @@ gh --version</code></pre>
               <li>Redémarrez Slicer.</li>
               <li>Ouvrez le module : liste des modules → <strong>Informatics</strong> → <strong>BRAVIS</strong>.</li>
             </ol>
+
+            <h3>Volume de démonstration</h3>
+            <p>Pour tester BRAVIS, un volume de référence léger (~17&nbsp;Mo, sous la limite GitHub de 100&nbsp;Mo — <a href="#limites">voir Limites actuelles</a>) est fourni :</p>
+            <p><a href="assets/demo/LAMBADA_25um_reference_P21_v1.0.nii.gz" download>Télécharger le volume de démonstration</a> (atlas de référence souris P21, 25&nbsp;µm) — <a href="https://lambada.icm-institute.org/" target="_blank" rel="noopener">lambada.icm-institute.org</a>. Fourni ici uniquement pour essayer BRAVIS. Données © ICM.</p>
           </div>
 
           <div data-l="en">
@@ -226,6 +230,10 @@ gh --version</code></pre>
               <li>Restart Slicer.</li>
               <li>Open the module: module list → <strong>Informatics</strong> → <strong>BRAVIS</strong>.</li>
             </ol>
+
+            <h3>Demo volume</h3>
+            <p>To try BRAVIS, a lightweight reference volume (~17&nbsp;MB, under GitHub’s 100&nbsp;MB file limit — <a href="#limites">see Current limitations</a>) is provided:</p>
+            <p><a href="assets/demo/LAMBADA_25um_reference_P21_v1.0.nii.gz" download>Download demo volume</a> (mouse P21 reference atlas, 25&nbsp;µm) — <a href="https://lambada.icm-institute.org/" target="_blank" rel="noopener">lambada.icm-institute.org</a>. Provided here only to try BRAVIS. Data © ICM.</p>
           </div>
         </section>
 
@@ -385,7 +393,7 @@ gh --version</code></pre>
 
           <div data-l="fr">
             <h3>Créer <span style="font-weight: 400">(la vidéo ci-dessus montre Create et Open)</span></h3>
-            <p>Avant de créer : choisissez un <strong>3D Volume</strong> et une <strong>Ontology map</strong>. Sans eux, <span class="ui">Create</span> reste grisé. La <strong>Segmentation</strong> est optionnelle : si elle manque, BRAVIS en crée une vide aux dimensions du volume.</p>
+            <p>Avant de créer : choisissez un <strong>3D Volume</strong> (sous la limite GitHub de 100&nbsp;Mo — <a href="#installation">volume de démonstration</a>, <a href="#limites">Limites actuelles</a>) et une <strong>Ontology map</strong>. Sans eux, <span class="ui">Create</span> reste grisé. La <strong>Segmentation</strong> est optionnelle : si elle manque, BRAVIS en crée une vide aux dimensions du volume.</p>
             <ol class="steps">
               <li>Cliquez sur <span class="ui">Create</span>.</li>
               <li>Dans <strong>New project</strong>, saisissez un <strong>Project name</strong> et, si vous voulez, une <strong>Description</strong> courte.</li>
@@ -401,7 +409,7 @@ gh --version</code></pre>
 
           <div data-l="en">
             <h3>Create <span style="font-weight: 400">(the video above walks through Create and Open)</span></h3>
-            <p>Before creating: pick a <strong>3D Volume</strong> and an <strong>Ontology map</strong>. Without them, <span class="ui">Create</span> stays disabled. <strong>Segmentation</strong> is optional: if missing, BRAVIS creates an empty one matching the volume.</p>
+            <p>Before creating: pick a <strong>3D Volume</strong> (under GitHub’s 100&nbsp;MB file limit — <a href="#installation">demo volume</a>, <a href="#limites">Current limitations</a>) and an <strong>Ontology map</strong>. Without them, <span class="ui">Create</span> stays disabled. <strong>Segmentation</strong> is optional: if missing, BRAVIS creates an empty one matching the volume.</p>
             <ol class="steps">
               <li>Click <span class="ui">Create</span>.</li>
               <li>In <strong>New project</strong>, enter a <strong>Project name</strong> and, optionally, a short <strong>Description</strong>.</li>
@@ -1155,7 +1163,7 @@ gh --version</code></pre>
           <div data-l="fr">
             <ul>
               <li><strong>Taille de cube fixe (64³)</strong> : les segmentations sont découpées en cubes (64³ par défaut). Trop gros → beaucoup de données stockées pour une petite retouche ; trop petits → plus de cubes stockés et un coût de traitement / hachage plus élevé. Le bon compromis dépend de la résolution et de la taille typique des modifications. Une solution plus adaptée est à l’étude. Ex. : viser ~3&nbsp;cm de modification → blocs de 32 voxels à 1&nbsp;mm/voxel, ou 64 à 500&nbsp;µm/voxel. Une piste : au Create, choisir la taille de modification en cm et en déduire automatiquement la taille des blocs.</li>
-              <li><strong>GitHub</strong> : 100&nbsp;Mo / fichier ; un dépôt doit rester raisonnablement petit (ordre du Go). Git LFS / DVC servent surtout (1) à contourner ces plafonds, (2) à ne garder en local que des pointeurs et télécharger à la demande — les fichiers non téléchargés ne sont alors plus accessibles hors ligne. Le découpage en cubes répond en partie : un cube reste en pratique sous 100&nbsp;Mo, et seule la partie modifiée est ajoutée à chaque version. En revanche, une image brute de plusieurs Go nécessite encore Git LFS (ou un hébergement aux limites relevées, ex. GitLab auto-hébergé).</li>
+              <li><strong>GitHub</strong> : 100&nbsp;Mo / fichier ; un dépôt doit rester raisonnablement petit (ordre du Go). Git LFS / DVC servent surtout (1) à contourner ces plafonds, (2) à ne garder en local que des pointeurs et télécharger à la demande — les fichiers non téléchargés ne sont alors plus accessibles hors ligne. Le découpage en cubes répond en partie : un cube reste en pratique sous 100&nbsp;Mo, et seule la partie modifiée est ajoutée à chaque version. Un <a href="#installation">volume de démonstration</a> léger (~17&nbsp;Mo) est fourni pour tester. En revanche, une image brute de plusieurs Go nécessite encore Git LFS (ou un hébergement aux limites relevées, ex. GitLab auto-hébergé).</li>
               <li><strong>Une seule modalité</strong> d’imagerie par projet pour l’instant (pas encore multi-modalités ni navigation entre elles, ex. T2, diffusion, histologie).</li>
               <li>En <strong>mode local</strong>, Share, People (ajout), Assign, messages projet et notifications distantes sont indisponibles.</li>
               <li><strong>Version de départ d’une tâche</strong> : doit être sur <code>main</code> ; les départs depuis d’autres branches viendront plus tard.</li>
@@ -1165,7 +1173,7 @@ gh --version</code></pre>
           <div data-l="en">
             <ul>
               <li><strong>Fixed cube size (64³)</strong>: segmentations are split into cubes (64³ by default). Too large → lots of data stored for a small edit; too small → more cubes stored and higher processing / hashing cost. The right trade-off depends on resolution and typical edit size. A better fit is under consideration. E.g. targeting ~3&nbsp;cm edits → 32-voxel blocks at 1&nbsp;mm/voxel, or 64 at 500&nbsp;µm/voxel. A path forward: at Create, pick a modification size in cm and derive the block size automatically.</li>
-              <li><strong>GitHub</strong>: 100&nbsp;MB / file; a repo should stay reasonably small (order of a few GB). Git LFS / DVC mainly help (1) past those caps, (2) keeping only pointers locally and fetching on demand — files not yet downloaded are then unavailable offline. Cube splitting partly addresses this: a cube typically stays under 100&nbsp;MB, and only changed parts are added each version. A multi-GB raw volume still needs Git LFS (or hosting with higher limits, e.g. self-hosted GitLab).</li>
+              <li><strong>GitHub</strong>: 100&nbsp;MB / file; a repo should stay reasonably small (order of a few GB). Git LFS / DVC mainly help (1) past those caps, (2) keeping only pointers locally and fetching on demand — files not yet downloaded are then unavailable offline. Cube splitting partly addresses this: a cube typically stays under 100&nbsp;MB, and only changed parts are added each version. A lightweight <a href="#installation">demo volume</a> (~17&nbsp;MB) is provided for testing. A multi-GB raw volume still needs Git LFS (or hosting with higher limits, e.g. self-hosted GitLab).</li>
               <li><strong>One imaging modality</strong> per project for now (not yet multi-modality or navigation between them, e.g. T2, diffusion, histology).</li>
               <li>In <strong>local mode</strong>, Share, People (add), Assign, project messages and remote notifications are unavailable.</li>
               <li><strong>Task start version</strong>: must be on <code>main</code>; starts from other branches will come later.</li>
